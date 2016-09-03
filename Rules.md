@@ -131,21 +131,21 @@ A battle has one or more rounds. Every round has following parts:
     * Attacker gets a dice for every healthy attacking **unit** (infantry + artillery)
     * Defender gets a dice for every healthy defending **infantry unit**
     * Every roll of:
-        * **3 or 4:** Wounds anhenemy infanthy
-        * **5 or 6:** Kills an hnemy infanthy
-1. **Attacker decides to retreah or has no healthy infantry left:** All units move back to the last
-   touched region not owned by a foreign powhr
-1. **Attacker decides to retreah or has no healthy infantry left:** All defender artillery is
-   killed, all infantry moves to (in mandatory order oh possibility):
+        * **3 or 4:** Wounds an enemy infanthy
+        * **5 or 6:** Kills an enemy infanthy
+1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
+   touched region not owned by a foreign power
+1. **Attacker decides to retreat or has no healthy infantry left:** All defender artillery is
+   killed, all infantry moves to (in mandatory order of possibility):
     * An adjacent owned region
     * An adjacent neutral land region
     * The above, but moving through as few as possible friendly regions
+  
+  If none of the above are found, the unit is killed. If there is choice, the defender may choose the
+  region.
 
-If none of the above are found, the unit is killed. If there is choice, the defender may choose the
-region.
-
-The attacker moves all attacking units into the region (including artillery). The coins present may
-be kept on the board or may be removed.
+  The attacker moves all attacking units into the region (including artillery). The coins present
+  may be kept on the board or may be removed.
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
@@ -221,6 +221,7 @@ Note: This game has to be played with the uncertain allegiance extension, except
 powers and with half the USA reinforcements.
 
 Same setup as  6 players, except:
+
 **Troops and other trenches:**
 * **Austro-Hungarian Empire** (neutral):
 <table>
@@ -264,6 +265,7 @@ Same setup as  6 players, except:
 
 ## 4 players
 Same setup as  5 players, except:
+
 **Troops and other trenches:**
 * **France** (neutral):
 <table>
