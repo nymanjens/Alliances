@@ -50,6 +50,7 @@ One of:
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on occupied
        regions
+    1. **Token trading:** All players can trade non-used command tokens among each other
     1. **Token revealing:** All tokens are turned face up
     1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
        board, every player plays a single command token in round order.<br>
