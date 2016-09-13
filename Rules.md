@@ -108,9 +108,6 @@ simultaneously.
 
 **Artillery** units are not allowed to move to sea regions.
 
-When assigning command tokens, troops in sea regions must be given a move token. Only if there are
-more troops in sea than move tokens may there be embarked troops without move token.
-
 ### Ambiguous crossings
 The following points on the map can be crossed both by land-land and sea-sea movement:
 
