@@ -17,7 +17,7 @@
       move.
     * **MP:** move point
     * **Troop:** Group of units
-* **Strategic city:** Star on the map
+* **Strategic city:** City with more than 4 coins invested
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that contains mostly of a water body (the inverse of land regions)
     * **Occupied region:** Land region with at least one military unit
