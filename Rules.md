@@ -4,8 +4,7 @@
       in a game.
     * **(Command token) round:** A single iteration in round order where all players can play a
       single command token
-    * **Round order:** Player order: Starts with the order below and shifts every turn (first player
-      becomes last player every turn):
+    * **Round order:** Player order is the order below:
         * UK
         * Germany
         * Russia
@@ -80,7 +79,7 @@ Token types:
 * 2 x Train troops
     * +2 units in regions with a strategic city, otherwise +1 unit
 * 2 x Get money and invest ("invest" for short)
-    * Receive 2 coins and invest any amount (0-inf) in region
+    * Invest any amount (0-inf) in region
 
 ## Digging trench
 When resolving the "Dig trench" token, a single trench may be placed at a border with another land
@@ -107,9 +106,6 @@ Sea regions are always neutral and troops of different teams can thus reside in 
 simultaneously.
 
 **Artillery** units are not allowed to move to sea regions.
-
-When assigning command tokens, troops in sea regions must be given a move token. Only if there are
-more troops in sea than move tokens may there be embarked troops without move token.
 
 ### Ambiguous crossings
 The following points on the map can be crossed both by land-land and sea-sea movement:
@@ -169,22 +165,7 @@ Note: The unit has to be paid later that turn.
 
 ## Investing
 When investing (through movement, conquest or command token), tokens can go from the player's supply
-on the board. The maximum number of coins that may be invested in the region is indicated on the
-map.
-
-# Special abilities of powers
-* **UK**: Owns the seas
-    * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
-* **Germany**: Autobahn
-    * German units get 3 MP from the move token if the move only touches German regions
-* **Russia**: Burning retreat
-    * When losing a territory, choose to destroy all or some coins
-* **Ottoman Empire**: Cosmopolitans
-    * When moving into neutral or conquered territory without coins, a free coin is invested
-* **France**: Diggers
-    * May build 2 trenches per resolved command token
-* **Austro-Hungarian Empire**: Bankers
-    * Gains 3 coins when resolving invest token
+on the board.
 
 # Initial setup
 ## 6 players
