@@ -116,9 +116,9 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 
 * **Denmark islands**
 * **Gibraltar**
-* **Istanbul:** Notes:
-    * Land-land crossing is irrelevant since it's the same region
-    * Can only be crossed by sea if friendly power owns region
+* **Istanbul:**
+
+Sea-sea movement is not possible if both land regions at the crossing are controlled by an enemy power.
 
 ## Battles
 When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
