@@ -116,7 +116,7 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 
 * **Denmark islands**
 * **Gibraltar**
-* **Istanbul:**
+* **Istanbul**
 
 Sea-sea movement is not possible if both land regions at the crossing are controlled by an enemy power.
 
