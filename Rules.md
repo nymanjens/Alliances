@@ -216,11 +216,8 @@ map.
     * 2 infantry in Hungary
     * 1 infantry in Austria
 
-## 5 players
-Note: This game has to be played with the uncertain allegiance extension, except only for the allied
-powers and with half the USA reinforcements.
-
-Same setup as  6 players, except:
+## 4 players
+Same setup as  5 players, except:
 
 **Troops and other trenches:**
 * **Austro-Hungarian Empire** (neutral):
@@ -262,11 +259,6 @@ Same setup as  6 players, except:
     <td>with border Turkey</td>
   </tr>
 </table>
-
-## 4 players
-Same setup as  5 players, except:
-
-**Troops and other trenches:**
 * **France** (neutral):
 <table>
   <tr>
