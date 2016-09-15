@@ -45,7 +45,7 @@ One of:
 
 1. At the end of a turn, have at least a 15 point advantage over the other team (ends the game)
 1. Get your team to score the most points at the end of turn 15
-1. Have 5 strategic cities at any point in the game to win individually
+1. Have 5 (6 players) or 7 (4 players) strategic cities at any point in the game to win individually
 
 # Playing a turn
 1. **Command phase:**
