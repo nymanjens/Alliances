@@ -216,11 +216,8 @@ map.
     * 2 infantry in Hungary
     * 1 infantry in Austria
 
-## 5 players
-Note: This game has to be played with the uncertain allegiance extension, except only for the allied
-powers and with half the USA reinforcements.
-
-Same setup as  6 players, except:
+## 4 players
+Same setup as  5 players, except:
 
 **Troops and other trenches:**
 * **Austro-Hungarian Empire** (neutral):
@@ -262,11 +259,6 @@ Same setup as  6 players, except:
     <td>with border Turkey</td>
   </tr>
 </table>
-
-## 4 players
-Same setup as  5 players, except:
-
-**Troops and other trenches:**
 * **France** (neutral):
 <table>
   <tr>
@@ -304,47 +296,5 @@ Same setup as  5 players, except:
     <td>2</td>
     <td>2</td>
     <td>with border Turkey</td>
-  </tr>
-</table>
-
-# Uncertain allegiance extension
-At the beginning of the game, every player gets a card. One card symbolizes the "mole". This player
-can only win if the opposing side wins.
-
-## Discovery
-**At the end of every turn** (after the cleanup phase), both teams get the opportunity (first
-allies, then central) to call out a single team member to show their card. From the next turn
-onwards, the mole will become a member of the opposing team and USA will send reinforcements to the
-leftover members.
-
-The mole may also **attack an ally**, which immediately changes their official allegiance and causes
-the USA to enter the war immediately. The mole shows their card.
-
-Note: After discovery, scored points for the strategic cities of the mole are scored for the mole's
-new team.
-
-## USA
-**Troops:** At the start of every turn (before the command phase), each supported player gets a
-number of units (see table below). The recipient may choose the type of unit and may pick an owned
-region for the units to appear in. If the recipient owns no territories, the units appear in the
-North Sea or Atlantic Ocean.
-
-**Coins:** At the start of the economic phase, each supported player receives  a number of coins
-(see table below).
-<table>
-  <tr>
-    <td></td>
-    <th>1 shown card</th>
-    <th>2+ shown cards</th>
-  </tr>
-  <tr>
-    <th>Units</th>
-    <td>4</td>
-    <td>3</td>
-  </tr>
-  <tr>
-    <th>Coins</th>
-    <td>12</td>
-    <td>7</td>
   </tr>
 </table>
