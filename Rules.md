@@ -103,13 +103,12 @@ Troops can end their move in conquered, neutral or owned regions. Troops can't e
 (friendly) regions.
 
 ### Sea regions
-Sea regions are always neutral and troops of different teams can thus reside in the same region
+Sea regions are **always neutral** and troops of different teams can thus reside in the same region
 simultaneously.
 
-**Artillery** units are not allowed to move to sea regions.
+Only **move tokens** may be played in sea regions.
 
-When assigning command tokens, troops in sea regions must be given a move token. Only if there are
-more troops in sea than move tokens may there be embarked troops without move token.
+**Artillery** units are not allowed to move to sea regions.
 
 ### Ambiguous crossings
 The following points on the map can be crossed both by land-land and sea-sea movement:
