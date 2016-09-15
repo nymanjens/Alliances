@@ -54,10 +54,10 @@ One of:
     1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
        board, every player plays a single command token in round order.<br>
        Command token types are resolved in this order:
+        * Invest
         * Dig trench
         * Move
         * Train troops
-        * Invest
 1. **Economic phase:**
     1. **Production:** All occupied regions produce the amount of coins invested
     1. **Payment:** All units are paid one coin
