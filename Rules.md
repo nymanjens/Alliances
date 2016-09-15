@@ -72,19 +72,30 @@ One of:
 
 # Command tokens
 Token types:
-* 1 x Dig trench
-    * Choose a border between this and an adjacent region and put a trench on your side
-* 3 x Move
-    * All troops in region get 2 MP
-        * Units can move separately to multiple regions, but only one region can be battled
-* 2 x Train troops
-    * +2 units in regions with a strategic city, otherwise +1 unit
-* 2 x Get money and invest ("invest" for short)
-    * Receive 2 coins and invest any amount (0-inf) in region
+* **Invest** (x 2):<br>
+  Receive 2 coins and invest any amount (0-inf) in this region.
 
-## Digging trench
-When resolving the "Dig trench" token, a single trench may be placed at a border with another land
-region that has a trench placeholder on the map.
+  Investing means that coins go from the player's supply on to the board. The maximum number of
+  coins that may be invested in the region is indicated on the map.
+
+  This token is ignored in **sea regions**, i.e. no coins can be received/invested in sea regions.
+
+* **Dig trench** (x 1):<br>
+  A single trench may be placed at a border with another land region that has a trench placeholder
+  on the map.
+
+* **Move** (x 3):<br>
+  All troops in this region get 2 MP. Units can move separately to multiple regions, but only one
+  region can be battled.
+
+* **Train troops** (x 2):<br>
+  * +2 units in regions with a strategic city<br>
+  * +1 unit in other land regions<br>
+  * Does nothing in sea regions
+
+  The player may choose the type of units, which are added to this region.
+
+  Note: The unit has to be paid later that turn.
 
 ## Moving units
 Units can move through neutral, friendly and sea regions. Moving to an enemy region consumes all
@@ -105,8 +116,6 @@ Troops can end their move in conquered, neutral or owned regions. Troops can't e
 ### Sea regions
 Sea regions are **always neutral** and troops of different teams can thus reside in the same region
 simultaneously.
-
-Only **move tokens** may be played in sea regions.
 
 **Artillery** units are not allowed to move to sea regions.
 
@@ -160,16 +169,6 @@ advantages:
 Neutral powers don't attack, but do defend. The same rules apply as for normal combat. Whenever a
 defender has to make a choice (e.g. retreat), the other team may make that decision.
 
-## Training troops
-When resolving a "train troops" token, 1 unit (no strategic city) or 2 units (strategic city in
-region) are added to that region. The player may choose which one.
-
-Note: The unit has to be paid later that turn.
-
-## Investing
-When investing (through movement, conquest or command token), tokens can go from the player's supply
-on the board. The maximum number of coins that may be invested in the region is indicated on the
-map.
 
 # Special abilities of powers
 * **UK**: Owns the seas
