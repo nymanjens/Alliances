@@ -50,9 +50,9 @@ One of:
         * Train troops (&#42;)
 
        (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when 
-       both players repetitively alter their desision in reaction to another player's decision, 
-       both players whisper the solution to a third player who then executes the moves. When there 
-       is no third player available, both write down their action on a piece of paper.<br>
+       a number of players repetitively alter their desision in reaction to another player's decision, 
+       all players whisper the solution to a player not involved who then executes the moves. When there 
+       is no such player available, all write down their action and execute that action.<br>
        (&#42;&#42;) Tokens are resolved in the order of the number indicated on the token.
 1. **Economic phase:**
     1. **Production:** All occupied regions produce the amount of coins invested
