@@ -49,8 +49,10 @@ One of:
         * Move (&#42;&#42;)
         * Train troops (&#42;)
 
-       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, the player
-       with the least {stars, troops, coins} should resolve its tokens first.<br>
+       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when 
+       both players repetitively alter their desision in reaction to another player's decision, 
+       both players whisper the solution to a third player who then executes the moves. When there 
+       is no third player available, both write down their action on a piece of paper.<br>
        (&#42;&#42;) Tokens are resolved in the order of the number indicated on the token.
 1. **Economic phase:**
     1. **Production:** All occupied regions produce the amount of coins invested
@@ -209,12 +211,12 @@ defender has to make a choice (e.g. retreat), the other team may make that decis
     * 1 infantry in Austria
 
 **Move command tokens**
-* **UK**: 1, 12, 13
-* **Germany**: 2, 11, 14
-* **Russia**: 3, 10, 15
-* **Ottoman Empire**: 4, 9, 16
-* **France**: 5, 8, 18
-* **Austro-Hungarian Empire**: 6, 7, 19
+* **UK**: 1, 11, 15
+* **Germany**: 2, 12, 16
+* **Russia**: 3, 7, 17
+* **Ottoman Empire**: 4, 8, 18
+* **France**: 5, 9, 13
+* **Austro-Hungarian Empire**: 6, 10, 14
 
 ## 4 players
 Same setup as  5 players, except:
