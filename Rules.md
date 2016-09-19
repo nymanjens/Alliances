@@ -51,7 +51,8 @@ One of:
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on occupied
        regions
-    1. **Token trading:** All players can trade unused command tokens among each other
+    1. **Token and coin trading:** All players can trade unused command tokens and coins among each
+       other
     1. **Token revealing:** All tokens are turned face up
     1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
        board, every player plays a single command token in round order.<br>
@@ -128,7 +129,8 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **Gibraltar**
 * **Istanbul**
 
-Sea-sea movement is not possible if both land regions at the crossing are controlled by an enemy power.
+Sea-sea movement is not possible if both land regions at the crossing are controlled by an enemy
+power.
 
 ## Battles
 When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
@@ -151,8 +153,8 @@ A battle has one or more rounds. Every round has following parts:
     * An adjacent neutral land region
     * The above, but moving through as few as possible friendly regions
   
-  If none of the above are found, the unit is killed. If there is choice, the defender may choose the
-  region.
+  If none of the above are found, the unit is killed. If there is choice, the defender may choose
+  the region.
 
   The attacker moves all attacking units into the region (including artillery). The coins present
   may be kept on the board or may be removed.
