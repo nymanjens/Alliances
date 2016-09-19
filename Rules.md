@@ -85,8 +85,7 @@ Token types:
   on the map.
 
 * **Move** (x 3):<br>
-  All troops in this region get 2 MP. Units can move separately to multiple regions, but only one
-  region can be battled.
+  All troops in this region get 2 MP. Units can move separately to multiple regions.
 
 * **Train troops** (x 2):<br>
   * +2 units in regions with a strategic city<br>
