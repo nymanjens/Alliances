@@ -50,7 +50,7 @@ One of:
         * Train troops (&#42;)
 
        (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when 
-       a number of players repetitively alter their desision in reaction to another player's decision, 
+       a number of players repetitively alter their decision in reaction to another player's decision, 
        all players whisper the solution to a player not involved who then executes the moves. When there 
        is no such player available, all write down their action and execute that action.<br>
        (&#42;&#42;) Tokens are resolved in the order of the number indicated on the token.
