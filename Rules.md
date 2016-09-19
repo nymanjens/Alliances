@@ -1,17 +1,7 @@
 # Definitions
 * **Time:**
-    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 15 turns
-      in a game.
-    * **(Command token) round:** A single iteration in round order where all players can play a
-      single command token
-    * **Round order:** Player order: Starts with the order below and shifts every turn (first player
-      becomes last player every turn):
-        * UK
-        * Germany
-        * Russia
-        * Ottoman Empire
-        * France
-        * Austro-Hungarian Empire
+    * **Turn:** A single iteration of the game flow. There are a maximum of 15 turns in a game.
+* **Command:** The action of resolving a command token
 * **Unit:** Military unit, either a soldier or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move.
@@ -22,8 +12,8 @@
     * **Sea region:** Region that contains mostly of a water body (the inverse of land regions)
     * **Occupied region:** Land region with at least one military unit
     * **Neutral region:** Either a region without any units or a sea region
-    * **Conquered region:** Region won after successful battle earlier in the current round. This
-      excludes neutral regions occupied by retreated units.
+    * **Conquered region:** Region won after successful battle earlier during the current command.
+      This excludes neutral regions occupied by retreated units.
     * **Friendly region:** Region owned by you or your allies (the inverse of enemy regions)
 
 # Teams
@@ -54,13 +44,17 @@ One of:
     1. **Token and coin trading:** All players can trade unused command tokens and coins among each
        other
     1. **Token revealing:** All tokens are turned face up
-    1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
-       board, every player plays a single command token in round order.<br>
-       Command token types are resolved in this order:
-        * Invest
-        * Dig trench
-        * Move
-        * Train troops
+    1. **Commands:** Resolve token types in following order:
+        * Invest (&#42;)
+        * Dig trench (&#42;)
+        * Move (&#42;&#42;)
+        * Train troops (&#42;)
+
+       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when 
+       a number of players repetitively alter their decision in reaction to another player's decision, 
+       all players whisper the solution to a player not involved who then executes the commands. When there 
+       is no such player available, all write down their action and execute that action.<br>
+       (&#42;&#42;) Tokens are resolved in the order of the number indicated on the token.
 1. **Economic phase:**
     1. **Production:** All occupied regions produce the amount of coins invested
     1. **Payment:** All units are paid one coin
@@ -217,6 +211,14 @@ defender has to make a choice (e.g. retreat), the other team may make that decis
 * **Austro-Hungarian Empire**
     * 2 infantry in Hungary
     * 1 infantry in Austria
+
+**Move command tokens**
+* **UK**: 1, 11, 15
+* **Germany**: 2, 12, 16
+* **Russia**: 3, 7, 17
+* **Ottoman Empire**: 4, 8, 18
+* **France**: 5, 9, 13
+* **Austro-Hungarian Empire**: 6, 10, 14
 
 ## 4 players
 Same setup as  5 players, except:
