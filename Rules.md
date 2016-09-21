@@ -60,10 +60,10 @@ One of:
         * Train troops
 1. **Economic phase:**
     1. **Production:** All occupied regions produce the amount of coins invested
-    1. **Payment:** Units in regions the player wants to keep, are paid one coin per unit
-        * After paying the units, money can be given to allies, which they can use to pay for their
-        units.
-    1. **Mutany** Countries with units which were not paid this round, convert to neutral forces.
+    1. **Payment:** All units are paid one coin
+        * After paying all units, money can be given to allies, e.g. for paying their units or
+          allowing them to invest
+        * Unpaid units are removed from the board (chosen by player)
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per occupied strategic city (check game end
        condition)
