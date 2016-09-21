@@ -24,7 +24,7 @@
     * **Occupied region:** Land region occupied by at least one military unit
     * **Unoccupied region:** Land region not occupied by any military units
     * **Neutral region:** Land region occupied by neutral units
-    * **Owned region of a player:** Land region occupied by units of that player
+    * **Region owned by a player:** Land region occupied by units of that player
     * **Friendly region for a player:** Land region occupied by units of that player, or 
       units of an ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy 
@@ -69,7 +69,7 @@ One of:
           their units.
     1. **Mutiny:** All units which were not paid this round, convert to neutral units.
 1. **Cleanup phase**
-    1. **Point scoring:** Every team scores 1 point per owned strategic city (check game end
+    1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
     1. **Unit healing:** All wounded units are healed
     1. **Advance turn counter** by one
@@ -117,7 +117,7 @@ but the sea isn't a friendly region so I can't move any further. The remaining 1
 
 ### Ending move
 Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or 
-owned regions of the same player. Troops can't end in friendly regions owned by other players.
+regions owned by the same player. Troops can't end in friendly regions owned by other players.
 
 ### Sea regions
 Troops of different teams can reside in the same sea region simultaneously.
@@ -147,10 +147,10 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched region not owned by another player
+   touched region not owned by a player other than the attacker
 1. **Attacker decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
-    * An adjacent owned region
+    * An adjacent region owned by the attacker
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
@@ -192,7 +192,7 @@ defender has to make a choice (e.g. retreat), the enemy team of the attacker may
 # Initial setup
 ## 6 players
 **Money:**
-* Every player gets 2 coins in every owned region
+* Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
 **Trenches:**
@@ -328,9 +328,9 @@ new team.
 
 ## USA
 **Troops:** At the start of every turn (before the command phase), each supported player gets a
-number of units (see table below). The recipient may choose the type of unit and may pick an owned
-region for the units to appear in. If the recipient owns no regions, the units appear in the
-North Sea or Atlantic Ocean.
+number of units (see table below). The recipient may choose the type of unit and may pick a 
+region owned by the recipient for the units to appear in. If the recipient owns no regions, 
+the units appear in the North Sea or Atlantic Ocean.
 
 **Coins:** At the start of the economic phase, each supported player receives  a number of coins
 (see table below).
