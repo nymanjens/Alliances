@@ -87,6 +87,9 @@ Token types:
 * **Move** (x 3):<br>
   All troops in this region get 2 MP. Units can move separately to multiple regions.
 
+  First, the player shows the other players all planned moves by moving units to their desired
+  destinations in the desired order. Where necessary, battles are resolved in that order.
+
 * **Train troops** (x 2):<br>
   * +2 units in regions with a strategic city<br>
   * +1 unit in other land regions<br>
@@ -147,7 +150,7 @@ A battle has one or more rounds. Every round has following parts:
     * An adjacent owned region
     * An adjacent neutral land region
     * The above, but moving through as few as possible friendly regions
-  
+
   If none of the above are found, the unit is killed. If there is choice, the defender may choose the
   region.
 
