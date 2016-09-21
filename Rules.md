@@ -63,7 +63,7 @@ One of:
         * Move
         * Train troops
 1. **Economic phase:**
-    1. **Production:** All players receive the total amount of coins invested in countries they own.
+    1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
         * After paying the units, money can be given to allied players, which they can use to pay for 
           their units.
@@ -147,7 +147,7 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched region not owned by a foreign power
+   touched region not owned by another player
 1. **Attacker decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
     * An adjacent owned region
@@ -175,7 +175,7 @@ Neutral units will never attack, but do defend. The same rules apply as for norm
 defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that decision.
 
 
-# Special abilities of powers
+# Special abilities of players
 * **UK**: Owns the seas
     * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
 * **Germany**: Autobahn
