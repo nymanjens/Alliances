@@ -63,7 +63,7 @@ One of:
     1. **Payment:** Units in regions the player wants to keep, are paid one coin per unit
         * After paying the units, money can be given to allies, which they can use to pay for their
         units.
-    1. **Mutiny** Regions with units which were not paid this round, convert to neutral forces.
+    1. **Mutiny:** Regions with units which were not paid this round, convert to neutral forces.
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per occupied strategic city (check game end
        condition)
