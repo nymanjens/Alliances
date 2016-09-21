@@ -50,17 +50,17 @@ One of:
         * Move (&#42;&#42;)
         * Train troops (&#42;)
 
-       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when 
-       a number of players repetitively alter their decision in reaction to another player's decision, 
-       all players whisper the solution to a player not involved who then executes the commands. When there 
+       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when
+       a number of players repetitively alter their decision in reaction to another player's decision,
+       all players whisper the solution to a player not involved who then executes the commands. When there
        is no such player available, all write down their action and execute that action.<br>
        (&#42;&#42;) Tokens are resolved in the order of the number indicated on the token.
 1. **Economic phase:**
     1. **Production:** All occupied regions produce the amount of coins invested
-    1. **Payment:** All units are paid one coin
-        * After paying all units, money can be given to allies, e.g. for paying their units or
-          allowing them to invest
-        * Unpaid units are removed from the board (chosen by player)
+    1. **Payment:** Units in regions the player wants to keep, are paid one coin per unit
+        * After paying the units, money can be given to allies, which they can use to pay for their
+        units.
+    1. **Mutiny:** Regions with units which were not paid this round, convert to neutral forces.
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per occupied strategic city (check game end
        condition)
@@ -70,20 +70,22 @@ One of:
 # Command tokens
 Token types:
 * **Invest** (x 2):<br>
-  Receive 2 coins and invest any amount (0-inf) in this region.
+  Invest any amount (0-inf) in this region.
 
   Investing means that coins go from the player's supply on to the board. The maximum number of
   coins that may be invested in the region is indicated on the map.
 
-  This token is ignored in **sea regions**, i.e. no coins can be received/invested in sea regions.
+  This token is ignored in **sea regions**, i.e. no coins can be invested in sea regions.
 
 * **Dig trench** (x 1):<br>
   A single trench may be placed at a border with another land region that has a trench placeholder
   on the map.
 
 * **Move** (x 3):<br>
-  All troops in this region get 2 MP. Units can move separately to multiple regions, but only one
-  region can be battled.
+  All troops in this region get 2 MP. Units can move separately to multiple regions.
+
+  First, the player shows the other players all planned moves by moving units to their desired
+  destinations in the desired order. Where necessary, battles are resolved in that order.
 
 * **Train troops** (x 2):<br>
   * +2 units in regions with a strategic city<br>
@@ -146,7 +148,7 @@ A battle has one or more rounds. Every round has following parts:
     * An adjacent owned region
     * An adjacent neutral land region
     * The above, but moving through as few as possible friendly regions
-  
+
   If none of the above are found, the unit is killed. If there is choice, the defender may choose
   the region.
 
@@ -180,7 +182,7 @@ defender has to make a choice (e.g. retreat), the other team may make that decis
 * **France**: Diggers
     * May build 2 trenches per resolved command token
 * **Austro-Hungarian Empire**: Bankers
-    * Gains 3 coins when resolving invest token
+    * Gains 1 coin when resolving invest token
 
 # Initial setup
 ## 6 players
