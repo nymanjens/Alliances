@@ -73,12 +73,12 @@ One of:
 # Command tokens
 Token types:
 * **Invest** (x 2):<br>
-  Receive 2 coins and invest any amount (0-inf) in this region.
+  Invest any amount (0-inf) in this region.
 
   Investing means that coins go from the player's supply on to the board. The maximum number of
   coins that may be invested in the region is indicated on the map.
 
-  This token is ignored in **sea regions**, i.e. no coins can be received/invested in sea regions.
+  This token is ignored in **sea regions**, i.e. no coins can be invested in sea regions.
 
 * **Dig trench** (x 1):<br>
   A single trench may be placed at a border with another land region that has a trench placeholder
@@ -184,7 +184,7 @@ defender has to make a choice (e.g. retreat), the other team may make that decis
 * **France**: Diggers
     * May build 2 trenches per resolved command token
 * **Austro-Hungarian Empire**: Bankers
-    * Gains 3 coins when resolving invest token
+    * Gains 1 coin when resolving invest token
 
 # Initial setup
 ## 6 players
