@@ -15,9 +15,9 @@
     * **Unoccupied region:** Land region not occupied by any military units
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
-    * **Friendly region for a player:** Land region occupied by units of that player, or 
+    * **Friendly region for a player:** Land region occupied by units of that player, or
       units of an ally of that player
-    * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy 
+    * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
 
 # Teams
@@ -62,7 +62,7 @@ One of:
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
-        * After paying the units, money can be given to allied players, which they can use to pay for 
+        * After paying the units, money can be given to allied players, which they can use to pay for
           their units.
     1. **Mutiny:** All units which were not paid this round, convert to neutral units.
 1. **Cleanup phase**
@@ -115,7 +115,7 @@ The total amount of MP consumed may never exceed the given amount (typically 2).
 but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
 
 ### Ending move
-Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or 
+Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
 regions owned by the same player. Troops can't end in friendly regions owned by other players.
 
 ### Sea regions
