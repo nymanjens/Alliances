@@ -67,7 +67,7 @@ One of:
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
         * After paying the units, money can be given to allied players, which they can use to pay
           for their units.
-    1. **Mutiny:** All units which were not paid this round, convert to neutral units.
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
