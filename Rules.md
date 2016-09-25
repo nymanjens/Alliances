@@ -177,7 +177,6 @@ Neutral units will never attack, but do defend. The same rules apply as for norm
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
-
 # Special abilities of players
 * **UK**: Owns the seas
     * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
