@@ -121,6 +121,8 @@ but the sea isn't a friendly region so I can't move any further. The remaining 1
 Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
 regions owned by the same player. Troops can't end in friendly regions owned by other players.
 
+If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
+
 ### Sea regions
 Troops of different teams can reside in the same sea region simultaneously.
 
