@@ -62,8 +62,8 @@ One of:
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
-        * After paying the units, money can be given to allied players, which they can use to pay for
-          their units.
+        * After paying the units, money can be given to allied players, which they can use to pay
+          for their units.
     1. **Mutiny:** All units which were not paid this round, convert to neutral units.
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
@@ -170,8 +170,9 @@ advantages:
 * Defender gets twice the amount of dice per defending infantry
 
 ### Fighting neutral regions
-Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever a
-defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that decision.
+Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
+a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
+decision.
 
 
 # Special abilities of players
