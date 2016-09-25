@@ -19,26 +19,30 @@
     * **Troop:** Group of units
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
-    * **Sea region:** Region that contains mostly of a water body (the inverse of land regions)
-    * **Occupied region:** Land region with at least one military unit
-    * **Neutral region:** Either a region without any units or a sea region
-    * **Conquered region:** Region won after successful battle earlier in the current round. This
-      excludes neutral regions occupied by retreated units.
-    * **Friendly region:** Region owned by you or your allies (the inverse of enemy regions)
+    * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
+    * **Land region:** Region that consists mostly of land (the inverse of sea regions)
+    * **Occupied region:** Land region occupied by at least one military unit
+    * **Unoccupied region:** Land region not occupied by any military units
+    * **Neutral region:** Land region occupied by neutral units
+    * **Region owned by a player:** Land region occupied by units of that player
+    * **Friendly region for a player:** Land region occupied by units of that player, or 
+      units of an ally of that player
+    * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy 
+      of that player
 
 # Teams
 There are 2 teams:
-* Allied powers:
+* Allied players:
     * UK
     * Russia
     * France (&#42;)
-* Central powers:
+* Central players:
     * Germany
     * Ottoman Empire
     * Austro-Hungarian Empire (&#42;&#42;)
 
-(&#42;) Neutral power when playing with 4 players<br />
-(&#42;&#42;) Neutral power when playing with 4 or 5 players
+(&#42;) Neutral when playing with 4 players<br />
+(&#42;&#42;) Neutral when playing with 4 or 5 players
 
 # Goal of the game
 One of:
@@ -48,8 +52,8 @@ One of:
 
 # Playing a turn
 1. **Command phase:**
-    1. **Token assignment:** All players simultaneously put command tokens face down on occupied
-       regions
+    1. **Token assignment:** All players simultaneously put command tokens face down on regions
+       they own.
     1. **Token revealing:** All tokens are turned face up
     1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
        board, every player plays a single command token in round order.<br>
@@ -59,13 +63,13 @@ One of:
         * Move
         * Train troops
 1. **Economic phase:**
-    1. **Production:** All occupied regions produce the amount of coins invested
-    1. **Payment:** Units in regions the player wants to keep, are paid one coin per unit
-        * After paying the units, money can be given to allies, which they can use to pay for their
-        units.
-    1. **Mutiny:** Regions with units which were not paid this round, convert to neutral forces.
+    1. **Production:** All players receive the total amount of coins invested in regions they own.
+    1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
+        * After paying the units, money can be given to allied players, which they can use to pay for 
+          their units.
+    1. **Mutiny:** All units which were not paid this round, convert to neutral units.
 1. **Cleanup phase**
-    1. **Point scoring:** Every team scores 1 point per occupied strategic city (check game end
+    1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
     1. **Unit healing:** All wounded units are healed
     1. **Advance turn counter** by one
@@ -78,11 +82,13 @@ Token types:
   Investing means that coins go from the player's supply on to the board. The maximum number of
   coins that may be invested in the region is indicated on the map.
 
-  This token is ignored in **sea regions**, i.e. no coins can be invested in sea regions.
+  This token is ignored in **sea regions**.
 
 * **Dig trench** (x 1):<br>
   A single trench may be placed at a border with another land region that has a trench placeholder
   on the map.
+
+  This token is ignored in **sea regions**.
 
 * **Move** (x 3):<br>
   All troops in this region get 2 MP. Units can move separately to multiple regions.
@@ -100,7 +106,7 @@ Token types:
   Note: The unit has to be paid later that turn.
 
 ## Moving units
-Units can move through neutral, friendly and sea regions. Moving to an enemy region consumes all
+Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
 Move Points and initiates a battle.
 
 ### Move Points (MP)
@@ -109,15 +115,14 @@ Moves starting in a friendly region with at least one coin invested cost 1 MP.<b
 The total amount of MP consumed may never exceed the given amount (typically 2).
 
 *Example: My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
-but the sea isn't friendly region so I can't move any further. The remaining 1 MP gets lost.*
+but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
 
 ### Ending move
-Troops can end their move in conquered, neutral or owned regions. Troops can't end in foreign
-(friendly) regions.
+Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or 
+regions owned by the same player. Troops can't end in friendly regions owned by other players.
 
 ### Sea regions
-Sea regions are **always neutral** and troops of different teams can thus reside in the same region
-simultaneously.
+Troops of different teams can reside in the same sea region simultaneously.
 
 **Artillery** units are not allowed to move to sea regions.
 
@@ -128,7 +133,7 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **Gibraltar**
 * **Istanbul**
 
-Sea-sea movement is not possible if both land regions at the crossing are controlled by an enemy power.
+Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
 
 ## Battles
 When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
@@ -144,11 +149,11 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched region not owned by a foreign power
-1. **Attacker decides to retreat or has no healthy infantry left:** All defender artillery is
+   touched unoccupied or owned region.
+1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
-    * An adjacent owned region
-    * An adjacent neutral land region
+    * An adjacent region owned by the defender
+    * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
   If none of the above are found, the unit is killed. If there is choice, the defender may choose the
@@ -167,20 +172,20 @@ advantages:
 * Attacker needs 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
 * Defender gets twice the amount of dice per defending infantry
 
-### Fighting neutral powers
-Neutral powers don't attack, but do defend. The same rules apply as for normal combat. Whenever a
-defender has to make a choice (e.g. retreat), the other team may make that decision.
+### Fighting neutral regions
+Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever a
+defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that decision.
 
 
-# Special abilities of powers
+# Special abilities of players
 * **UK**: Owns the seas
     * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
 * **Germany**: Autobahn
     * German units get 3 MP from the move token if the move only touches German regions
 * **Russia**: Burning retreat
-    * When losing a territory, choose to destroy all or some coins
+    * When losing a region, choose to destroy all or some coins
 * **Ottoman Empire**: Cosmopolitans
-    * When moving into neutral or conquered territory without coins, a free coin is invested
+    * When moving into neutral or conquered region without coins, a free coin is invested
 * **France**: Diggers
     * May build 2 trenches per resolved command token
 * **Austro-Hungarian Empire**: Bankers
@@ -189,7 +194,7 @@ defender has to make a choice (e.g. retreat), the other team may make that decis
 # Initial setup
 ## 6 players
 **Money:**
-* Every player gets 2 coins in every owned region
+* Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
 **Trenches:**
@@ -218,7 +223,7 @@ defender has to make a choice (e.g. retreat), the other team may make that decis
 
 ## 5 players
 Note: This game has to be played with the uncertain allegiance extension, except only for the allied
-powers and with half the USA reinforcements.
+players and with half the USA reinforcements.
 
 Same setup as  6 players, except:
 
@@ -325,9 +330,9 @@ new team.
 
 ## USA
 **Troops:** At the start of every turn (before the command phase), each supported player gets a
-number of units (see table below). The recipient may choose the type of unit and may pick an owned
-region for the units to appear in. If the recipient owns no territories, the units appear in the
-North Sea or Atlantic Ocean.
+number of units (see table below). The recipient may choose the type of unit and may pick a 
+region owned by the recipient for the units to appear in. If the recipient owns no regions, 
+the units appear in the North Sea or Atlantic Ocean.
 
 **Coins:** At the start of the economic phase, each supported player receives  a number of coins
 (see table below).
