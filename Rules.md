@@ -159,8 +159,8 @@ A battle has one or more rounds. Every round has following parts:
   If none of the above are found, the unit is killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region (including artillery). The coins present
-  may be kept on the board or may be removed.
+  The attacker moves all attacking units into the region (including artillery). The invested coins
+  may be kept on the board or may be (partly) stolen.
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
