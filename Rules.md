@@ -65,7 +65,7 @@ One of:
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
         * After paying the units, money can be given to allied players, which they can use to pay
           for their units.
-    1. **Mutiny:** All units which were not paid this round, convert to neutral units.
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
@@ -162,7 +162,7 @@ A battle has one or more rounds. Every round has following parts:
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
-part 2 **and the artillery retreats.*
+part 2** and the artillery retreats.*
 
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
@@ -174,7 +174,6 @@ advantages:
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
-
 
 # Special abilities of players
 * **UK**: Owns the seas
@@ -188,7 +187,7 @@ decision.
 * **France**: Diggers
     * May build 2 trenches per resolved command token
 * **Austro-Hungarian Empire**: Bankers
-    * Gains 1 coin when resolving invest token
+    * Gains 1 coin when resolving invest token on a land region
 
 # Initial setup
 ## 6 players
@@ -198,7 +197,6 @@ decision.
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
-* At coast of W-Germany
 
 **Troops**
 * **UK**
