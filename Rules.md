@@ -200,7 +200,6 @@ decision.
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
-* At coast of W-Germany
 
 **Troops**
 * **UK**
