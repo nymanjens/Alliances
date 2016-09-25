@@ -63,7 +63,7 @@ One of:
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
-        * After paying the units, money can be given to allied players, which they can use to pay
+        * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
     1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
@@ -157,8 +157,8 @@ A battle has one or more rounds. Every round has following parts:
   If none of the above are found, the unit is killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region (including artillery). The coins present
-  may be kept on the board or may be removed.
+  The attacker moves all attacking units into the region (including artillery). The invested coins
+  may be kept on the board or may be (partly) stolen.
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
@@ -191,7 +191,7 @@ decision.
 
 # Initial setup
 ## 6 players
-**Money:**
+**Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
