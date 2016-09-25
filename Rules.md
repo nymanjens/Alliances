@@ -179,7 +179,8 @@ decision.
 
 # Special abilities of players
 * **UK**: Owns the seas
-    * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
+    * UK units get 3 MP from the move token if the move starts in the England, Scotland or Ireland
+      region
 * **Germany**: Autobahn
     * German units get 3 MP from the move token if the regions touched by the move except for the
       last are German.
@@ -203,8 +204,8 @@ decision.
 
 **Troops**
 * **UK**
-    * 2 infantry in UK
-    * 1 infantry in Ireland
+    * 2 infantry in England
+    * 1 infantry in Scotland
 * **Germany**
     * 2 infantry in E-Germany
     * 1 infantry in W-Germany
