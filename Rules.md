@@ -65,7 +65,7 @@ One of:
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
-        * After paying the units, money can be given to allied players, which they can use to pay
+        * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
     1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
@@ -193,7 +193,7 @@ decision.
 
 # Initial setup
 ## 6 players
-**Money:**
+**Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
