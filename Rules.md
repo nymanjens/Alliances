@@ -190,7 +190,7 @@ decision.
 * **France**: Diggers
     * May build 2 trenches per resolved command token
 * **Austro-Hungarian Empire**: Bankers
-    * Gains 1 coin when resolving invest token
+    * Gains 1 coin when resolving invest token on a land region
 
 # Initial setup
 ## 6 players
