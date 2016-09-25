@@ -164,7 +164,7 @@ A battle has one or more rounds. Every round has following parts:
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
-part 2 **and the artillery retreats.*
+part 2** and the artillery retreats.*
 
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
