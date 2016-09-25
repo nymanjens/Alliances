@@ -1,6 +1,6 @@
 # Definitions
 * **Time:**
-    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 15 turns
+    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 10 turns
       in a game.
     * **(Command token) round:** A single iteration in round order where all players can play a
       single command token
@@ -47,8 +47,8 @@ There are 2 teams:
 # Goal of the game
 One of:
 
-1. At the end of a turn, have at least a 15 point advantage over the other team (ends the game)
-1. Get your team to score the most points at the end of turn 15
+1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
+1. Get your team to score the most points at the end of turn 10
 
 # Playing a turn
 1. **Command phase:**
