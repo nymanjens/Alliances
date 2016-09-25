@@ -81,11 +81,13 @@ Token types:
 
   Investing means that coins go from the player's supply on to the board. The maximum number of
   coins that may be invested in the region is indicated on the map.
+
   This token is ignored in **sea regions**.
 
 * **Dig trench** (x 1):<br>
   A single trench may be placed at a border with another land region that has a trench placeholder
   on the map.
+
   This token is ignored in **sea regions**.
 
 * **Move** (x 3):<br>
@@ -147,10 +149,10 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched region not owned by a player other than the attacker
-1. **Attacker decides to retreat or has no healthy infantry left:** All defender artillery is
+   touched unoccupied or owned region.
+1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
-    * An adjacent region owned by the attacker
+    * An adjacent region owned by the defender
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
