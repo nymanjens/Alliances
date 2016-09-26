@@ -1,6 +1,6 @@
 # Definitions
 * **Time:**
-    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 15 turns
+    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 15 turns LINE TOO LONG
       in a game.
     * **(Command token) round:** A single iteration in round order where all players can play a
       single command token
