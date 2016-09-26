@@ -1,3 +1,4 @@
-language: python
+language: ruby
+install: gem install mdl
 script:
   - mdl .
