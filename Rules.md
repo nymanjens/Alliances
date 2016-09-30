@@ -149,7 +149,7 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched unoccupied or owned region.
+   touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
     * An adjacent region owned by the defender
