@@ -67,9 +67,9 @@ One of:
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
-        * After paying the units, money can be given to allied players, which they can use to pay
+        * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
-    1. **Mutiny:** All units which were not paid this round, convert to neutral units.
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
@@ -161,12 +161,12 @@ A battle has one or more rounds. Every round has following parts:
   If none of the above are found, the unit is killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region (including artillery). The coins present
-  may be kept on the board or may be removed.
+  The attacker moves all attacking units into the region (including artillery). The invested coins
+  may be kept on the board or may be (partly) stolen.
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
-part 2 **and the artillery retreats.*
+part 2** and the artillery retreats.*
 
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
@@ -179,12 +179,12 @@ Neutral units will never attack, but do defend. The same rules apply as for norm
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
-
 # Special abilities of players
 * **UK**: Owns the seas
     * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
 * **Germany**: Autobahn
-    * German units get 3 MP from the move token if the move only touches German regions
+    * German units get 3 MP from the move token if the regions touched by the move except for the
+      last are German.
 * **Russia**: Burning retreat
     * When losing a region, choose to destroy all or some coins
 * **Ottoman Empire**: Cosmopolitans
@@ -192,17 +192,16 @@ decision.
 * **France**: Diggers
     * May build 2 trenches per resolved command token
 * **Austro-Hungarian Empire**: Bankers
-    * Gains 1 coin when resolving invest token
+    * Gains 1 coin when resolving invest token on a land region
 
 # Initial setup
 ## 6 players
-**Money:**
+**Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
-* At coast of W-Germany
 
 **Troops**
 * **UK**
