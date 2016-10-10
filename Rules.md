@@ -172,8 +172,11 @@ part 2** and the artillery retreats.*
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
-* Attacker needs 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
+* Attacking **infantry** need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
 * Defender gets twice the amount of dice per defending infantry
+
+*Clarification: This means attacking artillery follow normal combat rules (1 roll for
+wounding/killing). Artillery and infantry dice should thus be rolled separately.*
 
 ### Fighting neutral regions
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
