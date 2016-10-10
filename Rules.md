@@ -1,6 +1,6 @@
 # Definitions
 * **Time:**
-    * **Turn:** A single iteration of the game flow. There are a maximum of 15 turns in a game.
+    * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Command:** The action of resolving a command token
 * **Unit:** Military unit, either a soldier or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
@@ -19,6 +19,8 @@
       units of an ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
+    * **Conquered region:** Land region won after successful battle earlier during the current
+      command. This excludes previously unoccupied regions now occupied by retreated units.
 
 # Teams
 There are 2 teams:
@@ -37,11 +39,14 @@ There are 2 teams:
 # Goal of the game
 One of:
 
-1. At the end of a turn, have at least a 15 point advantage over the other team (ends the game)
-1. Get your team to score the most points at the end of turn 15
+1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
+1. Get your team to score the most points at the end of turn 10
 1. Have 5 (6 players) or 7 (4 players) strategic cities at any point in the game to win individually
 
 # Playing a turn
+
+All decisions below happen simultaneously (&#42;) unless stated otherwise.
+
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
@@ -49,28 +54,30 @@ One of:
        other
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
-        * Invest (&#42;)
-        * Dig trench (&#42;)
-        * Move (&#42;&#42;)
-        * Train troops (&#42;)
-
-       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when
-       a number of players repetitively alter their decision in reaction to another player's
-       decision, all players whisper the solution to a player not involved who then executes the
-       commands. When there is no such player available, all write down their action and execute
-       that action.<br>
-       (&#42;&#42;) Tokens are resolved in the order of the number indicated on the token.
+        * **Invest and Dig trench**: Resolved simultaneously (&#42;)
+        * **Move**: Resolved in the order of the number indicated on the token.
+        * **Train troops**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
-    1. **Production:** All players receive the total amount of coins invested in regions they own.
+    1. **Production:** All players receive the total amount of coins invested in regions they own,
+       with a *minimum of 3*.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
         * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
-    1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+       artillery converts to neutral infantry).
+    1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
-    1. **Unit healing:** All wounded units are healed
+    1. **Revival:** Any player with *less than 3 units* on the board gets free units of their choice
+       until they have a total of 3 units on the board. New units must be placed at regions owned by
+       the player. If that's impossible, the player may pick a *single unoccupied or sea region*.
     1. **Advance turn counter** by one
+
+(&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
+players repetitively alter their decision in reaction to another player's decision, all players
+whisper the solution to a player not involved who then executes the commands. When there is no such
+player available, all write down their action and execute that action.
 
 # Command tokens
 Token types:
@@ -119,6 +126,8 @@ but the sea isn't a friendly region so I can't move any further. The remaining 1
 Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
 regions owned by the same player. Troops can't end in friendly regions owned by other players.
 
+If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
+
 ### Sea regions
 Troops of different teams can reside in the same sea region simultaneously.
 
@@ -147,7 +156,7 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched unoccupied or owned region.
+   touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
     * An adjacent region owned by the defender
@@ -167,8 +176,11 @@ part 2** and the artillery retreats.*
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
-* Attacker needs 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
+* Attacking **infantry** need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
 * Defender gets twice the amount of dice per defending infantry
+
+*Clarification: This means attacking artillery follow normal combat rules (1 roll for
+wounding/killing). Artillery and infantry dice should thus be rolled separately.*
 
 ### Fighting neutral regions
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
@@ -177,10 +189,11 @@ decision.
 
 # Special abilities of players
 * **UK**: Owns the seas
-    * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
+    * UK units get 3 MP from the move token if the move starts in the England, Scotland or Ireland
+      region
 * **Germany**: Autobahn
     * German units get 3 MP from the move token if the regions touched by the move except for the
-      last are German.
+      last are friendly.
 * **Russia**: Burning retreat
     * When losing a region, choose to destroy all or some coins
 * **Ottoman Empire**: Cosmopolitans
@@ -201,8 +214,8 @@ decision.
 
 **Troops**
 * **UK**
-    * 2 infantry in UK
-    * 1 infantry in Ireland
+    * 2 infantry in England
+    * 1 infantry in Scotland
 * **Germany**
     * 2 infantry in E-Germany
     * 1 infantry in W-Germany
