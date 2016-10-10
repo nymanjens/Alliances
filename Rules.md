@@ -66,7 +66,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
         * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
 1. **Cleanup phase**
-    1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units.
     1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
