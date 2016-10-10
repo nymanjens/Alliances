@@ -241,7 +241,7 @@ decision.
 * **Austro-Hungarian Empire**: 6, 10, 14
 
 ## 4 players
-Same setup as  5 players, except:
+Same setup as 6 players, except:
 
 **Troops and other trenches:**
 * **Austro-Hungarian Empire** (neutral):
