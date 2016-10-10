@@ -66,7 +66,8 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
         * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
 1. **Cleanup phase**
-    1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units.
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+       artillery converts to neutral infantry).
     1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
@@ -155,7 +156,7 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched unoccupied or owned region.
+   touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
     * An adjacent region owned by the defender
@@ -175,8 +176,11 @@ part 2** and the artillery retreats.*
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
-* Attacker needs 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
+* Attacking **infantry** need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
 * Defender gets twice the amount of dice per defending infantry
+
+*Clarification: This means attacking artillery follow normal combat rules (1 roll for
+wounding/killing). Artillery and infantry dice should thus be rolled separately.*
 
 ### Fighting neutral regions
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
@@ -188,7 +192,7 @@ decision.
     * UK units get 3 MP from the move token if the move starts in the UK or Ireland region
 * **Germany**: Autobahn
     * German units get 3 MP from the move token if the regions touched by the move except for the
-      last are German.
+      last are friendly.
 * **Russia**: Burning retreat
     * When losing a region, choose to destroy all or some coins
 * **Ottoman Empire**: Cosmopolitans
