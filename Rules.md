@@ -1,11 +1,8 @@
 # Definitions
 * **Time:**
-    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 15 turns
-      in a game.
-    * **(Command token) round:** A single iteration in round order where all players can play a
-      single command token
-    * **Round order:** Player order: Starts with the order below and shifts every turn (first player
-      becomes last player every turn):
+    * **Turn:** A single iteration of the game flow. There are a maximum of 15 turns in a game.
+    * **Move command round order:** Player order: Starts with the order below and shifts every turn
+      (first player becomes last player every turn):
         * UK
         * Germany
         * Russia
@@ -55,13 +52,18 @@ One of:
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
-    1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
-       board, every player plays a single command token in round order.<br>
-       Command token types are resolved in this order:
-        * Invest
-        * Dig trench
-        * Move
-        * Train troops
+    1. **Commands:** Resolve token types in following order:
+        * Invest (&#42;)
+        * Dig trench (&#42;)
+        * Move (&#42;&#42;)
+        * Train troops (&#42;)
+
+       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when
+       a number of players repetitively alter their decision in reaction to another player's
+       decision, all players whisper the solution to a player not involved who then executes the
+       commands. When there is no such player available, all write down their action and execute
+       that action.<br>
+       (&#42;&#42;) Tokens are resolved in move command round order.
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
