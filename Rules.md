@@ -1,11 +1,8 @@
 # Definitions
 * **Time:**
-    * **Turn:** Contains among others multiple command token rounds. There are a maximum of 15 turns
-      in a game.
-    * **(Command token) round:** A single iteration in round order where all players can play a
-      single command token
-    * **Round order:** Player order: Starts with the order below and shifts every turn (first player
-      becomes last player every turn):
+    * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
+    * **Move command round order:** Player order: Starts with the order below and shifts every turn
+      (first player becomes last player every turn):
         * UK
         * Germany
         * Russia
@@ -29,6 +26,8 @@
       units of an ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
+    * **Conquered region:** Land region won after successful battle earlier during the current
+      command. This excludes previously unoccupied regions now occupied by retreated units.
 
 # Teams
 There are 2 teams:
@@ -47,32 +46,42 @@ There are 2 teams:
 # Goal of the game
 One of:
 
-1. At the end of a turn, have at least a 15 point advantage over the other team (ends the game)
-1. Get your team to score the most points at the end of turn 15
+1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
+1. Get your team to score the most points at the end of turn 10
 
 # Playing a turn
+
+All decisions below happen simultaneously (&#42;) unless stated otherwise.
+
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
-    1. **Rounds:** For every token type: Until all command tokens of that type are removed from the
-       board, every player plays a single command token in round order.<br>
-       Command token types are resolved in this order:
-        * Invest
-        * Dig trench
-        * Move
-        * Train troops
+    1. **Commands:** Resolve token types in following order:
+        * **Invest and Dig trench**: Resolved simultaneously (&#42;)
+        * **Move**: Resolved in move command round order
+        * **Train troops**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
-    1. **Production:** All players receive the total amount of coins invested in regions they own.
+    1. **Production:** All players receive the total amount of coins invested in regions they own,
+       with a *minimum of 3*.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
         * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
-    1. **Mutiny:** All units which were not paid this turn, convert to neutral units.
 1. **Cleanup phase**
+    1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+       artillery converts to neutral infantry).
+    1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
-    1. **Unit healing:** All wounded units are healed
+    1. **Revival:** Any player with *less than 3 units* on the board gets free units of their choice
+       until they have a total of 3 units on the board. New units must be placed at regions owned by
+       the player. If that's impossible, the player may pick a *single unoccupied or sea region*.
     1. **Advance turn counter** by one
+
+(&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
+players repetitively alter their decision in reaction to another player's decision, all players
+whisper the solution to a player not involved who then executes the commands. When there is no such
+player available, all write down their action and execute that action.
 
 # Command tokens
 Token types:
@@ -149,7 +158,7 @@ A battle has one or more rounds. Every round has following parts:
         * **3 or 4:** Wounds an enemy infanthy
         * **5 or 6:** Kills an enemy infanthy
 1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
-   touched unoccupied or owned region.
+   touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
    killed, all infantry moves to (in mandatory order of possibility):
     * An adjacent region owned by the defender
@@ -169,8 +178,11 @@ part 2** and the artillery retreats.*
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
-* Attacker needs 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
+* Attacking **infantry** need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
 * Defender gets twice the amount of dice per defending infantry
+
+*Clarification: This means attacking artillery follow normal combat rules (1 roll for
+wounding/killing). Artillery and infantry dice should thus be rolled separately.*
 
 ### Fighting neutral regions
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
@@ -183,7 +195,7 @@ decision.
       region
 * **Germany**: Autobahn
     * German units get 3 MP from the move token if the regions touched by the move except for the
-      last are German.
+      last are friendly.
 * **Russia**: Burning retreat
     * When losing a region, choose to destroy all or some coins
 * **Ottoman Empire**: Cosmopolitans
