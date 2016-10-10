@@ -48,33 +48,38 @@ One of:
 1. Get your team to score the most points at the end of turn 15
 
 # Playing a turn
+
+All decisions below happen simultaneously (&#42;) unless stated otherwise.
+
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
-        * Invest and Dig trench (&#42;)
-        * Move (&#42;&#42;)
-        * Train troops (&#42;)
-
-       (&#42;) Tokens are resolved simultaneously if possible. In case of a conflict, e.g. when
-       a number of players repetitively alter their decision in reaction to another player's
-       decision, all players whisper the solution to a player not involved who then executes the
-       commands. When there is no such player available, all write down their action and execute
-       that action.<br>
-       (&#42;&#42;) Tokens are resolved in move command round order.
+        * **Invest and Dig trench**: Resolved simultaneously (&#42;)
+        * **Move**: Resolved in move command round order
+        * **Train troops**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
-    1. **Production:** All players receive the total amount of coins invested in regions they own.
+    1. **Production:** All players receive the total amount of coins invested in regions they own,
+       with a *minimum of 3*.
     1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
         * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
+1. **Cleanup phase**
     1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry).
-1. **Cleanup phase**
+    1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
-    1. **Unit healing:** All wounded units are healed
+    1. **Revival:** Any player with *less than 3 units* on the board gets free units of their choice
+       until they have a total of 3 units on the board. New units must be placed at regions owned by
+       the player. If that's impossible, the player may pick a *single unoccupied or sea region*.
     1. **Advance turn counter** by one
+
+(&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
+players repetitively alter their decision in reaction to another player's decision, all players
+whisper the solution to a player not involved who then executes the commands. When there is no such
+player available, all write down their action and execute that action.
 
 # Command tokens
 Token types:
