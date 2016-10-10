@@ -29,7 +29,7 @@
       units of an ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
-    * **Conquered region:** Land region won after successful battle earlier during the current 
+    * **Conquered region:** Land region won after successful battle earlier during the current
       command. This excludes previously unoccupied regions now occupied by retreated units.
 
 # Teams
