@@ -53,8 +53,7 @@ One of:
        they own.
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
-        * Invest (&#42;)
-        * Dig trench (&#42;)
+        * Invest and Dig trench (&#42;)
         * Move (&#42;&#42;)
         * Train troops (&#42;)
 
