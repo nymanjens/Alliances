@@ -5,3 +5,4 @@
 * Moved Sweden's star to Denmark.
 * Denmark's coin coint changes from 2 to 5
 * Sweden's coin coint changes from 6 to 3
+* Benelux's coin coint changes from 6 to 5
