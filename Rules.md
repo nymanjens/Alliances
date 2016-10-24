@@ -27,12 +27,12 @@
     * Units:
         * Infantry: 14
         * Artillery: 6
-    * Command tokens:
-        * Invest: 2
-        * Dig trench: 1
-        * Move: 3
-        * Train troops: 2
 * **General:**
+    * Command tokens:
+        * Invest: 2 x *number of players*
+        * Dig trench: 1 x *number of players*
+        * Move: 3 x *number of players*
+        * Train troops: 2 x *number of players*
     * Coins: infinite
     * Neutral infantry: infinite
 
