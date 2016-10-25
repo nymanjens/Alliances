@@ -22,6 +22,20 @@
     * **Conquered region:** Land region won after successful battle earlier during the current
       command. This excludes previously unoccupied regions now occupied by retreated units.
 
+# Contents of the game
+* **Per player:**
+    * Units:
+        * Infantry: 14
+        * Artillery: 6
+* **General:**
+    * Command tokens:
+        * Invest: 2 x *number of players*
+        * Dig trench: 1 x *number of players*
+        * Move: 3 x *number of players*
+        * Train troops: 2 x *number of players*
+    * Coins: infinite
+    * Neutral infantry: infinite
+
 # Teams
 There are 2 teams:
 * Allied players:
@@ -81,7 +95,7 @@ player available, all write down their action and execute that action.
 
 # Command tokens
 Token types:
-* **Invest** (x 2):<br>
+* **Invest**:<br>
   Invest any amount (0-inf) in this region.
 
   Investing means that coins go from the player's supply on to the board. The maximum number of
@@ -89,19 +103,19 @@ Token types:
 
   This token is ignored in **sea regions**.
 
-* **Dig trench** (x 1):<br>
+* **Dig trench**:<br>
   A single trench may be placed at a border with another land region that has a trench placeholder
   on the map.
 
   This token is ignored in **sea regions**.
 
-* **Move** (x 3):<br>
+* **Move**:<br>
   All troops in this region get 2 MP. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
 
-* **Train troops** (x 2):<br>
+* **Train troops**:<br>
   * +2 units in regions with a strategic city<br>
   * +1 unit in other land regions<br>
   * Does nothing in sea regions
