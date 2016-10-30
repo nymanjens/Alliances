@@ -182,7 +182,7 @@ A battle has one or more rounds. Every round has following parts:
 
   The attacker moves all attacking units into the region (including artillery). The invested coins
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round but the token returns to the defender at the end of the turn.
+  in a next command round and can keep the token at the end of the turn.
 
 *Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
 killing enemy infantry without risk of losing their own units. The battle ends automatically **in
