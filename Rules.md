@@ -244,11 +244,11 @@ decision.
     * 2 infantry in Turkey
     * 1 infantry in Middle East
 * **France**
-    * 2 infantry in S-France
-    * 1 infantry in N-France
+    * 2 infantry in N-France
+    * 1 infantry in S-France
 * **Austro-Hungarian Empire**
-    * 2 infantry in Hungary
-    * 1 infantry in Austria
+    * 2 infantry in Austria
+    * 1 infantry in Hungary
 
 ## 5 players
 Note: This game has to be played with the uncertain allegiance extension, except only for the allied
