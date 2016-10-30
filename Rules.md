@@ -155,6 +155,7 @@ Troops of different teams can reside in the same sea region simultaneously.
 The following points on the map can be crossed both by land-land and sea-sea movement:
 
 * **Denmark islands**
+* **English Channel**
 * **Gibraltar**
 * **Istanbul**
 
