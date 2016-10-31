@@ -151,6 +151,7 @@ Troops of different teams can reside in the same sea region simultaneously.
 The following points on the map can be crossed both by land-land and sea-sea movement:
 
 * **Denmark islands**
+* **English Channel**
 * **Gibraltar**
 * **Istanbul**
 
@@ -241,11 +242,11 @@ decision.
     * 2 infantry in Turkey
     * 1 infantry in Middle East
 * **France**
-    * 2 infantry in S-France
-    * 1 infantry in N-France
+    * 2 infantry in N-France
+    * 1 infantry in S-France
 * **Austro-Hungarian Empire**
-    * 2 infantry in Hungary
-    * 1 infantry in Austria
+    * 2 infantry in Austria
+    * 1 infantry in Hungary
 
 **Move command tokens**
 * **UK**: 1, 11, 15
