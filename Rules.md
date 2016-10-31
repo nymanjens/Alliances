@@ -83,7 +83,8 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
           for their units.
 1. **Cleanup phase**
     1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
-       artillery converts to neutral infantry).
+       artillery converts to neutral infantry). Neutral units in sea regions are removed from the
+       board.
     1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
