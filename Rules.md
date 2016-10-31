@@ -207,22 +207,6 @@ Neutral units will never attack, but do defend. The same rules apply as for norm
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
-# Special abilities of players
-* **UK**: Owns the seas
-    * UK units get 3 MP from the move token if the move starts in the England, Scotland or Ireland
-      region
-* **Germany**: Autobahn
-    * German units get 3 MP from the move token if the regions touched by the move except for the
-      last are friendly.
-* **Russia**: Burning retreat
-    * When losing a region, choose to destroy all or some coins
-* **Ottoman Empire**: Cosmopolitans
-    * When moving into neutral or conquered region without coins, a free coin is invested
-* **France**: Diggers
-    * May build 2 trenches per resolved command token
-* **Austro-Hungarian Empire**: Bankers
-    * Gains 1 coin when resolving invest token on a land region
-
 # Initial setup
 ## 6 players
 **Coins:**
