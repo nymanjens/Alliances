@@ -300,7 +300,10 @@ Same setup as  5 players, except:
     <td>N-France</td>
     <td>4</td>
     <td>4</td>
-    <td>with border W-Germany</td>
+    <td>
+      with border W-Germany<br>
+      with border UK
+    </td>
   </tr>
   <tr>
     <td>S-France</td>
