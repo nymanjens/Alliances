@@ -302,7 +302,7 @@ Same setup as  5 players, except:
     <td>4</td>
     <td>
       with border W-Germany<br>
-      with border UK
+      with border England
     </td>
   </tr>
   <tr>
