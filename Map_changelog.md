@@ -13,3 +13,6 @@
 * Add "North Atlantic Ocean" between Atlantic Ocean and North Sea, bordering Ireland and Scotland.
 * Indiciate sea crossings on map to make it clear that the Istambul crossing is between Turkey and
   Greece
+
+## Changes from v1.2 to v1.3
+* England's coin count increses from 3 to 4
