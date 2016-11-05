@@ -33,7 +33,7 @@
 * **Per player:**
     * Units:
         * Infantry: 14
-        * Artillery: 6
+        * Artillery: 5
     * Command tokens:
         * Invest: 2
         * Dig trench: 1
