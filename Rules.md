@@ -300,7 +300,10 @@ Same setup as  5 players, except:
     <td>N-France</td>
     <td>4</td>
     <td>4</td>
-    <td>with border W-Germany</td>
+    <td>
+      with border W-Germany<br>
+      with border England
+    </td>
   </tr>
   <tr>
     <td>S-France</td>
@@ -312,7 +315,7 @@ Same setup as  5 players, except:
     <td>Spain</td>
     <td>3</td>
     <td>3</td>
-    <td>with border Ukraine</td>
+    <td></td>
   </tr>
   <tr>
     <td>Portugal</td>
@@ -324,7 +327,7 @@ Same setup as  5 players, except:
     <td>Morocco</td>
     <td>2</td>
     <td>2</td>
-    <td>with border Turkey</td>
+    <td></td>
   </tr>
 </table>
 
