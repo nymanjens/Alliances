@@ -15,4 +15,4 @@
   Greece
 
 ## Changes from v1.2 to v1.3
-* England's coin count increses from 3 to 4
+* England's coin count increases from 3 to 4
