@@ -17,3 +17,4 @@
 ## Changes from v1.2 to v1.3
 * Caucasus's coin count increses from 1 to 2
 * Yugoslavia's coin count increses from 1 to 2
+* England's coin count increases from 3 to 4
