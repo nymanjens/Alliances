@@ -170,9 +170,12 @@ A battle has one or more rounds. Every round has following parts:
 1. **Rolling dice:**
     * Attacker gets a dice for every healthy attacking **infantry unit**
     * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
-    * Every roll of:
-        * **3 or 4:** Wounds an enemy unit (*)
-        * **5 or 6:** Kills an enemy unit (*)
+    * Every attacker roll of:
+        * **3-4:** Wounds an enemy unit (*)
+        * **5-6:** Kills an enemy unit (*)
+    * Every defender roll of:
+        * **1-4:** Wounds an enemy unit (*)
+        * **5-6:** Kills an enemy unit (*)
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units move to (in mandatory
