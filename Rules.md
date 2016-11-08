@@ -213,6 +213,11 @@ decision.
 **Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
+* Every player gets command tokens:
+    * Invest x 2
+    * Dig trench x 1
+    * Move x 3
+    * Train troops x 2
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
