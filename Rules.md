@@ -9,9 +9,9 @@
         * Ottoman Empire
         * France
         * Austro-Hungarian Empire
-* **Unit:** Military unit, either a soldier or an artillery
+* **Unit:** Military unit, either an infantry or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
-      move.
+      move (but it can retreat).
     * **MP:** move point
     * **Troop:** Group of units
 * **Strategic city:** Star on the map
@@ -33,7 +33,7 @@
 * **Per player:**
     * Units:
         * Infantry: 14
-        * Artillery: 6
+        * Artillery: 5
 * **Per team:**
     * Command tokens:
         * Invest: 2 x *number of players in team*
@@ -81,7 +81,8 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
-    1. **Payment:** All units in regions the player wants to keep, are paid one coin per unit.
+    1. **Payment:** All units in regions the player wants to keep, are paid 1/2 coins per
+       infantry/artillery.
         * After paying the units, coins can be given to allied players, which they can use to pay
           for their units.
 1. **Cleanup phase**
@@ -91,9 +92,10 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
        condition)
-    1. **Revival:** Any player with *less than 3 units* on the board gets free units of their choice
-       until they have a total of 3 units on the board. New units must be placed at regions owned by
-       the player. If that's impossible, the player may pick a *single unoccupied or sea region*.
+    1. **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
+       choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
+       at regions owned by the player. If that's impossible, the player may pick a *single
+       unoccupied or sea region*.
     1. **Advance turn counter** by one
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
@@ -124,13 +126,9 @@ Token types:
   destinations in the desired order. Where necessary, battles are resolved in that order.
 
 * **Train troops**:<br>
-  * +2 units in regions with a strategic city<br>
-  * +1 unit in other land regions<br>
-  * Does nothing in sea regions
-
-  The player may choose the type of units, which are added to this region.
-
-  Note: The unit has to be paid later that turn.
+  * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
+  * In other land regions: +1 infantry or upgrade 1 infantry to artillery
+  * In sea regions: Nothing happens
 
 ## Moving units
 Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
@@ -153,8 +151,6 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 ### Sea regions
 Troops of different teams can reside in the same sea region simultaneously.
 
-**Artillery** units are not allowed to move to sea regions.
-
 ### Ambiguous crossings
 The following points on the map can be crossed both by land-land and sea-sea movement:
 
@@ -172,39 +168,40 @@ units.
 ### Battle mechanic
 A battle has one or more rounds. Every round has following parts:
 
+1. **Artillery strike:**
+    * Every healthy attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets a dice for every healthy attacking **unit** (infantry + artillery)
-    * Defender gets a dice for every healthy defending **infantry unit**
-    * Every roll of:
-        * **3 or 4:** Wounds an enemy infanthy
-        * **5 or 6:** Kills an enemy infanthy
-1. **Attacker decides to retreat or has no healthy infantry left:** All units move back to the last
+    * Attacker gets a dice for every healthy attacking **infantry unit**
+    * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
+    * Every attacker roll of:
+        * **3-4:** Wounds an enemy unit (*)
+        * **5-6:** Kills an enemy unit (*)
+    * Every defender roll of:
+        * **1-4:** Wounds an enemy unit (*)
+        * **5-6:** Kills an enemy unit (*)
+1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
-1. **Defender decides to retreat or has no healthy infantry left:** All defender artillery is
-   killed, all infantry moves to (in mandatory order of possibility):
+1. **Defender decides to retreat or has no healthy units left:** All units move to (in mandatory
+   order of possibility):
     * An adjacent region owned by the defender
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
-  If none of the above are found, the unit is killed. If there is choice, the defender may choose
+  If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region (including artillery). The invested coins
-  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round but the token returns to the defender at the end of the turn.
+  The attacker moves all attacking units into the region. The invested coins may be kept on the
+  board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
+  round but the token returns to the defender at the end of the turn.
 
-*Example: If the attacker engages with only artillery, the attacker will get a chance of wounding or
-killing enemy infantry without risk of losing their own units. The battle ends automatically **in
-part 2** and the artillery retreats.*
+(&#42;) When an enemy kills/wounds your unit, you may choose which (infantry or artillery) is
+affected.
 
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
-* Attacking **infantry** need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
-* Defender gets twice the amount of dice per defending infantry
-
-*Clarification: This means attacking artillery follow normal combat rules (1 roll for
-wounding/killing). Artillery and infantry dice should thus be rolled separately.*
+* Attacking infantry need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
+* Defender gets twice the amount of dice per defending unit
 
 ### Fighting neutral regions
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
@@ -303,7 +300,10 @@ Same setup as  5 players, except:
     <td>N-France</td>
     <td>4</td>
     <td>4</td>
-    <td>with border W-Germany</td>
+    <td>
+      with border W-Germany<br>
+      with border England
+    </td>
   </tr>
   <tr>
     <td>S-France</td>
@@ -315,7 +315,7 @@ Same setup as  5 players, except:
     <td>Spain</td>
     <td>3</td>
     <td>3</td>
-    <td>with border Ukraine</td>
+    <td></td>
   </tr>
   <tr>
     <td>Portugal</td>
@@ -327,7 +327,7 @@ Same setup as  5 players, except:
     <td>Morocco</td>
     <td>2</td>
     <td>2</td>
-    <td>with border Turkey</td>
+    <td></td>
   </tr>
 </table>
 
