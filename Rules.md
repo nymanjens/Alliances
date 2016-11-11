@@ -1,6 +1,14 @@
 # Definitions
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
+    * **Move command round order:** Player order: Starts with the order below and shifts every turn
+      (first player becomes last player every turn):
+        * UK
+        * Germany
+        * Russia
+        * Ottoman Empire
+        * France
+        * Austro-Hungarian Empire
 * **Command:** The action of resolving a command token
 * **Unit:** Military unit, either a soldier or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
@@ -69,7 +77,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
-        * **Move**: Resolved in the order of the number indicated on the token.
+        * **Move**: Resolved in move command round order
         * **Train troops**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
@@ -209,6 +217,11 @@ decision.
 **Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
+* Every player gets command tokens:
+    * Invest x 2
+    * Dig trench x 1
+    * Move x 3
+    * Train troops x 2
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
@@ -232,14 +245,6 @@ decision.
 * **Austro-Hungarian Empire**
     * 2 infantry in Austria
     * 1 infantry in Hungary
-
-**Move command tokens**
-* **UK**: 1, 11, 15
-* **Germany**: 2, 12, 16
-* **Russia**: 3, 7, 17
-* **Ottoman Empire**: 4, 8, 18
-* **France**: 5, 9, 13
-* **Austro-Hungarian Empire**: 6, 10, 14
 
 ## 4 players
 Same setup as 6 players, except:
