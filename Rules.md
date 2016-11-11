@@ -40,6 +40,7 @@
         * Dig trench: 1 x *number of players in team*
         * Move: 3 x *number of players in team*
         * Train troops: 2 x *number of players in team*
+* **General:**   
     * Coins: infinite
     * Neutral infantry: infinite
 
