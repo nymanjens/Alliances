@@ -171,10 +171,10 @@ units.
 ### Battle mechanic
 A battle has one or more rounds. Every round has following parts:
 
-1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets a dice for every healthy attacking **infantry unit**
+    * Attacker gets:
+        * 1 dice for every healthy attacking **infantry unit**
+        * 2 dice for every healthy attacking **artillery unit**
     * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
     * Every attacker roll of:
         * **3-4:** Wounds an enemy unit (*)
@@ -204,6 +204,7 @@ affected.
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
 * Attacking infantry need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
+* Attacking artillery follow the normal rules (roll these dice separately)
 * Defender gets twice the amount of dice per defending unit
 
 ### Fighting neutral regions
