@@ -266,7 +266,7 @@ Same setup as  6 players, except without Austro-Hungarian Empire and:
   </tr>
   <tr>
     <td>Austria</td>
-    <td>3</td>
+    <td>2</td>
     <td>3</td>
     <td>with border W-Germany</td>
   </tr>
@@ -283,13 +283,13 @@ Same setup as 6 players, except without Austro-Hungarian Empire and France and:
   </tr>
   <tr>
     <td>Austria</td>
-    <td>3</td>
+    <td>2</td>
     <td>3</td>
     <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>N-France</td>
-    <td>3</td>
+    <td>2</td>
     <td>3</td>
     <td>
       with border W-Germany<br>
