@@ -171,10 +171,10 @@ units.
 ### Battle mechanic
 A battle has one or more rounds. Every round has following parts:
 
-1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets a dice for every healthy attacking **infantry unit**
+    * Attacker gets:
+        * 1 dice for every healthy attacking **infantry unit**
+        * 2 dice for every healthy attacking **artillery unit**
     * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
     * Every attacker roll of:
         * **3-4:** Wounds an enemy unit (*)
