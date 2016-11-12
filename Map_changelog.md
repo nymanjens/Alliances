@@ -16,3 +16,7 @@
 
 ## Changes from v1.2 to v1.3
 * England's coin count increases from 3 to 4
+
+## Changes from v1.3 to v1.4
+* Moved Denmark's star to Sweden.
+
