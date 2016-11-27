@@ -193,7 +193,7 @@ A battle has one or more rounds. Every round has following parts:
   If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region. The invested coins of the conquered region
+  The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
   in a next command round but the token returns to the defender at the end of the turn.
 
