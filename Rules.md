@@ -123,7 +123,7 @@ Token types:
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All troops in this region get 2 MP. Units can move separately to multiple regions.
+  All healthy units in this region get 2 MP. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
