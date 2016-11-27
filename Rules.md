@@ -226,7 +226,7 @@ decision.
 **Trenches:**
 * Between N-France and W-Germany on both sides
 
-**Troops**
+**Troops:**
 * **UK**
     * 2 infantry in England
     * 1 infantry in Scotland
@@ -246,94 +246,65 @@ decision.
     * 2 infantry in Austria
     * 1 infantry in Hungary
 
+**Initial seeding:**
+
+For every unoccupied region, roll a dice. If its result is:
+* 1-2: Nothing happens
+* 3-4: Add 1 coin
+* 5-6: Add 2 coins + neutral infantry
+
 ## 5 players
 Note: This game has to be played with the uncertain allegiance extension, except only for the allied
 players and with half the USA reinforcements.
 
-Same setup as  6 players, except:
-
-**Troops and other trenches:**
-* **Austro-Hungarian Empire** (neutral):
+Same setup as  6 players, except without Austro-Hungarian Empire and:
 <table>
   <tr>
     <th>Region</th>
-    <th>Infantry</th>
+    <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
   </tr>
   <tr>
     <td>Austria</td>
-    <td>3</td>
+    <td>2</td>
     <td>3</td>
     <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>Hungary</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Romania</td>
-    <td>4</td>
-    <td>3</td>
-    <td>with border Ukraine</td>
-  </tr>
-  <tr>
-    <td>Yugoslavia</td>
-    <td>1</td>
-    <td>1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Bulgaria</td>
-    <td>4</td>
-    <td>3</td>
-    <td>with border Turkey</td>
   </tr>
 </table>
 
 ## 4 players
-Same setup as  5 players, except:
-
-**Troops and other trenches:**
-* **France** (neutral):
+Same setup as 6 players, except without Austro-Hungarian Empire and France and:
 <table>
   <tr>
     <th>Region</th>
-    <th>Infantry</th>
+    <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
   </tr>
   <tr>
+    <td>Austria</td>
+    <td>2</td>
+    <td>3</td>
+    <td>with border W-Germany</td>
+  </tr>
+  <tr>
     <td>N-France</td>
-    <td>4</td>
-    <td>4</td>
+    <td>2</td>
+    <td>3</td>
     <td>
       with border W-Germany<br>
       with border England
     </td>
   </tr>
   <tr>
-    <td>S-France</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Spain</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Portugal</td>
+    <td>Italy</td>
     <td>2</td>
     <td>2</td>
     <td></td>
   </tr>
   <tr>
-    <td>Morocco</td>
+    <td>N-Africa</td>
     <td>2</td>
     <td>2</td>
     <td></td>
