@@ -20,3 +20,6 @@
 ## Changes from v1.3 to v1.4
 * Moved Denmark's star to Sweden.
 
+## Changes from v1.4 to v1.5
+* Caucasus's coin count increses from 1 to 2
+* Yugoslavia's coin count increses from 1 to 2

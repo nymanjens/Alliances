@@ -123,7 +123,7 @@ Token types:
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All troops in this region get 2 MP. Units can move separately to multiple regions.
+  All healthy units in this region get 2 MP. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
@@ -161,6 +161,7 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **English Channel**
 * **Gibraltar**
 * **Istanbul**
+* **North Channel (between Ireland and Scotland)**
 
 Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
 
@@ -171,10 +172,10 @@ units.
 ### Battle mechanic
 A battle has one or more rounds. Every round has following parts:
 
+1. **Artillery strike:**
+    * Every healthy attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets:
-        * 1 dice for every healthy attacking **infantry unit**
-        * 2 dice for every healthy attacking **artillery unit**
+    * Attacker gets a dice for every healthy attacking **infantry unit**
     * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
     * Every attacker roll of:
         * **3-4:** Wounds an enemy unit (*)
@@ -190,12 +191,15 @@ A battle has one or more rounds. Every round has following parts:
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
+  Note that if the attacker completely vacated a region to perform this attack, it could happen
+  that the defending units retreat to this region.
+
   If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region. The invested coins may be kept on the
-  board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
-  round but the token returns to the defender at the end of the turn.
+  The attacker moves all attacking units into the region. The invested coins in the conquered region
+  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
+  in a next command round but the token returns to the defender at the end of the turn.
 
 (&#42;) When an enemy kills/wounds your unit, you may choose which (infantry or artillery) is
 affected.
@@ -225,7 +229,7 @@ decision.
 **Trenches:**
 * Between N-France and W-Germany on both sides
 
-**Troops**
+**Troops:**
 * **UK**
     * 2 infantry in England
     * 1 infantry in Scotland
@@ -245,94 +249,65 @@ decision.
     * 2 infantry in Austria
     * 1 infantry in Hungary
 
+**Initial seeding:**
+
+For every unoccupied region, roll a dice. If its result is:
+* 1-2: Nothing happens
+* 3-4: Add 1 coin
+* 5-6: Add 2 coins + neutral infantry
+
 ## 5 players
 Note: This game has to be played with the uncertain allegiance extension, except only for the allied
 players and with half the USA reinforcements.
 
-Same setup as  6 players, except:
-
-**Troops and other trenches:**
-* **Austro-Hungarian Empire** (neutral):
+Same setup as  6 players, except without Austro-Hungarian Empire and:
 <table>
   <tr>
     <th>Region</th>
-    <th>Infantry</th>
+    <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
   </tr>
   <tr>
     <td>Austria</td>
-    <td>3</td>
+    <td>2</td>
     <td>3</td>
     <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>Hungary</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Romania</td>
-    <td>4</td>
-    <td>3</td>
-    <td>with border Ukraine</td>
-  </tr>
-  <tr>
-    <td>Yugoslavia</td>
-    <td>1</td>
-    <td>1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Bulgaria</td>
-    <td>4</td>
-    <td>3</td>
-    <td>with border Turkey</td>
   </tr>
 </table>
 
 ## 4 players
-Same setup as  5 players, except:
-
-**Troops and other trenches:**
-* **France** (neutral):
+Same setup as 6 players, except without Austro-Hungarian Empire and France and:
 <table>
   <tr>
     <th>Region</th>
-    <th>Infantry</th>
+    <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
   </tr>
   <tr>
+    <td>Austria</td>
+    <td>2</td>
+    <td>3</td>
+    <td>with border W-Germany</td>
+  </tr>
+  <tr>
     <td>N-France</td>
-    <td>4</td>
-    <td>4</td>
+    <td>2</td>
+    <td>3</td>
     <td>
       with border W-Germany<br>
       with border England
     </td>
   </tr>
   <tr>
-    <td>S-France</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Spain</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Portugal</td>
+    <td>Italy</td>
     <td>2</td>
     <td>2</td>
     <td></td>
   </tr>
   <tr>
-    <td>Morocco</td>
+    <td>N-Africa</td>
     <td>2</td>
     <td>2</td>
     <td></td>
