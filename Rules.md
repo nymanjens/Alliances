@@ -308,7 +308,7 @@ Same setup as 6 players, except without Austro-Hungarian Empire and France and:
   </tr>
   <tr>
     <td>N-Africa</td>
-    <td>2</td>
+    <td>1</td>
     <td>2</td>
     <td></td>
   </tr>
