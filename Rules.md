@@ -201,8 +201,12 @@ A battle has one or more rounds. Every round has following parts:
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
   in a next command round but the token returns to the defender at the end of the turn.
 
-(&#42;) When an enemy kills/wounds your unit, you may choose which (infantry or artillery) is
-affected.
+(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
+priorities:
+* Healthy infantry
+* Healthy artillery
+* Wounded infantry
+* Wounded artillery
 
 ### Trenches
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
