@@ -48,6 +48,7 @@
 # Teams
 
 There are 2 teams:
+
 * Allied players:
     * UK
     * Russia
@@ -112,6 +113,7 @@ player available, all write down their action and execute that action.
 # Command tokens
 
 Token types:
+
 * **Invest**:<br>
   Invest any amount (0-inf) in this region.
 
@@ -214,6 +216,7 @@ A battle has one or more rounds. Every round has following parts:
 
 (&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
+
 * Healthy infantry
 * Healthy artillery
 * Wounded infantry
@@ -223,6 +226,7 @@ priorities:
 
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
+
 * Defending units cannot be wounded (only killed)
 * Attacking infantry need 2 rolls >= 5 for kill
 
@@ -237,6 +241,7 @@ decision.
 ## 6 players
 
 **Coins:**
+
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 * Every player gets command tokens:
@@ -246,9 +251,11 @@ decision.
     * Train units x 2
 
 **Trenches:**
+
 * Between N-France and W-Germany on both sides
 
 **Units:**
+
 * **UK**
     * 2 infantry in England
     * 1 infantry in Scotland
@@ -271,6 +278,7 @@ decision.
 **Initial seeding:**
 
 For every unoccupied region, roll a dice. If its result is:
+
 * 1-2: Nothing happens
 * 3-4: Add 1 coin
 * 5-6: Add 2 coins + neutral infantry
