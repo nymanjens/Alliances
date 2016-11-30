@@ -10,7 +10,6 @@ exclude_rule 'no-inline-html'
 exclude_rule 'MD005' # Inconsistent indentation for list items at the same level
 exclude_rule 'MD006' # Lists at beginning of line
 exclude_rule 'MD007' # List indentation
-exclude_rule 'MD022' # Headers should be surrounded by blank lines
 exclude_rule 'MD025' # Multiple top level headers in the same document
 exclude_rule 'MD032' # Lists should be surrounded by blank lines
 exclude_rule 'MD034' # Bare URL used

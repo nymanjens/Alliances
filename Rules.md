@@ -1,4 +1,5 @@
 # Definitions
+
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
     * **Move command round order:** Player order: Starts with the order below and shifts every turn
@@ -13,7 +14,6 @@
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
     * **MP:** move point
-    * **Troop:** Group of units
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -30,6 +30,7 @@
       command. This excludes previously unoccupied regions now occupied by retreated units.
 
 # Contents of the game
+
 * **Per player:**
     * Units:
         * Infantry: 14
@@ -39,12 +40,13 @@
         * Invest: 2 x *number of players in team*
         * Dig trench: 1 x *number of players in team*
         * Move: 3 x *number of players in team*
-        * Train troops: 2 x *number of players in team*
+        * Train units: 2 x *number of players in team*
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
 
 # Teams
+
 There are 2 teams:
 * Allied players:
     * UK
@@ -59,6 +61,7 @@ There are 2 teams:
 (&#42;&#42;) Neutral when playing with 4 or 5 players
 
 # Goal of the game
+
 One of:
 
 1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
@@ -81,7 +84,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in move command round order
-        * **Train troops**: Resolved simultaneously (&#42;)
+        * **Train units**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
@@ -108,6 +111,7 @@ whisper the solution to a player not involved who then executes the commands. Wh
 player available, all write down their action and execute that action.
 
 # Command tokens
+
 Token types:
 * **Invest**:<br>
   Invest any amount (0-inf) in this region.
@@ -124,21 +128,23 @@ Token types:
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All troops in this region get 2 MP. Units can move separately to multiple regions.
+  All healthy units in this region get 2 MP. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
 
-* **Train troops**:<br>
+* **Train units**:<br>
   * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
   * In other land regions: +1 infantry or upgrade 1 infantry to artillery
   * In sea regions: Nothing happens
 
 ## Moving units
+
 Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
 Move Points and initiates a battle.
 
 ### Move Points (MP)
+
 Moves between regions normally cost 2 MP.<br>
 Moves starting in a friendly region with at least one coin invested cost 1 MP.<br>
 The total amount of MP consumed may never exceed the given amount (typically 2).
@@ -147,29 +153,35 @@ The total amount of MP consumed may never exceed the given amount (typically 2).
 but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
 
 ### Ending move
-Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
-regions owned by the same player. Troops can't end in friendly regions owned by other players.
+
+Units can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
+regions owned by the same player. Units can't end in friendly regions owned by other players.
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
 ### Sea regions
-Troops of different teams can reside in the same sea region simultaneously.
+
+Units of different teams can reside in the same sea region simultaneously.
 
 ### Ambiguous crossings
+
 The following points on the map can be crossed both by land-land and sea-sea movement:
 
 * **Denmark islands**
 * **English Channel**
 * **Gibraltar**
 * **Istanbul**
+* **North Channel (between Ireland and Scotland)**
 
 Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
 
 ## Battles
+
 When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
 units.
 
 ### Battle mechanic
+
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
@@ -191,29 +203,40 @@ A battle has one or more rounds. Every round has following parts:
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
+  Note that if the attacker completely vacated a region to perform this attack, it could happen
+  that the defending units retreat to this region.
+
   If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
 
-  The attacker moves all attacking units into the region. The invested coins may be kept on the
-  board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
-  round but the token returns to the defender at the end of the turn.
+  The attacker moves all attacking units into the region. The invested coins in the conquered region
+  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
+  in a next command round but the token returns to the defender at the end of the turn.
 
-(&#42;) When an enemy kills/wounds your unit, you may choose which (infantry or artillery) is
-affected.
+(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
+priorities:
+* Healthy infantry
+* Healthy artillery
+* Wounded infantry
+* Wounded artillery
 
 ### Trenches
+
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
-* Attacking infantry need 2 rolls >= 3 for wounded, 2 rolls >= 5 for kill
-* Defender gets twice the amount of dice per defending unit
+* Defending units cannot be wounded (only killed)
+* Attacking infantry need 2 rolls >= 5 for kill
 
 ### Fighting neutral regions
+
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
 # Initial setup
+
 ## 6 players
+
 **Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
@@ -221,12 +244,12 @@ decision.
     * Invest x 2
     * Dig trench x 1
     * Move x 3
-    * Train troops x 2
+    * Train units x 2
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
 
-**Troops**
+**Units:**
 * **UK**
     * 2 infantry in England
     * 1 infantry in Scotland
@@ -246,87 +269,47 @@ decision.
     * 2 infantry in Austria
     * 1 infantry in Hungary
 
-## 4 players
-Same setup as 6 players, except:
+**Initial seeding:**
 
-**Troops and other trenches:**
-* **Austro-Hungarian Empire** (neutral):
+For every unoccupied region, roll a dice. If its result is:
+* 1-2: Nothing happens
+* 3-4: Add 1 coin
+* 5-6: Add 2 coins + neutral infantry
+
+## 4 players
+
+Same setup as 6 players, except without Austro-Hungarian Empire and France and:
 <table>
   <tr>
     <th>Region</th>
-    <th>Infantry</th>
+    <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
   </tr>
   <tr>
     <td>Austria</td>
-    <td>3</td>
+    <td>2</td>
     <td>3</td>
     <td>with border W-Germany</td>
   </tr>
   <tr>
-    <td>Hungary</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Romania</td>
-    <td>4</td>
-    <td>3</td>
-    <td>with border Ukraine</td>
-  </tr>
-  <tr>
-    <td>Yugoslavia</td>
-    <td>1</td>
-    <td>1</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Bulgaria</td>
-    <td>4</td>
-    <td>3</td>
-    <td>with border Turkey</td>
-  </tr>
-</table>
-* **France** (neutral):
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Infantry</th>
-    <th>Coins</th>
-    <th>Trenches</th>
-  </tr>
-  <tr>
     <td>N-France</td>
-    <td>4</td>
-    <td>4</td>
+    <td>2</td>
+    <td>3</td>
     <td>
       with border W-Germany<br>
       with border England
     </td>
   </tr>
   <tr>
-    <td>S-France</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Spain</td>
-    <td>3</td>
-    <td>3</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Portugal</td>
+    <td>Italy</td>
     <td>2</td>
     <td>2</td>
     <td></td>
   </tr>
   <tr>
-    <td>Morocco</td>
-    <td>2</td>
+    <td>N-Africa</td>
+    <td>1</td>
     <td>2</td>
     <td></td>
   </tr>
