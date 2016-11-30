@@ -133,9 +133,9 @@ Token types:
   destinations in the desired order. Where necessary, battles are resolved in that order.
 
 * **Train units**:<br>
-  * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
-  * In other land regions: +1 infantry or upgrade 1 infantry to artillery
-  * In sea regions: Nothing happens
+    * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
+    * In other land regions: +1 infantry or upgrade 1 infantry to artillery
+    * In sea regions: Nothing happens
 
 ## Moving units
 

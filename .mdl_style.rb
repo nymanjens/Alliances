@@ -7,7 +7,6 @@ rule 'line-length', :line_length => 100
 exclude_rule 'no-inline-html'
 
 # Disabled rules to be revisited
-exclude_rule 'MD005' # Inconsistent indentation for list items at the same level
 exclude_rule 'MD006' # Lists at beginning of line
 exclude_rule 'MD007' # List indentation
 exclude_rule 'MD025' # Multiple top level headers in the same document
