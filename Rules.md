@@ -1,4 +1,5 @@
 # Definitions
+
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
     * **Move command round order:** Player order: Starts with the order below and shifts every turn
@@ -29,6 +30,7 @@
       command. This excludes previously unoccupied regions now occupied by retreated units.
 
 # Contents of the game
+
 * **Per player:**
     * Units:
         * Infantry: 14
@@ -44,6 +46,7 @@
     * Neutral infantry: infinite
 
 # Teams
+
 There are 2 teams:
 * Allied players:
     * UK
@@ -58,6 +61,7 @@ There are 2 teams:
 (&#42;&#42;) Neutral when playing with 4 or 5 players
 
 # Goal of the game
+
 One of:
 
 1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
@@ -106,6 +110,7 @@ whisper the solution to a player not involved who then executes the commands. Wh
 player available, all write down their action and execute that action.
 
 # Command tokens
+
 Token types:
 * **Invest**:<br>
   Invest any amount (0-inf) in this region.
@@ -133,10 +138,12 @@ Token types:
   * In sea regions: Nothing happens
 
 ## Moving units
+
 Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
 Move Points and initiates a battle.
 
 ### Move Points (MP)
+
 Moves between regions normally cost 2 MP.<br>
 Moves starting in a friendly region with at least one coin invested cost 1 MP.<br>
 The total amount of MP consumed may never exceed the given amount (typically 2).
@@ -145,15 +152,18 @@ The total amount of MP consumed may never exceed the given amount (typically 2).
 but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
 
 ### Ending move
+
 Units can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
 regions owned by the same player. Units can't end in friendly regions owned by other players.
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
 ### Sea regions
+
 Units of different teams can reside in the same sea region simultaneously.
 
 ### Ambiguous crossings
+
 The following points on the map can be crossed both by land-land and sea-sea movement:
 
 * **Denmark islands**
@@ -165,10 +175,12 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
 
 ## Battles
+
 When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
 units.
 
 ### Battle mechanic
+
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
@@ -208,18 +220,22 @@ priorities:
 * Wounded artillery
 
 ### Trenches
+
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
 * Defending units cannot be wounded (only killed)
 * Attacking infantry need 2 rolls >= 5 for kill
 
 ### Fighting neutral regions
+
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
 # Initial setup
+
 ## 6 players
+
 **Coins:**
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
@@ -260,6 +276,7 @@ For every unoccupied region, roll a dice. If its result is:
 * 5-6: Add 2 coins + neutral infantry
 
 ## 5 players
+
 Note: This game has to be played with the uncertain allegiance extension, except only for the allied
 players and with half the USA reinforcements.
 
@@ -280,6 +297,7 @@ Same setup as  6 players, except without Austro-Hungarian Empire and:
 </table>
 
 ## 4 players
+
 Same setup as 6 players, except without Austro-Hungarian Empire and France and:
 <table>
   <tr>
@@ -318,10 +336,12 @@ Same setup as 6 players, except without Austro-Hungarian Empire and France and:
 </table>
 
 # Uncertain allegiance extension
+
 At the beginning of the game, every player gets a card. One card symbolizes the "mole". This player
 can only win if the opposing side wins.
 
 ## Discovery
+
 **At the end of every turn** (after the cleanup phase), both teams get the opportunity (first
 allies, then central) to call out a single team member to show their card. From the next turn
 onwards, the mole will become a member of the opposing team and USA will send reinforcements to the
@@ -334,6 +354,7 @@ Note: After discovery, scored points for the strategic cities of the mole are sc
 new team.
 
 ## USA
+
 **Units:** At the start of every turn (before the command phase), each supported player gets a
 number of units (see table below). The recipient may choose the type of unit and may pick a
 region owned by the recipient for the units to appear in. If the recipient owns no regions,
