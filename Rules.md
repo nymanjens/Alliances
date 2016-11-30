@@ -238,9 +238,9 @@ decision.
 
 # Initial setup
 
-## 6 players
+## General setup
 
-**Coins:**
+### Coins
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
@@ -250,11 +250,9 @@ decision.
     * Move x 3
     * Train units x 2
 
-**Trenches:**
+### Units per player
 
-* Between N-France and W-Germany on both sides
-
-**Units:**
+*(ignore the players that are not in the game)*
 
 * **UK**
     * 2 infantry in England
@@ -275,7 +273,7 @@ decision.
     * 2 infantry in Austria
     * 1 infantry in Hungary
 
-**Initial seeding:**
+### Initial seeding
 
 For every unoccupied region, roll a dice. If its result is:
 
@@ -283,18 +281,50 @@ For every unoccupied region, roll a dice. If its result is:
 * 3-4: Add 1 coin
 * 5-6: Add 2 coins + neutral infantry
 
+## 6 players
+
+Add the following to the map:
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Trenches</th>
+  </tr>
+  <tr>
+    <td>N-France</td>
+    <td>with border W-Germany</td>
+  </tr>
+  <tr>
+    <td>W-Germany</td>
+    <td>with border France</td>
+  </tr>
+</table>
+
 ## 5 players
 
 Note: This game has to be played with the uncertain allegiance extension, except only for the allied
 players and with half the USA reinforcements.
 
-Same setup as  6 players, except without Austro-Hungarian Empire and:
+This game is without the Austro-Hungarian Empire.
+
+Add the following to the map:
 <table>
   <tr>
     <th>Region</th>
     <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
+  </tr>
+  <tr>
+    <td>N-France</td>
+    <td>See "General setup"</td>
+    <td>See "General setup"</td>
+    <td>with border W-Germany</td>
+  </tr>
+  <tr>
+    <td>W-Germany</td>
+    <td>See "General setup"</td>
+    <td>See "General setup"</td>
+    <td>with border France</td>
   </tr>
   <tr>
     <td>Austria</td>
@@ -306,7 +336,9 @@ Same setup as  6 players, except without Austro-Hungarian Empire and:
 
 ## 4 players
 
-Same setup as 6 players, except without Austro-Hungarian Empire and France and:
+This game is without the Austro-Hungarian Empire and France.
+
+Add the following to the map:
 <table>
   <tr>
     <th>Region</th>
@@ -315,10 +347,10 @@ Same setup as 6 players, except without Austro-Hungarian Empire and France and:
     <th>Trenches</th>
   </tr>
   <tr>
-    <td>Austria</td>
-    <td>2</td>
-    <td>3</td>
-    <td>with border W-Germany</td>
+    <td>W-Germany</td>
+    <td>See "General setup"</td>
+    <td>See "General setup"</td>
+    <td>with border France</td>
   </tr>
   <tr>
     <td>N-France</td>
@@ -328,6 +360,12 @@ Same setup as 6 players, except without Austro-Hungarian Empire and France and:
       with border W-Germany<br>
       with border England
     </td>
+  </tr>
+  <tr>
+    <td>Austria</td>
+    <td>2</td>
+    <td>3</td>
+    <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Italy</td>
