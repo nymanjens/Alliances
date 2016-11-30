@@ -2,13 +2,12 @@ all
 
 # Rule configuration
 rule 'line-length', :line_length => 100
+rule 'ul-indent', :indent => 4
 
 # Permanently disabled rules
 exclude_rule 'no-inline-html'
 
 # Disabled rules to be revisited
-exclude_rule 'MD006' # Lists at beginning of line
-exclude_rule 'MD007' # List indentation
 exclude_rule 'MD025' # Multiple top level headers in the same document
 exclude_rule 'MD032' # Lists should be surrounded by blank lines
 exclude_rule 'MD034' # Bare URL used
