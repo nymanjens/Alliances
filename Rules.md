@@ -13,7 +13,6 @@
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
     * **MP:** move point
-    * **Troop:** Group of units
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -39,7 +38,7 @@
         * Invest: 2 x *number of players in team*
         * Dig trench: 1 x *number of players in team*
         * Move: 3 x *number of players in team*
-        * Train troops: 2 x *number of players in team*
+        * Train units: 2 x *number of players in team*
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
@@ -80,7 +79,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in move command round order
-        * **Train troops**: Resolved simultaneously (&#42;)
+        * **Train units**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
@@ -128,7 +127,7 @@ Token types:
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
 
-* **Train troops**:<br>
+* **Train units**:<br>
   * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
   * In other land regions: +1 infantry or upgrade 1 infantry to artillery
   * In sea regions: Nothing happens
@@ -146,13 +145,13 @@ The total amount of MP consumed may never exceed the given amount (typically 2).
 but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
 
 ### Ending move
-Troops can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
-regions owned by the same player. Troops can't end in friendly regions owned by other players.
+Units can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
+regions owned by the same player. Units can't end in friendly regions owned by other players.
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
 ### Sea regions
-Troops of different teams can reside in the same sea region simultaneously.
+Units of different teams can reside in the same sea region simultaneously.
 
 ### Ambiguous crossings
 The following points on the map can be crossed both by land-land and sea-sea movement:
@@ -228,12 +227,12 @@ decision.
     * Invest x 2
     * Dig trench x 1
     * Move x 3
-    * Train troops x 2
+    * Train units x 2
 
 **Trenches:**
 * Between N-France and W-Germany on both sides
 
-**Troops:**
+**Units:**
 * **UK**
     * 2 infantry in England
     * 1 infantry in Scotland
@@ -335,7 +334,7 @@ Note: After discovery, scored points for the strategic cities of the mole are sc
 new team.
 
 ## USA
-**Troops:** At the start of every turn (before the command phase), each supported player gets a
+**Units:** At the start of every turn (before the command phase), each supported player gets a
 number of units (see table below). The recipient may choose the type of unit and may pick a
 region owned by the recipient for the units to appear in. If the recipient owns no regions,
 the units appear in the North Sea or Atlantic Ocean.
