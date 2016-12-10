@@ -347,12 +347,6 @@ Add the following to the map:
     <th>Trenches</th>
   </tr>
   <tr>
-    <td>W-Germany</td>
-    <td>See "General setup"</td>
-    <td>See "General setup"</td>
-    <td>with border France</td>
-  </tr>
-  <tr>
     <td>N-France</td>
     <td>2</td>
     <td>3</td>
