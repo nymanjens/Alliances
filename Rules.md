@@ -198,7 +198,7 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6:** Kills an enemy unit (*)
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
-1. **Defender decides to retreat or has no healthy units left:** All units (included wounded units)
+1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
    move to (in mandatory order of possibility):
     * An adjacent region owned by the defender
     * An adjacent unoccupied region
