@@ -65,7 +65,7 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
+1. At the end of a turn, have at least a 7 point advantage over the other team (ends the game)
 1. Get your team to score the most points at the end of turn 10
 
    **In case of a tie:** The team with the most coins on board wins. If these match, the team
