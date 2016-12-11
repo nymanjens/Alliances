@@ -103,6 +103,8 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
        at regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
+
+       All added units must be payed immediately.
     1. **Advance turn counter** by one
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
