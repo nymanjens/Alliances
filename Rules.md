@@ -197,17 +197,17 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6:** Kills an enemy unit (*)
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
-1. **Defender decides to retreat or has no healthy units left:** All units move to (in mandatory
-   order of possibility):
+1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
+   move to (in mandatory order of possibility):
     * An adjacent region owned by the defender
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
-  Note that if the attacker completely vacated a region to perform this attack, it could happen
-  that the defending units retreat to this region.
-
   If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
+
+  Note that if the attacker completely vacated a region to perform this attack, it could happen
+  that the defending units retreat to this region.
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
