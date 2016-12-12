@@ -66,10 +66,9 @@ There are 2 teams:
 * Central players:
     * Germany
     * Ottoman Empire
-    * Austro-Hungarian Empire (&#42;&#42;)
+    * Austro-Hungarian Empire (&#42;)
 
-(&#42;) Neutral when playing with 4 players<br />
-(&#42;&#42;) Neutral when playing with 4 or 5 players
+(&#42;) Neutral when playing with 4 players
 
 # Goal of the game
 
@@ -80,7 +79,7 @@ One of:
 1. Have 5 (6 players) or 7 (4 players) strategic cities at any point in the game to win individually
 
    **In case of a tie:** The team with the most coins on board wins. If these match, the team
-   with the army which has the highest payment cost, wins. If these match, everybody loses.
+   with the highest unit cost, wins. If these match, everybody loses.
 
 # Playing a turn
 
@@ -101,8 +100,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        with a *minimum of 3*.
     1. **Payment:** All units in regions the player wants to keep, are paid 1/2 coins per
        infantry/artillery.
-        * After paying the units, coins can be given to other players, which they can use to pay
-          for their units.
 1. **Cleanup phase**
     1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
@@ -128,9 +125,9 @@ player available, all write down their action and execute that action.
 Token types:
 
 * **Invest**:<br>
-  Invest any amount (0-inf) in this region.
+  You may change the number of coins in this region.
 
-  Investing means that coins go from the player's supply on to the board. The maximum number of
+  Coins are exchanged between the player's supply and the region on the board. The maximum number of
   coins that may be invested in the region is indicated on the map.
 
   This token is ignored in **sea regions**.
@@ -265,6 +262,15 @@ Neutral units will never attack, but do defend. The same rules apply as for norm
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
+# Coin trading
+
+At any point in the game, you are allowed to give coins to another player.
+
+*Examples:*
+
+* *When an ally is struggling with paying their units*
+* *When an ally wants to invest in a region but has no coins*
+
 # Initial setup
 
 ## General setup
@@ -344,10 +350,7 @@ Add the following to the map:
     <td>N-France</td>
     <td>2</td>
     <td>3</td>
-    <td>
-      with border W-Germany<br>
-      with border England
-    </td>
+    <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Austria</td>
