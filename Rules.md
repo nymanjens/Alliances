@@ -56,10 +56,9 @@ There are 2 teams:
 * Central players:
     * Germany
     * Ottoman Empire
-    * Austro-Hungarian Empire (&#42;&#42;)
+    * Austro-Hungarian Empire (&#42;)
 
-(&#42;) Neutral when playing with 4 players<br />
-(&#42;&#42;) Neutral when playing with 4 or 5 players
+(&#42;) Neutral when playing with 4 players
 
 # Goal of the game
 
@@ -70,7 +69,7 @@ One of:
 1. Have 5 (6 players) or 7 (4 players) strategic cities at any point in the game to win individually
 
    **In case of a tie:** The team with the most coins on board wins. If these match, the team
-   with the army which has the highest payment cost, wins. If these match, everybody loses.
+   with the highest unit cost, wins. If these match, everybody loses.
 
 # Playing a turn
 
@@ -318,10 +317,7 @@ Add the following to the map:
     <td>N-France</td>
     <td>2</td>
     <td>3</td>
-    <td>
-      with border W-Germany<br>
-      with border England
-    </td>
+    <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Austria</td>
