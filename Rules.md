@@ -55,9 +55,10 @@ There are 2 teams:
 * Central players:
     * Germany
     * Ottoman Empire
-    * Austro-Hungarian Empire (&#42;)
+    * Austro-Hungarian Empire (&#42;&#42;)
 
-(&#42;) Neutral when playing with 4 players
+(&#42;) Neutral when playing with 4 players<br />
+(&#42;&#42;) Neutral when playing with 4 or 5 players
 
 # Goal of the game
 
@@ -297,6 +298,41 @@ Add the following to the map:
   </tr>
 </table>
 
+## 5 players
+
+Note: This game has to be played with the uncertain allegiance extension, except only for the allied
+players and with half the USA reinforcements.
+
+This game is without the Austro-Hungarian Empire.
+
+Add the following to the map:
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Neutral infantry</th>
+    <th>Coins</th>
+    <th>Trenches</th>
+  </tr>
+  <tr>
+    <td>N-France</td>
+    <td>See "General setup"</td>
+    <td>See "General setup"</td>
+    <td>with border W-Germany</td>
+  </tr>
+  <tr>
+    <td>W-Germany</td>
+    <td>See "General setup"</td>
+    <td>See "General setup"</td>
+    <td>with border France</td>
+  </tr>
+  <tr>
+    <td>Austria</td>
+    <td>2</td>
+    <td>3</td>
+    <td>with border W-Germany</td>
+  </tr>
+</table>
+
 ## 4 players
 
 This game is without the Austro-Hungarian Empire and France.
@@ -332,5 +368,50 @@ Add the following to the map:
     <td>1</td>
     <td>2</td>
     <td></td>
+  </tr>
+</table>
+
+# Uncertain allegiance extension
+
+At the beginning of the game, every player gets a card. One card symbolizes the "mole". This player
+can only win if the opposing side wins.
+
+## Discovery
+
+**At the end of every turn** (after the cleanup phase), both teams get the opportunity (first
+allies, then central) to call out a single team member to show their card. From the next turn
+onwards, the mole will become a member of the opposing team and USA will send reinforcements to the
+leftover members.
+
+The mole may also **attack an ally**, which immediately changes their official allegiance and causes
+the USA to enter the war immediately. The mole shows their card.
+
+Note: After discovery, scored points for the strategic cities of the mole are scored for the mole's
+new team.
+
+## USA
+
+**Units:** At the start of every turn (before the command phase), each supported player gets a
+number of units (see table below). The recipient may choose the type of unit and may pick a
+region owned by the recipient for the units to appear in. If the recipient owns no regions,
+the units appear in the North Sea or Atlantic Ocean.
+
+**Coins:** At the start of the economic phase, each supported player receives  a number of coins
+(see table below).
+<table>
+  <tr>
+    <td></td>
+    <th>1 shown card</th>
+    <th>2+ shown cards</th>
+  </tr>
+  <tr>
+    <th>Units</th>
+    <td>4</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <th>Coins</th>
+    <td>12</td>
+    <td>7</td>
   </tr>
 </table>
