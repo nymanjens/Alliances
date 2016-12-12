@@ -35,12 +35,11 @@
     * Units:
         * Infantry: 14
         * Artillery: 5
-* **Per team:**
     * Command tokens:
-        * Invest: 2 x *number of players in team*
-        * Dig trench: 1 x *number of players in team*
-        * Move: 3 x *number of players in team*
-        * Train units: 2 x *number of players in team*
+        * Invest: 2
+        * Dig trench: 1
+        * Move: 3
+        * Train units: 2
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
@@ -65,7 +64,7 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn, have at least a 10 point advantage over the other team (ends the game)
+1. At the end of a turn, have at least a 7 point advantage over the other team (ends the game)
 1. Get your team to score the most points at the end of turn 10
 1. Have 5 (6 players) or 7 (4 players) strategic cities at any point in the game to win individually
 
@@ -79,8 +78,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
-    1. **Token and coin trading:** All players can trade unused command tokens and coins among each
-       other
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
@@ -104,6 +101,8 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
        at regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
+
+       All added units must be payed immediately.
     1. **Advance turn counter** by one
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
@@ -199,17 +198,17 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6:** Kills an enemy unit (*)
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
-1. **Defender decides to retreat or has no healthy units left:** All units move to (in mandatory
-   order of possibility):
+1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
+   move to (in mandatory order of possibility):
     * An adjacent region owned by the defender
     * An adjacent unoccupied region
     * The above, but moving through as few as possible friendly regions
 
-  Note that if the attacker completely vacated a region to perform this attack, it could happen
-  that the defending units retreat to this region.
-
   If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
+
+  Note that if the attacker completely vacated a region to perform this attack, it could happen
+  that the defending units retreat to this region.
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
@@ -239,9 +238,9 @@ decision.
 
 # Initial setup
 
-## 6 players
+## General setup
 
-**Coins:**
+### Coins
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
@@ -251,11 +250,9 @@ decision.
     * Move x 3
     * Train units x 2
 
-**Trenches:**
+### Units per player
 
-* Between N-France and W-Germany on both sides
-
-**Units:**
+*(ignore the players that are not in the game)*
 
 * **UK**
     * 2 infantry in England
@@ -276,7 +273,7 @@ decision.
     * 2 infantry in Austria
     * 1 infantry in Hungary
 
-**Initial seeding:**
+### Initial seeding
 
 For every unoccupied region, roll a dice. If its result is:
 
@@ -284,21 +281,35 @@ For every unoccupied region, roll a dice. If its result is:
 * 3-4: Add 1 coin
 * 5-6: Add 2 coins + neutral infantry
 
+## 6 players
+
+Add the following to the map:
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Trenches</th>
+  </tr>
+  <tr>
+    <td>N-France</td>
+    <td>with border W-Germany</td>
+  </tr>
+  <tr>
+    <td>W-Germany</td>
+    <td>with border France</td>
+  </tr>
+</table>
+
 ## 4 players
 
-Same setup as 6 players, except without Austro-Hungarian Empire and France and:
+This game is without the Austro-Hungarian Empire and France.
+
+Add the following to the map:
 <table>
   <tr>
     <th>Region</th>
     <th>Neutral infantry</th>
     <th>Coins</th>
     <th>Trenches</th>
-  </tr>
-  <tr>
-    <td>Austria</td>
-    <td>2</td>
-    <td>3</td>
-    <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>N-France</td>
@@ -308,6 +319,12 @@ Same setup as 6 players, except without Austro-Hungarian Empire and France and:
       with border W-Germany<br>
       with border England
     </td>
+  </tr>
+  <tr>
+    <td>Austria</td>
+    <td>2</td>
+    <td>3</td>
+    <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Italy</td>
