@@ -56,10 +56,9 @@ There are 2 teams:
 * Central players:
     * Germany
     * Ottoman Empire
-    * Austro-Hungarian Empire (&#42;&#42;)
+    * Austro-Hungarian Empire (&#42;)
 
-(&#42;) Neutral when playing with 4 players<br />
-(&#42;&#42;) Neutral when playing with 4 or 5 players
+(&#42;) Neutral when playing with 4 players
 
 # Goal of the game
 
