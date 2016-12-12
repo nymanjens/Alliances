@@ -68,7 +68,7 @@ One of:
 1. Get your team to score the most points at the end of turn 10
 
    **In case of a tie:** The team with the most coins on board wins. If these match, the team
-   with the army which has the highest payment cost, wins. If these match, everybody loses.
+   with the highest unit cost, wins. If these match, everybody loses.
 
 # Playing a turn
 
