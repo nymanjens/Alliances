@@ -79,8 +79,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
-    1. **Token and coin trading:** All players can trade unused command tokens and coins among each
-       other
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
@@ -239,19 +237,20 @@ decision.
 
 # Trade and agreements
 
-## Coin trading
+## Coin and token trading
 
-At any point in the game, you are allowed to give coins to another player.
+At any point in the game, you are allowed to give coins and tokens to another player.
 
 *Examples:*
 
 * *When an ally is struggling with paying their units*
 * *When an ally wants to invest in a region but has no coins*
+* *During the token assignment phase, when an ally needs an extra move token*
 
 ## Binding agreements
 
-You can make binding agreements with other players that involve coins and immediately executable
-actions that involve only the agreeing parties.
+You can make binding agreements with other players that involve coins or tokens and immediately
+executable actions that involve only the agreeing parties.
 
 *Examples:*
 
