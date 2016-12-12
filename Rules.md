@@ -39,7 +39,7 @@
         * Invest: 2
         * Dig trench: 1
         * Move: 3
-        * Train units: 2
+        * Train troops: 2
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
