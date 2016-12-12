@@ -35,12 +35,11 @@
     * Units:
         * Infantry: 14
         * Artillery: 5
-* **Per team:**
     * Command tokens:
-        * Invest: 2 x *number of players in team*
-        * Dig trench: 1 x *number of players in team*
-        * Move: 3 x *number of players in team*
-        * Train units: 2 x *number of players in team*
+        * Invest: 2
+        * Dig trench: 1
+        * Move: 3
+        * Train troops: 2
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
@@ -79,8 +78,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 1. **Command phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
-    1. **Token and coin trading:** All players can trade unused command tokens and coins among each
-       other
     1. **Token revealing:** All tokens are turned face up
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
