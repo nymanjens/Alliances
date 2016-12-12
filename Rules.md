@@ -114,10 +114,10 @@ player available, all write down their action and execute that action.
 Token types:
 
 * **Invest**:<br>
-  Invest any amount (0-inf) in this region.
+  Add or remove any amount of coins in this region.
 
-  Investing means that coins go from the player's supply on to the board. The maximum number of
-  coins that may be invested in the region is indicated on the map.
+  Adding means that coins go from the player's supply on to the board. The maximum number of coins
+  that may be invested in the region is indicated on the map. Removing means the exact opposite.
 
   This token is ignored in **sea regions**.
 
