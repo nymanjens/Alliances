@@ -349,10 +349,7 @@ Add the following to the map:
     <td>N-France</td>
     <td>2</td>
     <td>3</td>
-    <td>
-      with border W-Germany<br>
-      with border England
-    </td>
+    <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Austria</td>
