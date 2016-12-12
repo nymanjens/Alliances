@@ -15,6 +15,16 @@
       move (but it can retreat).
     * **MP:** move point
 * **Strategic city:** Star on the map
+* **Players**
+    * **Nominal ally:** Other player in the same team
+    * **Nominal enemy:** Any player in a different team
+    * **Enemy player:** Any player that is either:
+        1. A nominal enemy
+        1. A nominal ally that has explicitly indicated to be a (temporary) enemy (this can be done
+           at any time)
+        1. A nominal ally that you have explicitly indicated to be a (temporary) enemy of (this can
+           be done at any time)
+    * **Actual ally:** A nominal ally that is not an enemy
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
@@ -23,7 +33,7 @@
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
     * **Friendly region for a player:** Land region occupied by units of that player, or
-      units of an ally of that player
+      units of an actual ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
     * **Conquered region:** Land region won after successful battle earlier during the current
@@ -91,7 +101,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        with a *minimum of 3*.
     1. **Payment:** All units in regions the player wants to keep, are paid 1/2 coins per
        infantry/artillery.
-        * After paying the units, coins can be given to allied players, which they can use to pay
+        * After paying the units, coins can be given to other players, which they can use to pay
           for their units.
 1. **Cleanup phase**
     1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
@@ -177,7 +187,23 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **Istanbul**
 * **North Channel (between Ireland and Scotland)**
 
-Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
+Sea-sea movement is not possible for a unit if both land regions at the crossing are neutral regions
+or regions of a nominal enemy.
+
+### Friendly fire
+
+Nominal allies can become enemies at any moment, leading to edge cases:
+
+* **Battle nominal ally:** Ending a move in the territory of a nominal ally triggers a battle. This
+  move may not have relied on the same player being an ally (e.g. no moving through the soon-to-be
+  enemy's territory).
+* **Moving through territory:** When units move through your territory, you can stop them from
+  passing through. This automatically starts a fight between the units passing through and the units
+  in your territory.
+* **Retreating through territory:** (Following existing rules) Nominal allies can prevent a retreat
+  from going through their territory.
+* **Moving through ambiguous crossing:** You cannot block allies from crossing ambiguous crossing
+  via the sea.
 
 ## Battles
 
