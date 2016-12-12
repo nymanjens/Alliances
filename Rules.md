@@ -241,8 +241,8 @@ At any point in the game, you are allowed to give coins to another player.
 
 *Examples:*
 
-- *When an ally is struggling with paying their units*
-- *When an ally wants to invest in a region but has no coins*
+* *When an ally is struggling with paying their units*
+* *When an ally wants to invest in a region but has no coins*
 
 ## Binding agreements
 
@@ -251,8 +251,8 @@ actions that involve only the agreeing parties.
 
 *Examples:*
 
-- *Pay an enemy to retreat after a battle round*
-- *Pay a player to attack a region (it must be that player's turn to resolve a move token)*
+* *Pay an enemy to retreat after a battle round*
+* *Pay a player to attack a region (it must be that player's turn to resolve a move token)*
 
 # Initial setup
 
