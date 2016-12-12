@@ -233,9 +233,7 @@ Neutral units will never attack, but do defend. The same rules apply as for norm
 a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
 decision.
 
-# Trade and agreements
-
-## Coin trading
+# Coin trading
 
 At any point in the game, you are allowed to give coins to another player.
 
@@ -243,16 +241,6 @@ At any point in the game, you are allowed to give coins to another player.
 
 * *When an ally is struggling with paying their units*
 * *When an ally wants to invest in a region but has no coins*
-
-## Binding agreements
-
-You can make binding agreements with other players that involve coins and immediately executable
-actions that involve only the agreeing parties.
-
-*Examples:*
-
-* *Pay an enemy to retreat after a battle round*
-* *Pay a player to attack a region (it must be that player's turn to resolve a move token)*
 
 # Initial setup
 
