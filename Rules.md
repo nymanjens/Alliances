@@ -48,7 +48,7 @@
 
 There are 2 teams:
 
-* Allied players:
+* The Triple Entente:
     * UK
     * Russia
     * France (&#42;)
