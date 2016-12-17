@@ -177,8 +177,7 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **Istanbul**
 * **North Channel (between Ireland and Scotland)**
 
-Sea-sea movement is not possible for a unit if both land regions at the crossing are neutral regions
-or regions of a nominal enemy.
+Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
 
 ## Battles
 
