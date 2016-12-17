@@ -16,15 +16,12 @@
     * **MP:** move point
 * **Strategic city:** Star on the map
 * **Players**
-    * **Nominal ally:** Other player in the same team
-    * **Nominal enemy:** Any player in a different team
-    * **Enemy player:** Any player that is either:
-        1. A nominal enemy
-        1. A nominal ally that has explicitly indicated to be a (temporary) enemy (this can be done
-           at any time)
-        1. A nominal ally that you have explicitly indicated to be a (temporary) enemy of (this can
-           be done at any time)
-    * **Actual ally:** A nominal ally that is not an enemy
+    * **Ally:** Other player that you have a bilateral right of passage agreement with. By default,
+      only your team members are allies.
+
+      This can be changed at any time except when a command token is being resolved. An alliance
+      betwen two players ends unilaterally and starts bilaterally.
+    * **Enemy player:** Any other player that is not an ally.
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
@@ -32,8 +29,8 @@
     * **Unoccupied region:** Land region not occupied by any military units
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
-    * **Friendly region for a player:** Land region occupied by units of that player, or
-      units of an actual ally of that player
+    * **Friendly region for a player:** Land region occupied by units of that player, or units of an
+      ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
     * **Conquered region:** Land region won after successful battle earlier during the current
@@ -59,7 +56,7 @@
 
 There are 2 teams:
 
-* Allied players:
+* The Triple Entente:
     * UK
     * Russia
     * France (&#42;)
@@ -184,21 +181,6 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 
 Sea-sea movement is not possible for a unit if both land regions at the crossing are neutral regions
 or regions of a nominal enemy.
-
-### Friendly fire
-
-Nominal allies can become enemies at any moment, leading to edge cases:
-
-* **Battle nominal ally:** Ending a move in the territory of a nominal ally triggers a battle. This
-  move may not have relied on the same player being an ally (e.g. no moving through the soon-to-be
-  enemy's territory).
-* **Moving through territory:** When units move through your territory, you can stop them from
-  passing through. This automatically starts a fight between the units passing through and the units
-  in your territory.
-* **Retreating through territory:** (Following existing rules) Nominal allies can prevent a retreat
-  from going through their territory.
-* **Moving through ambiguous crossing:** You cannot block allies from crossing ambiguous crossing
-  via the sea.
 
 ## Battles
 
