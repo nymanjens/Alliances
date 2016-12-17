@@ -17,10 +17,8 @@
 * **Strategic city:** Star on the map
 * **Players**
     * **Ally:** Other player that you have a bilateral right of passage agreement with. By default,
-      only your team members are allies.
-
-      This can be changed at any time except when a command token is being resolved. An alliance
-      betwen two players ends unilaterally and starts bilaterally.
+      only your team members are allies. This can be changed at any time except when a command token
+      is being resolved. An alliance betwen two players ends unilaterally and starts bilaterally.
     * **Enemy player:** Any other player that is not an ally.
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
