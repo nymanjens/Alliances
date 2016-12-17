@@ -15,6 +15,11 @@
       move (but it can retreat).
     * **MP:** move point
 * **Strategic city:** Star on the map
+* **Players**
+    * **Ally:** Other player that you have a bilateral right of passage agreement with. By default,
+      only your team members are allies. This can be changed at any time except when a command token
+      is being resolved. An alliance between two players ends unilaterally and starts bilaterally.
+    * **Enemy player:** Any other player that is not an ally.
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
@@ -22,8 +27,8 @@
     * **Unoccupied region:** Land region not occupied by any military units
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
-    * **Friendly region for a player:** Land region occupied by units of that player, or
-      units of an ally of that player
+    * **Friendly region for a player:** Land region occupied by units of that player, or units of an
+      ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
     * **Conquered region:** Land region won after successful battle earlier during the current
@@ -49,7 +54,7 @@
 
 There are 2 teams:
 
-* Allied players:
+* The Triple Entente:
     * UK
     * Russia
     * France (&#42;)
