@@ -16,15 +16,15 @@
     * **MP:** move point
 * **Strategic city:** Star on the map
 * **Players**
-    * **Nominal friend:** Other player in the same team
+    * **Nominal ally:** Other player in the same team
     * **Nominal enemy:** Any player in a different team
     * **Enemy player:** Any player that is either:
         1. A nominal enemy
-        1. A nominal friend that has explicitly indicated to be a (temporary) enemy (this can be
-           done at any time)
-        1. A nominal friend that you have explicitly indicated to be a (temporary) enemy of (this
-           can be done at any time)
-    * **Actual friend:** A nominal friend that is not an enemy
+        1. A nominal ally that has explicitly indicated to be a (temporary) enemy (this can be done
+           at any time)
+        1. A nominal ally that you have explicitly indicated to be a (temporary) enemy of (this can
+           be done at any time)
+    * **Actual ally:** A nominal ally that is not an enemy
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
@@ -33,7 +33,7 @@
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
     * **Friendly region for a player:** Land region occupied by units of that player, or
-      units of an actual friend of that player
+      units of an actual ally of that player
     * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
       of that player
     * **Conquered region:** Land region won after successful battle earlier during the current
@@ -187,17 +187,17 @@ or regions of a nominal enemy.
 
 ### Friendly fire
 
-Nominal friends can become enemies at any moment, leading to edge cases:
+Nominal allies can become enemies at any moment, leading to edge cases:
 
-* **Battle nominal friend:** Ending a move in the territory of a nominal friend triggers a battle.
-  This move may not have relied on the same player being a friend (e.g. no moving through the
-  soon-to-be enemy's territory).
+* **Battle nominal ally:** Ending a move in the territory of a nominal ally triggers a battle. This
+  move may not have relied on the same player being an ally (e.g. no moving through the soon-to-be
+  enemy's territory).
 * **Moving through territory:** When units move through your territory, you can stop them from
   passing through. This automatically starts a fight between the units passing through and the units
   in your territory.
-* **Retreating through territory:** (Following existing rules) Nominal friends can prevent a retreat
+* **Retreating through territory:** (Following existing rules) Nominal allies can prevent a retreat
   from going through their territory.
-* **Moving through ambiguous crossing:** You cannot block friends from crossing ambiguous crossing
+* **Moving through ambiguous crossing:** You cannot block allies from crossing ambiguous crossing
   via the sea.
 
 ## Battles
@@ -268,9 +268,9 @@ At any point in the game, you are allowed to give coins and tokens to another pl
 
 *Examples:*
 
-* *When a friend is struggling with paying their units*
-* *When a friend wants to invest in a region but has no coins*
-* *During the token assignment phase, when a friend needs an extra move token*
+* *When an ally is struggling with paying their units*
+* *When an ally wants to invest in a region but has no coins*
+* *During the token assignment phase, when an ally needs an extra move token*
 
 ## Binding agreements
 
