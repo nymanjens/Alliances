@@ -63,11 +63,16 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn, have at least a 7 point advantage over the other team (ends the game)
-1. Get your team to score the most points at the end of turn 10
+1. At the end of a turn `n` (`n in {1..10}`), have at least a `11 - n` point advantage over the
+   other team (ends the game)
+1. If there is no winner after turn 10, the team with the most of the following wins (in order of
+   priority):
 
-   **In case of a tie:** The team with the most coins on board wins. If these match, the team
-   with the highest unit cost, wins. If these match, everybody loses.
+    * Strategic cities
+    * Coins on the board
+    * Highest unit cost
+
+   If all these match, everyone loses.
 
 # Playing a turn
 
