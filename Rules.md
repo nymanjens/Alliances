@@ -203,8 +203,13 @@ A battle has one or more rounds. Every round has following parts:
   If none of the above are found, the units are killed. If there is choice, the defender may choose
   the region.
 
-  Note that if the attacker completely vacated a region to perform this attack, it could happen
-  that the defending units retreat to this region.
+  Clarifications for edge cases:
+
+    * If the attacker completely **vacated a region** to perform this attack, it could happen that
+      the defending units retreat to this region.
+    * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
+      another region under attack. Healthy retreated units are allowed to participate in the
+      following battle.
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
