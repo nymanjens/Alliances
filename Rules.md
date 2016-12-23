@@ -65,8 +65,9 @@ One of:
 
 1. At the end of a turn `n` (`n in {1..10}`), have at least a `11 - n` point advantage over the
    other team (ends the game)
-1. If there is no winner after turn 10, the team with the most strategic cities wins. If there is
-   still a draw, the team with the most regions wins. If all these match, everyone loses.
+1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
+   match, whichever side may call itself the victor. For in war, there are no winners, but all are
+   losers.
 
 # Playing a turn
 
