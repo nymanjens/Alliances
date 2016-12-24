@@ -2,8 +2,7 @@
 
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Move command round order:** Player order: Starts with the order below and shifts every turn
-      (first player becomes last player every turn):
+    * **Initial move command round order:** Player order: The game starts with the order below:
         * UK
         * Germany
         * Russia
@@ -100,6 +99,13 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        All added units must be payed immediately.
     1. **Advance turn counter** by one
+    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
+       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
+       came first in the last command round order wins.
+
+       The winner pays the bidded coins to the supply, becomes start player and chooses the
+       direction of the move command round order. The full circle of the move command round order
+       should always be the same as that of the initial move command round order.
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
