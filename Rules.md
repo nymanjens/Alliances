@@ -198,6 +198,8 @@ A battle has one or more rounds. Every round has following parts:
     * Every defender roll of:
         * **1-4:** Wounds an enemy unit (*)
         * **5-6:** Kills an enemy unit (*)
+    
+    Kills are resolved before wounds.
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
