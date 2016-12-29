@@ -253,7 +253,7 @@ At any point in the game, you are allowed to give coins to another player.
 
 ## Apply scenario
 
-Choose a scenario for the desired number of players *at random* and apply it.
+Choose a [scenario](Scenarios.md) for the desired number of players *at random* and apply it.
 
 ## Coins
 
