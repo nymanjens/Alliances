@@ -149,7 +149,7 @@ Move Points and initiates a battle.
 ### Move Points (MP)
 
 Moves between regions normally cost 2 MP. The total amount of MP consumed may never exceed 2.
- 
+
 #### Exception: Moving along a road
 
 A move starting in a land region that is
@@ -160,6 +160,7 @@ A move starting in a land region that is
 only costs 1 MP.
 
 *Examples:*
+
 * *My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
   but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
 * *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
