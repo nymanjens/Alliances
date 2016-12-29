@@ -40,8 +40,8 @@ def main(typ):
     updateGraph(battles, "battle_graph_" + typ)
 
 def updateGraph(battles, name):
-    print "calculating battle chances..."
-    battleGraph, battleOutcomes = calcIntensive(battles)
+    print "calculating battle graph..."
+    battleGraph, battleStats = calcIntensive(battles)
     
     # convert to a graph object
     print "converting to graph object..."
@@ -49,23 +49,23 @@ def updateGraph(battles, name):
     del battleGraph
     
     # add expected result
-    print "adding death battle statistics to the graph..."
-    combineResults(graph, battleOutcomes)
-    del battleOutcomes
+    print "adding battle statistics to the graph..."
+    addBattleStats(graph, battleStats)
+    del battleStats
     
     # save
     filename = name+".pkl"
-    print "dumping battle chance graph to: {}".format(filename)
+    print "dumping battle graph to: {}".format(filename)
     with gzip.open(filename, "wb") as fil:
         dump(graph, fil, 2)
     
-    print "Number of nodes in battle chances graph: {}".format(graph.number_of_nodes())
-    print "Number of edges in battle chances graph: {}".format(graph.number_of_edges())
+    print "Number of nodes in battle graph: {}".format(graph.number_of_nodes())
+    print "Number of edges in battle graph: {}".format(graph.number_of_edges())
 
-def combineResults(graph, battleOutcomes):
-    bar = ProgressBar(max_value=len(battleOutcomes))
-    for i,(battle, outcomes) in enumerate(battleOutcomes.iteritems()):
-        graph.add_node(battle, outcome=StochasticBattleState(*zip(*outcomes.iteritems())))
+def addBattleStats(graph, battleStats):
+    bar = ProgressBar(max_value=graph.number_of_nodes())
+    for i, battle in enumerate(graph.nodes()):
+        graph.add_node(battle, {typ: stats[battle] for typ,stats in battleStats.iteritems() if stats.has_key(battle)})
         bar.update(i+1)
 
 def convertToGraph(battleGraph):
@@ -78,19 +78,22 @@ def convertToGraph(battleGraph):
 def calcIntensive(battles):
     with Manager() as manager:
         battleGraph = manager.dict()
+        roundStats = manager.dict()
         lock = manager.Lock()
-        parallelExec(calcBattleChances, ((battle, battleGraph, lock) for battle in battles))
+        parallelExec(calcBattleRoundChances, ((battle, battleGraph, roundStats, lock) for battle in battles))
         
-        print "calculating expected to the death battle..."
-        battleOutcomes = manager.dict()
-        parallelExec(battleEndChances, ((battle, battleGraph, battleOutcomes, lock) for battle in battles))
+        print "calculating full battle chances..."
+        fullBattleChances = manager.dict()
+        fullBattleStats = manager.dict()
+        parallelExec(calcFullBattleChances, ((battle, battleGraph, fullBattleChances, fullBattleStats, lock) for battle in battles))
         
         print "copying result..."
         battleGraph = dict(battleGraph)
-        battleOutcomes = dict(battleOutcomes)
-    return battleGraph, battleOutcomes
+        roundStats = dict(roundStats)
+        fullBattleStats = dict(fullBattleStats)
+    return battleGraph, {"round": roundStats, "full": fullBattleStats}
 
-def calcBattleChances(battle, battleGraph, lock):
+def calcBattleRoundChances(battle, battleGraph, roundStats, lock):
     # prevent unnecessary calculations
     if battle.hasEnded(): return
     lock.acquire()
@@ -98,47 +101,51 @@ def calcBattleChances(battle, battleGraph, lock):
     lock.release()
     if alreadyCalculated: return
     
-    # determine chances for possible outcomes of this battle
-    battleOutcomes = defaultdict(int)
+    # determine chances for possible outcomes of this battle round
+    roundOutcomes = defaultdict(int)
     for _ in xrange(NR_OF_SAMPLES):
-        battleOutcomes[battle.simulate()] += 1
-    battleChances = {k: v/float(NR_OF_SAMPLES) for k,v in battleOutcomes.iteritems()}
+        roundOutcomes[battle.simulate()] += 1
+    roundChances = {k: v/float(NR_OF_SAMPLES) for k,v in roundOutcomes.iteritems()}
+    roundStat = StochasticBattleState.fromDict(roundChances)
     
     lock.acquire()
     if battle not in battleGraph:
-        battleGraph[battle] = battleChances
+        battleGraph[battle] = roundChances
+        roundStats[battle] = roundStat
     lock.release()
     
     # also calculate all subsequent possible battles
-    for sampleBattle in battleChances:
+    for sampleBattle in roundChances:
         # recurse to build up the chance tree
         # Note: max recursive depth equals max infantry
-        calcBattleChances(sampleBattle, battleGraph, lock)
+        calcBattleRoundChances(sampleBattle, battleGraph, roundStats, lock)
 
-def battleEndChances(battle, graph, battleOutcomes, lock):
+def calcFullBattleChances(battle, graph, fullBattleChances, fullBattleStats, lock):
     # prevent unnecessary calculations
     if battle.hasEnded(): return None
     lock.acquire()
-    exists = battle in battleOutcomes
-    if exists: battleOutcome = battleOutcomes[battle]
+    exists = battle in fullBattleChances
+    if exists: battleChances = fullBattleChances[battle]
     lock.release()
-    if exists: return battleOutcome
+    if exists: return battleChances
     
     # recursively calculate
     battleChances = Counter()
-    for nextBattle, nextChance in graph[battle].iteritems():
-        nextBattleOutcome = battleEndChances(nextBattle, graph, battleOutcomes, lock)
-        if nextBattleOutcome==None:
-            battleChances[nextBattle] += nextChance
+    for nextRound, chance in graph[battle].iteritems():
+        nextRoundBattleChances = calcFullBattleChances(nextRound, graph, fullBattleChances, fullBattleStats, lock)
+        if nextRoundBattleChances==None:
+            battleChances[nextRound] += chance
         else:
-            for b in nextBattleOutcome:
-                nextBattleOutcome[b] *= nextChance
-            battleChances += nextBattleOutcome
+            for b in nextRoundBattleChances:
+                nextRoundBattleChances[b] *= chance
+            battleChances += nextRoundBattleChances
+    battleStat = StochasticBattleState.fromDict(battleChances)
     
-    # update battleOutcomes
+    # update fullBattleChances
     lock.acquire()
-    if battle not in battleOutcomes:
-        battleOutcomes[battle] = battleChances
+    if battle not in fullBattleChances:
+        fullBattleChances[battle] = battleChances
+        fullBattleStats[battle] = battleStat
     lock.release()
     return battleChances
 
