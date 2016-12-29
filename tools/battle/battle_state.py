@@ -158,6 +158,10 @@ class StochasticBattleState(object):
         self.unitAdvantageAvg, self.stdUnitAdvantage = avgAndStd(map(lambda s: s.unitAdvantage(), states), chances)
         self.valueAdvantageAvg, self.stdValueAdvantage = avgAndStd(map(lambda s: s.valueAdvantage(), states), chances)
     
+    @staticmethod
+    def fromDict(stateChancesDict):
+        return StochasticBattleState(stateChancesDict.keys(), stateChancesDict.values())
+    
     ### object information ###
     
     def hasEnded(self):
