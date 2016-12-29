@@ -148,12 +148,25 @@ Move Points and initiates a battle.
 
 ### Move Points (MP)
 
-Moves between regions normally cost 2 MP.<br>
-Moves starting in a friendly region with at least one coin invested cost 1 MP.<br>
-The total amount of MP consumed may never exceed the given amount (typically 2).
+Moves between regions normally cost 2 MP. The total amount of MP consumed may never exceed 2.
+ 
+#### Exception: Moving along a road
 
-*Example: My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
-but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
+A move starting in a land region that is
+
+1. A friendly region before moving any units
+1. Has at least one coin invested
+
+only costs 1 MP.
+
+*Examples:*
+* *My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
+  but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
+  England and N-France have an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
+  Middle East, I still can't get to N-Africa even if I move a unit to Egypt because Egypt is not a
+  friendly region before moving any units.*
 
 ### Ending move
 
