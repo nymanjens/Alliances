@@ -156,7 +156,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Update a battle chance graph.')
     parser.add_argument('type', type=str, choices=["full", "simple", "small"], help='battle chance graph type')
     parser.add_argument('--samples', type=int, default=2500, help='nr of samples per battle case')
-    parser.add_argument('--maxinfantry', type=int, default=14, help='max nr of infantry')
+    parser.add_argument('--maxinfantry', type=int, default=9, help='max nr of infantry')
     parser.add_argument('--maxartillery', type=int, default=5, help='max nr of artillery')
     
     args = parser.parse_args()
