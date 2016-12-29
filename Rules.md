@@ -50,13 +50,11 @@ There are 2 teams:
 * The Triple Entente:
     * UK
     * Russia
-    * France (&#42;)
+    * France
 * Central players:
     * Germany
     * Ottoman Empire
-    * Austro-Hungarian Empire (&#42;)
-
-(&#42;) Neutral when playing with 4 players
+    * Austro-Hungarian Empire
 
 # Goal of the game
 
@@ -256,9 +254,11 @@ At any point in the game, you are allowed to give coins to another player.
 
 # Initial setup
 
-## General setup
+## Apply scenario
 
-### Coins
+Choose a scenario for the desired number of players *at random* and apply it.
+
+## Coins
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
@@ -268,89 +268,9 @@ At any point in the game, you are allowed to give coins to another player.
     * Move x 3
     * Train units x 2
 
-### Units per player
-
-*(ignore the players that are not in the game)*
-
-* **UK**
-    * 2 infantry in England
-    * 1 infantry in Scotland
-* **Germany**
-    * 2 infantry in E-Germany
-    * 1 infantry in W-Germany
-* **Russia**
-    * 2 infantry in Russia
-    * 1 infantry in Ukraine
-* **Ottoman Empire**
-    * 2 infantry in Turkey
-    * 1 infantry in Middle East
-* **France**
-    * 2 infantry in N-France
-    * 1 infantry in S-France
-* **Austro-Hungarian Empire**
-    * 2 infantry in Austria
-    * 1 infantry in Hungary
-
-### Initial seeding
+## Initial seeding
 
 For every unoccupied region, roll a dice. If its result is:
 
-* 1-2: Nothing happens
-* 3-4: Add 1 coin
-* 5-6: Add 2 coins + neutral infantry
-
-## 6 players
-
-Add the following to the map:
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Trenches</th>
-  </tr>
-  <tr>
-    <td>N-France</td>
-    <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>W-Germany</td>
-    <td>with border France</td>
-  </tr>
-</table>
-
-## 4 players
-
-This game is without the Austro-Hungarian Empire and France.
-
-Add the following to the map:
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Neutral infantry</th>
-    <th>Coins</th>
-    <th>Trenches</th>
-  </tr>
-  <tr>
-    <td>N-France</td>
-    <td>2</td>
-    <td>3</td>
-    <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>Austria</td>
-    <td>2</td>
-    <td>3</td>
-    <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>Italy</td>
-    <td>2</td>
-    <td>2</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>N-Africa</td>
-    <td>1</td>
-    <td>2</td>
-    <td></td>
-  </tr>
-</table>
+* 1-3: Nothing happens
+* 4-6: Add 1 coin
