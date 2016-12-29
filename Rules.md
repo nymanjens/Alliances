@@ -203,12 +203,9 @@ A battle has one or more rounds. Every round has following parts:
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to (in mandatory order of possibility):
-    * An adjacent region owned by the defender
-    * An adjacent unoccupied region
-    * The above, but moving through as few as possible friendly regions
+   move to an adjacent land region that is unoccupied or owned by the defender.
 
-  If none of the above are found, the units are killed. If there is choice, the defender may choose
+  If no such regions are found, the units are killed. If there is choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
