@@ -76,6 +76,13 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
+    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
+       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
+       came first in the last command round order wins. If this is the first turn, skip this step.
+
+       The winner pays the bidded coins to the supply, becomes start player and chooses the
+       direction of the move command round order. The full circle of the move command round order
+       should always be the same as that of the initial move command round order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in move command round order
@@ -99,13 +106,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        All added units must be payed immediately.
     1. **Advance turn counter** by one
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins.
-
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
