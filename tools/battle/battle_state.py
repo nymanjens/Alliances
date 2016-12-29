@@ -143,6 +143,54 @@ class SimpleBattleState(object):
     def __hash__(self):
         return hash(self.battleState)
 
+
+class BattleStateRetreat(object):
+    '''Don't use as a battle graph state key.'''
+    
+    def __init__(self, battle, retreater):
+        assert retreater in ['attacker', 'defender']
+        assert not battle.hasEnded(), "can't retreat if battle already over"
+        self.battle = battle
+        self.retreater = retreater
+        
+        # to support accessing these directly
+        self.attackingArmy = battle.attackingArmy
+        self.defendingArmy = battle.defendingArmy
+    
+    @staticmethod
+    def attackerRetreats(battle):
+        return BattleStateRetreat(battle, 'attacker')
+    
+    @staticmethod
+    def defenderRetreats(battle):
+        return BattleStateRetreat(battle, 'defender')
+    
+    ### object information ###
+    
+    def hasEnded(self):
+        return True
+    
+    def attackerWon(self):
+        return self.retreater=='defender'
+    
+    def defenderWon(self):
+        return self.retreater=='attacker'
+    
+    def unitAdvantage(self):
+        return self.battle.unitAdvantage()
+    
+    def valueAdvantage(self):
+        return self.battle.valueAdvantage()
+    
+    ### overrides ###
+    
+    def __str__(self):
+        return str(self.battle) + " || {} retreated".format(self.retreater)
+    
+    def __repr__(self):
+        return self.__str__()
+
+
 class StochasticBattleState(object):
     '''Only used for analysis'''
     
@@ -157,6 +205,9 @@ class StochasticBattleState(object):
         
         self.unitAdvantageAvg, self.stdUnitAdvantage = avgAndStd(map(lambda s: s.unitAdvantage(), states), chances)
         self.valueAdvantageAvg, self.stdValueAdvantage = avgAndStd(map(lambda s: s.valueAdvantage(), states), chances)
+        
+        self.attackerRetreatChance = sum(c for s,c in zip(states, chances) if hasattr(s, 'retreater') and s.retreater=="attacker")
+        self.defenderRetreatChance = sum(c for s,c in zip(states, chances) if hasattr(s, 'retreater') and s.retreater=="defender")
     
     @staticmethod
     def fromDict(stateChancesDict):
@@ -178,6 +229,12 @@ class StochasticBattleState(object):
     
     def valueAdvantage(self):
         return self.valueAdvantageAvg, self.stdValueAdvantage
+    
+    def attackerRetreat(self):
+        return self.attackerRetreatChance
+    
+    def defenderRetreat(self):
+        return self.defenderRetreatChance
     
     ### overrides ###
     

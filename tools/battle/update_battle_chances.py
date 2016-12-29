@@ -1,5 +1,5 @@
 from army import Army
-from battle_state import BattleState, SimpleBattleState, StochasticBattleState
+from battle_state import BattleState, SimpleBattleState, StochasticBattleState, BattleStateRetreat
 from collections import defaultdict, Counter
 from multiprocessing import Manager
 from cPickle import dump
@@ -75,6 +75,17 @@ def convertToGraph(battleGraph):
     graph.add_weighted_edges_from(edgeList)
     return graph
 
+def simpleAttackerRetreatStrat(battle, roundStat, fullBattleStat):
+    if fullBattleStat.attackerWon()<fullBattleStat.defenderWon() and roundStat.valueAdvantage()[0]<0:
+        return True
+    return False
+
+def simpleDefenderRetreatStrat(battle, roundStat, fullBattleStat):
+    if (fullBattleStat.attackerWon()>fullBattleStat.defenderWon()+.2 or 
+            fullBattleStat.attackerWon()>fullBattleStat.defenderWon()<.2) and roundStat.valueAdvantage()[0]>0:
+        return True
+    return False
+
 def calcIntensive(battles):
     with Manager() as manager:
         battleGraph = manager.dict()
@@ -87,11 +98,18 @@ def calcIntensive(battles):
         fullBattleStats = manager.dict()
         parallelExec(calcFullBattleChances, ((battle, battleGraph, fullBattleChances, fullBattleStats, lock) for battle in battles))
         
+        print "calculating retreat battle chances..."
+        retreatBattleChances = manager.dict()
+        retreatBattleStats = manager.dict()
+        parallelExec(calcRetreatBattleChances, ((battle, battleGraph, retreatBattleChances, retreatBattleStats, lock, 
+                roundStats, fullBattleStats, simpleAttackerRetreatStrat, simpleDefenderRetreatStrat) for battle in battles))
+        
         print "copying result..."
         battleGraph = dict(battleGraph)
         roundStats = dict(roundStats)
         fullBattleStats = dict(fullBattleStats)
-    return battleGraph, {"round": roundStats, "full": fullBattleStats}
+        retreatBattleStats = dict(retreatBattleStats)
+    return battleGraph, {"round": roundStats, "full": fullBattleStats, "retreat": retreatBattleStats}
 
 def calcBattleRoundChances(battle, battleGraph, roundStats, lock):
     # prevent unnecessary calculations
@@ -146,6 +164,51 @@ def calcFullBattleChances(battle, graph, fullBattleChances, fullBattleStats, loc
     if battle not in fullBattleChances:
         fullBattleChances[battle] = battleChances
         fullBattleStats[battle] = battleStat
+    lock.release()
+    return battleChances
+
+def calcRetreatBattleChances(battle, graph, retreatBattleChances, retreatBattleStats, lock, 
+        roundBattleStats, fullBattleStats, attackerRetreatStrat, defenderRetreatStrat):
+    # prevent unnecessary calculations
+    if battle.hasEnded(): return None
+    lock.acquire()
+    exists = battle in retreatBattleChances
+    if exists: battleChances = retreatBattleChances[battle]
+    lock.release()
+    if exists: return battleChances
+    
+    # recursively calculate
+    battleChances = Counter()
+    for nextRound, chance in graph[battle].iteritems():
+        # check for retreat
+        attackerRetreats = False
+        defenderRetreats = False
+        if not nextRound.hasEnded():
+            attackerRetreats = attackerRetreatStrat(nextRound, roundBattleStats[nextRound], fullBattleStats[nextRound])
+            defenderRetreats = defenderRetreatStrat(nextRound, roundBattleStats[nextRound], fullBattleStats[nextRound])
+        
+        if attackerRetreats:
+            nextRoundRetreat = BattleStateRetreat.attackerRetreats(nextRound)
+            battleChances[nextRoundRetreat] += chance
+        elif defenderRetreats:
+            nextRoundRetreat = BattleStateRetreat.defenderRetreats(nextRound)
+            battleChances[nextRoundRetreat] += chance
+        else:
+            nextRoundBattleChances = calcRetreatBattleChances(nextRound, graph, retreatBattleChances, retreatBattleStats, lock, 
+                roundBattleStats, fullBattleStats, attackerRetreatStrat, defenderRetreatStrat)
+            if nextRoundBattleChances==None:
+                battleChances[nextRound] += chance
+            else:
+                for b in nextRoundBattleChances:
+                    nextRoundBattleChances[b] *= chance
+                battleChances += nextRoundBattleChances
+    battleStat = StochasticBattleState.fromDict(battleChances)
+    
+    # update retreatBattleChances
+    lock.acquire()
+    if battle not in retreatBattleChances:
+        retreatBattleChances[battle] = battleChances
+        retreatBattleStats[battle] = battleStat
     lock.release()
     return battleChances
 
