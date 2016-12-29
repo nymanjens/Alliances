@@ -146,9 +146,9 @@ Units can move to any adjacent region, except for friendly regions owned by othe
 
 ### Roads
 
-Moves can hop over a single friendly region if a road exists between the starting region and that
-friendly region. A road exists between adjacent regions if both have at least one invested coin.
-The road should have been present before resolving the move token.
+Moves can hop over a single friendly region if a road exists (before resolving the move token) between
+the starting region and that friendly region. A road exists between adjacent regions if both have at
+least one invested coin.
 
 *Examples:*
 
