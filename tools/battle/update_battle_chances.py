@@ -37,8 +37,7 @@ def main(typ):
     print "Calculating battle chances for {} possible battle cases".format(textMod)
     print "Assuming max infantry of {} and max artillery of {}".format(MAX_INFANTRY, MAX_ARTILLERY)
     print "--> Number of battle cases: {}".format(len(battles))
-    graph = updateGraph(battles, "battle_graph_" + typ)
-    print "Number of nodes in battle chances graph: {}".format(len(graph))
+    updateGraph(battles, "battle_graph_" + typ)
 
 def updateGraph(battles, name):
     print "calculating battle chances..."
@@ -60,7 +59,8 @@ def updateGraph(battles, name):
     with gzip.open(filename, "wb") as fil:
         dump(graph, fil, 2)
     
-    return graph
+    print "Number of nodes in battle chances graph: {}".format(graph.number_of_nodes())
+    print "Number of edges in battle chances graph: {}".format(graph.number_of_edges())
 
 def combineResults(graph, battleOutcomes):
     bar = ProgressBar(max_value=len(battleOutcomes))
@@ -155,8 +155,8 @@ def generateBattles(battleStateType=BattleState):
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Update a battle chance graph.')
     parser.add_argument('type', type=str, choices=["full", "simple", "small"], help='battle chance graph type')
-    parser.add_argument('--samples', type=int, default=2500, help='nr of samples per battle case')
-    parser.add_argument('--maxinfantry', type=int, default=14, help='max nr of infantry')
+    parser.add_argument('--samples', type=int, default=5000, help='nr of samples per battle case')
+    parser.add_argument('--maxinfantry', type=int, default=9, help='max nr of infantry')
     parser.add_argument('--maxartillery', type=int, default=5, help='max nr of artillery')
     
     args = parser.parse_args()
