@@ -37,8 +37,7 @@ def main(typ):
     print "Calculating battle chances for {} possible battle cases".format(textMod)
     print "Assuming max infantry of {} and max artillery of {}".format(MAX_INFANTRY, MAX_ARTILLERY)
     print "--> Number of battle cases: {}".format(len(battles))
-    graph = updateGraph(battles, "battle_graph_" + typ)
-    print "Number of nodes in battle chances graph: {}".format(len(graph))
+    updateGraph(battles, "battle_graph_" + typ)
 
 def updateGraph(battles, name):
     print "calculating battle chances..."
@@ -60,7 +59,8 @@ def updateGraph(battles, name):
     with gzip.open(filename, "wb") as fil:
         dump(graph, fil, 2)
     
-    return graph
+    print "Number of nodes in battle chances graph: {}".format(graph.number_of_nodes())
+    print "Number of edges in battle chances graph: {}".format(graph.number_of_edges())
 
 def combineResults(graph, battleOutcomes):
     bar = ProgressBar(max_value=len(battleOutcomes))
