@@ -162,7 +162,7 @@ only costs 1 MP.
 *Examples:*
 
 * *My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
-  but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
+  but the sea isn't a friendly region so I cannot move any further. The remaining 1 MP is lost.*
 * *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
   England and N-France have an invested coin.*
 * *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
