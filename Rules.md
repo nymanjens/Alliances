@@ -12,7 +12,6 @@
 * **Unit:** Military unit, either an infantry or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
-    * **MP:** move point
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -131,7 +130,7 @@ Token types:
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All healthy units in this region get 2 MP. Units can move separately to multiple regions.
+  All healthy units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
@@ -143,22 +142,23 @@ Token types:
 
 ## Moving units
 
-Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
-Move Points and initiates a battle.
+Units can move to any adjacent region, except for friendly regions owned by other players.
 
-### Move Points (MP)
+### Roads
 
-Moves between regions normally cost 2 MP.<br>
-Moves starting in a friendly region with at least one coin invested cost 1 MP.<br>
-The total amount of MP consumed may never exceed the given amount (typically 2).
+Moves can hop over a single friendly region if a road exists (before resolving the move token) between
+the starting region and that friendly region. A road exists between adjacent regions if both have at
+least one invested coin.
 
-*Example: My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
-but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
+*Examples:*
 
-### Ending move
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
+  England and N-France have an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
+  Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
+  Egypt is not a friendly region before resolving this move token.*
 
-Units can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
-regions owned by the same player. Units can't end in friendly regions owned by other players.
+### Raiding
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
