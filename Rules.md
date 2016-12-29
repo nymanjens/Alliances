@@ -74,6 +74,13 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
+    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
+       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
+       came first in the last command round order wins. If this is the first turn, skip this step.
+
+       The winner pays the bidded coins to the supply, becomes start player and chooses the
+       direction of the move command round order. The full circle of the move command round order
+       should always be the same as that of the initial move command round order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in move command round order
@@ -97,13 +104,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        All added units must be payed immediately.
     1. **Advance turn counter** by one
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins.
-
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
@@ -201,12 +201,9 @@ A battle has one or more rounds. Every round has following parts:
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to (in mandatory order of possibility):
-    * An adjacent region owned by the defender
-    * An adjacent unoccupied region
-    * The above, but moving through as few as possible friendly regions
+   move to an adjacent land region that is unoccupied or owned by the defender.
 
-  If none of the above are found, the units are killed. If there is choice, the defender may choose
+  If no such regions are found, the units are killed. If there is choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
