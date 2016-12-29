@@ -147,8 +147,16 @@ Units can move to any adjacent region, except for friendly regions owned by othe
 ### Roads
 
 Moves can hop over a single friendly region if a road exists between the starting region and that
-friendly region.<br>
-A road exists between adjacent regions if both have at least one invested coin.
+friendly region. A road exists between adjacent regions if both have at least one invested coin.
+The road should have been present before resolving the move token.
+
+*Examples:*
+
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
+  England and N-France have an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
+  Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
+  Egypt is not a friendly region before resolving this move token.*
 
 ### Raiding
 
