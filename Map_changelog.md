@@ -28,3 +28,7 @@
 
 * Caucasus's coin count increses from 1 to 2
 * Yugoslavia's coin count increses from 1 to 2
+
+## Changes from v1.8 to v1.9
+
+* Ukraine's coin count decreases from 4 to 3
