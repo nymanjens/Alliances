@@ -234,7 +234,7 @@ When attacking a region that has a trench at the border the attacker is crossing
 advantages:
 
 * Defending units cannot be wounded (only killed)
-* Attacking infantry need 2 rolls >= 5 for kill
+* The defender gets **2** dice for every healthy defending unit
 
 ### Fighting neutral regions
 
