@@ -12,7 +12,6 @@
 * **Unit:** Military unit, either an infantry or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
-    * **MP:** move point
 * **Strategic city:** Star on the map
 * **Players**
     * **Ally:** Other player that you have a bilateral right of passage agreement with. By default,
@@ -83,6 +82,13 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
+    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
+       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
+       came first in the last command round order wins. If this is the first turn, skip this step.
+
+       The winner pays the bidded coins to the supply, becomes start player and chooses the
+       direction of the move command round order. The full circle of the move command round order
+       should always be the same as that of the initial move command round order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in move command round order
@@ -106,13 +112,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        All added units must be payed immediately.
     1. **Advance turn counter** by one
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins.
-
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
@@ -138,7 +137,7 @@ Token types:
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All healthy units in this region get 2 MP. Units can move separately to multiple regions.
+  All healthy units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
@@ -150,22 +149,23 @@ Token types:
 
 ## Moving units
 
-Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
-Move Points and initiates a battle.
+Units can move to any adjacent region, except for friendly regions owned by other players.
 
-### Move Points (MP)
+### Roads
 
-Moves between regions normally cost 2 MP.<br>
-Moves starting in a friendly region with at least one coin invested cost 1 MP.<br>
-The total amount of MP consumed may never exceed the given amount (typically 2).
+Moves can hop over a single friendly region if a road exists (before resolving the move token) between
+the starting region and that friendly region. A road exists between adjacent regions if both have at
+least one invested coin.
 
-*Example: My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
-but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
+*Examples:*
 
-### Ending move
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
+  England and N-France have an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
+  Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
+  Egypt is not a friendly region before resolving this move token.*
 
-Units can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
-regions owned by the same player. Units can't end in friendly regions owned by other players.
+### Raiding
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
@@ -210,12 +210,9 @@ A battle has one or more rounds. Every round has following parts:
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to (in mandatory order of possibility):
-    * An adjacent region owned by the defender
-    * An adjacent unoccupied region
-    * The above, but moving through as few as possible friendly regions
+   move to an adjacent land region that is unoccupied or owned by the defender.
 
-  If none of the above are found, the units are killed. If there is choice, the defender may choose
+  If no such regions are found, the units are killed. If there is choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
