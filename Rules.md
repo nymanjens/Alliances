@@ -96,15 +96,14 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
     1. **Unit healing:** All wounded units are healed
-    1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
-       condition)
+    1. **Point scoring:** Every team scores 1 point per strategic city they own
     1. **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
        at regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
 
        All added units must be payed immediately.
-    1. **Advance turn counter** by one
+    1. **Advance turn counter** by one (check game end condition)
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
