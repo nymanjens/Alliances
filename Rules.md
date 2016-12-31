@@ -60,7 +60,7 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn `n` (`n in {1..10}`), have at least a `11 - n` point advantage over the
+1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
    other team (ends the game)
 1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
