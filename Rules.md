@@ -201,7 +201,7 @@ A battle has one or more rounds. Every round has following parts:
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
    move to a single adjacent land region that is either unoccupied or owned by the defender.
-   Exception: units can't retreat to the region where the attacker's move token was resolved.
+   Exception: units can't retreat to the region where the attacker's move started.
 
   If no such regions are found, the units are killed. If there is choice, the defender may choose
   the region.
