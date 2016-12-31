@@ -2,7 +2,7 @@
 
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Initial move command round order:** Player order: The game starts with the order below:
+    * **Initial player order:** The game starts with the following order:
         * UK
         * Germany
         * Russia
