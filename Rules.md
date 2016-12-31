@@ -2,7 +2,7 @@
 
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Initial move command round order:** Player order: The game starts with the order below:
+    * **Initial player order:** The game starts with the order below:
         * UK
         * Germany
         * Russia
@@ -76,14 +76,14 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token revealing:** All tokens are turned face up
     1. **Bid for start player**: All players put a number of coins in their hand and reveal their
        bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins. If this is the first turn, skip this step.
+       came first in the last player order wins. If this is the first turn, skip this step.
 
        The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
+       direction of the player order. The full circle of the player order
+       should always be the same as that of the initial player order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
-        * **Move**: Resolved in move command round order
+        * **Move**: Resolved in player order
         * **Train units**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
