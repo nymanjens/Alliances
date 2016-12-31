@@ -111,8 +111,6 @@ player available, all write down their action and execute that action.
 
 # Command tokens
 
-Token types:
-
 * **Invest**:<br>
   You may change the number of coins in this region.
 
