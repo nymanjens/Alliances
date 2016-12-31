@@ -198,15 +198,16 @@ A battle has one or more rounds. Every round has following parts:
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the region
    where to move started.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to an adjacent land region that is unoccupied or owned by the defender.
+   move to a single adjacent land region that is either unoccupied or owned by the defender.
+   Exception: units can't retreat to the region where the attacker's move started.
 
   If no such regions are found, the units are killed. If there is choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
 
-    * If the attacker completely **vacated a region** to perform this attack, it could happen that
-      the defending units retreat to this region.
+    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
+      may *not* retreat to this region.
     * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
       another region under attack. Healthy retreated units are allowed to participate in the
       following battle.
