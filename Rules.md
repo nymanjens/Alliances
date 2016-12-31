@@ -133,9 +133,10 @@ player available, all write down their action and execute that action.
   previous one concluded.
 
 * **Train units**:<br>
-    * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
-    * In other land regions: +1 infantry or upgrade 1 infantry to artillery
-    * In sea regions: Nothing happens
+  You are allowed to change units in a region up to a total cost of 1 more in non-starred regions,
+  and 2 more in starred regions.
+
+  This token is ignored in **sea regions**.
 
 ## Moving units
 
