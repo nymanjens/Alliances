@@ -129,7 +129,8 @@ player available, all write down their action and execute that action.
   All healthy units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
-  destinations in the desired order. Where necessary, battles are resolved in that order.
+  destinations. If there are multiple battles, the player chooses the subsequent battle every time the
+  previous one concluded.
 
 * **Train units**:<br>
     * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
