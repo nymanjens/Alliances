@@ -12,7 +12,6 @@
 * **Unit:** Military unit, either an infantry or an artillery
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
-    * **MP:** move point
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -50,13 +49,11 @@ There are 2 teams:
 * The Triple Entente:
     * UK
     * Russia
-    * France (&#42;)
+    * France
 * Central players:
     * Germany
     * Ottoman Empire
-    * Austro-Hungarian Empire (&#42;)
-
-(&#42;) Neutral when playing with 4 players
+    * Austro-Hungarian Empire
 
 # Goal of the game
 
@@ -76,6 +73,13 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
+    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
+       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
+       came first in the last command round order wins. If this is the first turn, skip this step.
+
+       The winner pays the bidded coins to the supply, becomes start player and chooses the
+       direction of the move command round order. The full circle of the move command round order
+       should always be the same as that of the initial move command round order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in move command round order
@@ -90,22 +94,14 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
     1. **Unit healing:** All wounded units are healed
-    1. **Point scoring:** Every team scores 1 point per strategic city they own (check game end
-       condition)
+    1. **Point scoring:** Every team scores 1 point per strategic city they own
     1. **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
        at regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
 
        All added units must be payed immediately.
-    1. **Advance turn counter** by one
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins.
-
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
+    1. **Advance turn counter** by one and check the game end condition
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
@@ -131,7 +127,7 @@ Token types:
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All healthy units in this region get 2 MP. Units can move separately to multiple regions.
+  All healthy units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations in the desired order. Where necessary, battles are resolved in that order.
@@ -143,22 +139,23 @@ Token types:
 
 ## Moving units
 
-Units can move through unoccupied, friendly and sea regions. Moving to an enemy region consumes all
-Move Points and initiates a battle.
+Units can move to any adjacent region, except for friendly regions owned by other players.
 
-### Move Points (MP)
+### Roads
 
-Moves between regions normally cost 2 MP.<br>
-Moves starting in a friendly region with at least one coin invested cost 1 MP.<br>
-The total amount of MP consumed may never exceed the given amount (typically 2).
+Moves can hop over a single friendly region if a road exists (before resolving the move token) between
+the starting region and that friendly region. A road exists between adjacent regions if both have at
+least one invested coin.
 
-*Example: My infantry gets 2 MP. When entering sea from my region with 2 coins, 1 MP is consumed,
-but the sea isn't a friendly region so I can't move any further. The remaining 1 MP gets lost.*
+*Examples:*
 
-### Ending move
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
+  England and N-France have an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
+  Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
+  Egypt is not a friendly region before resolving this move token.*
 
-Units can end their move in sea regions, unoccupied regions, enemy regions, neutral regions or
-regions owned by the same player. Units can't end in friendly regions owned by other players.
+### Raiding
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
@@ -203,12 +200,9 @@ A battle has one or more rounds. Every round has following parts:
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
    touched unoccupied, sea or owned region.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to (in mandatory order of possibility):
-    * An adjacent region owned by the defender
-    * An adjacent unoccupied region
-    * The above, but moving through as few as possible friendly regions
+   move to an adjacent land region that is unoccupied or owned by the defender.
 
-  If none of the above are found, the units are killed. If there is choice, the defender may choose
+  If no such regions are found, the units are killed. If there is choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
@@ -237,7 +231,7 @@ When attacking a region that has a trench at the border the attacker is crossing
 advantages:
 
 * Defending units cannot be wounded (only killed)
-* Attacking infantry need 2 rolls >= 5 for kill
+* The defender gets **2** dice for every healthy defending unit
 
 ### Fighting neutral regions
 
@@ -256,9 +250,11 @@ At any point in the game, you are allowed to give coins to another player.
 
 # Initial setup
 
-## General setup
+## Apply scenario
 
-### Coins
+Choose a [scenario](Scenarios.md) for the desired number of players *at random* and apply it.
+
+## Coins
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
@@ -268,89 +264,9 @@ At any point in the game, you are allowed to give coins to another player.
     * Move x 3
     * Train units x 2
 
-### Units per player
-
-*(ignore the players that are not in the game)*
-
-* **UK**
-    * 2 infantry in England
-    * 1 infantry in Scotland
-* **Germany**
-    * 2 infantry in E-Germany
-    * 1 infantry in W-Germany
-* **Russia**
-    * 2 infantry in Russia
-    * 1 infantry in Ukraine
-* **Ottoman Empire**
-    * 2 infantry in Turkey
-    * 1 infantry in Middle East
-* **France**
-    * 2 infantry in N-France
-    * 1 infantry in S-France
-* **Austro-Hungarian Empire**
-    * 2 infantry in Austria
-    * 1 infantry in Hungary
-
-### Initial seeding
+## Initial seeding
 
 For every unoccupied region, roll a dice. If its result is:
 
-* 1-2: Nothing happens
-* 3-4: Add 1 coin
-* 5-6: Add 2 coins + neutral infantry
-
-## 6 players
-
-Add the following to the map:
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Trenches</th>
-  </tr>
-  <tr>
-    <td>N-France</td>
-    <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>W-Germany</td>
-    <td>with border France</td>
-  </tr>
-</table>
-
-## 4 players
-
-This game is without the Austro-Hungarian Empire and France.
-
-Add the following to the map:
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Neutral infantry</th>
-    <th>Coins</th>
-    <th>Trenches</th>
-  </tr>
-  <tr>
-    <td>N-France</td>
-    <td>2</td>
-    <td>3</td>
-    <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>Austria</td>
-    <td>2</td>
-    <td>3</td>
-    <td>with border W-Germany</td>
-  </tr>
-  <tr>
-    <td>Italy</td>
-    <td>2</td>
-    <td>2</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>N-Africa</td>
-    <td>1</td>
-    <td>2</td>
-    <td></td>
-  </tr>
-</table>
+* 1-3: Nothing happens
+* 4-6: Add 1 coin
