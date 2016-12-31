@@ -10,6 +10,7 @@
         * France
         * Austro-Hungarian Empire
 * **Unit:** Military unit, either an infantry or an artillery
+    * **Healthy unit:** The default state of a unit. Able to move and participate in combat
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
 * **Strategic city:** Star on the map
