@@ -12,26 +12,7 @@ PROFILE = False
 def main():
     print "loading pkl..."
     graph = loadChanceGraph("battle_graph_full")
-    #printStats(graph, BattleState.fromUnits(3, 2, 6, 1))
-    
-    inconstAtt = 0
-    inconstDef = 0
-    const = 0
-    for n in graph.nodes():
-        if n.hasEnded(): continue
-        if n.attackingArmy.woundedValue()>0: continue
-        statOne = graph.node[n]["round"]
-        statFull = graph.node[n]["full"]
-        attackerNetValue = n.valueAdvantage() - statOne.valueAdvantage()[0]
-        if attackerNetValue>0 and statFull.attackerWon()<statFull.defenderWon():
-            inconstAtt += 1
-        elif attackerNetValue<0 and statFull.attackerWon()>statFull.defenderWon():
-            inconstDef += 1
-        else:
-            const += 1
-    print inconstAtt
-    print inconstDef
-    print const
+    printStats(graph, BattleState.fromUnits(3, 2, 6, 1))
 
 def printStats(graph, battle):
     print "{:<20}{:^20}{:^20}".format("","Attacker", "Defender")
