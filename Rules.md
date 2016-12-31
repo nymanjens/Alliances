@@ -115,7 +115,7 @@ player available, all write down their action and execute that action.
   You may change the number of coins in this region.
 
   Coins are exchanged between the player's supply and the region on the board. The maximum number of
-  coins that may be invested in the region is indicated on the map.
+  coins that may be invested in the region is indicated on the board.
 
   This token is ignored in **sea regions**.
 
