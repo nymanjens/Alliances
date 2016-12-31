@@ -201,7 +201,7 @@ A battle has one or more rounds. Every round has following parts:
    move to a single adjacent land region that is either unoccupied or owned by the defender.
    Exception: units can't retreat to the region where the attacker's move started.
 
-  If no such regions are found, the units are killed. If there is choice, the defender may choose
+  If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
