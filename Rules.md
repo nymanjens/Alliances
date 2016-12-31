@@ -176,8 +176,7 @@ Sea-sea movement is not possible for a unit if both land regions at the crossing
 
 ## Battles
 
-When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
-units.
+When a move proceeds into an enemy region, a battle is initiated with all moved units.
 
 ### Battle mechanic
 
