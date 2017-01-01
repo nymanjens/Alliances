@@ -133,8 +133,8 @@ player available, all write down their action and execute that action.
   previous one concluded.
 
 * **Train units**:<br>
-  You are allowed to change units in a region up to a total cost of 1 more in non-starred regions,
-  and 2 more in starred regions.
+  You can add/upgrade units in this region up to an additional cost of 2 if it's a strategic city,
+  or 1 if it's a normal land region.
 
   This token is ignored in **sea regions**.
 
