@@ -1,3 +1,5 @@
+# Warning: The `individual-goal` branch is deprecated
+
 # Definitions
 
 * **Time:**
