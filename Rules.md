@@ -137,7 +137,7 @@ player available, all write down their action and execute that action.
   city, or 1 coin if it's a normal land region.
 
   This token is ignored in **sea regions**.
-  
+
   *Example: A normal land region contains 1 infantry. You can upgrade that infantry to an artillery
   or add an additional infantry.*
 
