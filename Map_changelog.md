@@ -28,3 +28,7 @@
 
 * Caucasus's coin count increses from 1 to 2
 * Yugoslavia's coin count increses from 1 to 2
+
+## Changes from v1.9 to v1.10
+
+* Portugal's coin count increases from 2 to 4
