@@ -2,7 +2,7 @@
 
 * **Time:**
     * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Initial move command round order:** Player order: The game starts with the order below:
+    * **Initial player order:** The game starts with the order below:
         * UK
         * Germany
         * Russia
@@ -10,6 +10,7 @@
         * France
         * Austro-Hungarian Empire
 * **Unit:** Military unit, either an infantry or an artillery
+    * **Healthy unit:** The default state of a unit. Able to move and participate in combat
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
 * **Strategic city:** Star on the map
@@ -65,7 +66,7 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn `n` (`n in {1..10}`), have at least a `11 - n` point advantage over the
+1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
    other team (ends the game)
 1. Have 5 (6 players) or 6 (4 players) strategic cities at any point in the game to win individually
 1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
@@ -82,14 +83,14 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token revealing:** All tokens are turned face up
     1. **Bid for start player**: All players put a number of coins in their hand and reveal their
        bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins. If this is the first turn, skip this step.
+       came first in the last player order wins. If this is the first turn, skip this step.
 
        The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
+       direction of the player order. The full circle of the player order
+       should always be the same as that of the initial player order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
-        * **Move**: Resolved in move command round order
+        * **Move**: Resolved in player order
         * **Train units**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
@@ -117,13 +118,11 @@ player available, all write down their action and execute that action.
 
 # Command tokens
 
-Token types:
-
 * **Invest**:<br>
   You may change the number of coins in this region.
 
   Coins are exchanged between the player's supply and the region on the board. The maximum number of
-  coins that may be invested in the region is indicated on the map.
+  coins that may be invested in the region is indicated on the board.
 
   This token is ignored in **sea regions**.
 
@@ -137,12 +136,17 @@ Token types:
   All healthy units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
-  destinations in the desired order. Where necessary, battles are resolved in that order.
+  destinations. If there are multiple battles, the player chooses the subsequent battle every time the
+  previous one concluded.
 
 * **Train units**:<br>
-    * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
-    * In other land regions: +1 infantry or upgrade 1 infantry to artillery
-    * In sea regions: Nothing happens
+  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
+  city, or 1 coin if it's a normal land region.
+
+  This token is ignored in **sea regions**.
+
+  *Example: A normal land region contains 1 infantry. You can upgrade that infantry to an artillery
+  or add an additional infantry.*
 
 ## Moving units
 
@@ -184,8 +188,7 @@ Sea-sea movement is not possible for a unit if both land regions at the crossing
 
 ## Battles
 
-When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
-units.
+When a move proceeds into an enemy region, a battle is initiated with all moved units.
 
 ### Battle mechanic
 
@@ -204,13 +207,13 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6:** Kills an enemy unit (*)
 
     Kills are resolved before wounds.
-1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
-   touched unoccupied, sea or owned region.
+1. **Attacker decides to retreat or has no healthy units left:** All units move back to the region
+   where to move started.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
    move to a single adjacent land region that is either unoccupied or owned by the defender.
    Exception: units can't retreat to the region where the attacker's move started.
 
-  If no such regions are found, the units are killed. If there is choice, the defender may choose
+  If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
