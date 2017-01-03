@@ -71,12 +71,12 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        The number-player correspondence is indicated on the board:
 
-       * 1 - UK
-       * 2 - Germany
-       * 3 - Russia
-       * 4 - Ottoman Empire
-       * 5 - France
-       * 6 - Austro-Hungarian Empire
+       * 1 - UK (down)
+       * 2 - Germany (up)
+       * 3 - Russia (down)
+       * 4 - Ottoman Empire (up)
+       * 5 - France (down)
+       * 6 - Austro-Hungarian Empire (up)
 
        The board also indicates the direction of the player order. Note that the full circle of the
        player order should always be the same as that of the above player order.
