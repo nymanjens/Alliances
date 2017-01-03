@@ -1,14 +1,6 @@
 # Definitions
 
-* **Time:**
-    * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Initial player order:** The game starts with the order below:
-        * UK
-        * Germany
-        * Russia
-        * Ottoman Empire
-        * France
-        * Austro-Hungarian Empire
+* **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
     * **Healthy unit:** The default state of a unit. Able to move and participate in combat
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
@@ -74,13 +66,20 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last player order wins. If this is the first turn, skip this step.
+    1. **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
+       becomes the new start player. If that player is not in the game, roll again until it is.
 
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the player order. The full circle of the player order
-       should always be the same as that of the initial player order.
+       The number-player correspondence is indicated on the board:
+
+       * 1 - UK
+       * 2 - Germany
+       * 3 - Russia
+       * 4 - Ottoman Empire
+       * 5 - France
+       * 6 - Austro-Hungarian Empire
+       
+       The board also indicates the direction of the player order. Note that the full circle of the
+       player order should always be the same as that of the above player order.
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in player order
