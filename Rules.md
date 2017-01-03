@@ -133,10 +133,13 @@ player available, all write down their action and execute that action.
   previous one concluded.
 
 * **Train units**:<br>
-  You can add/upgrade units in this region up to an additional cost of 2 if it's a strategic city,
-  or 1 if it's a normal land region.
+  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
+  city, or 1 coin if it's a normal land region.
 
   This token is ignored in **sea regions**.
+  
+  *Example: A normal land region contains 1 infantry. You can upgrade that infantry to an artillery
+  or add an additional infantry.*
 
 ## Moving units
 
