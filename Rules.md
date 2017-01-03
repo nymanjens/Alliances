@@ -77,7 +77,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        * 4 - Ottoman Empire
        * 5 - France
        * 6 - Austro-Hungarian Empire
-       
+
        The board also indicates the direction of the player order. Note that the full circle of the
        player order should always be the same as that of the above player order.
     1. **Commands:** Resolve token types in following order:
