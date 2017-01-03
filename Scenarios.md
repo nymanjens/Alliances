@@ -120,7 +120,7 @@
   </tr>
   <tr>
     <td>Sweden</td>
-    <td>1</td>
+    <td>2</td>
     <td>2</td>
     <td></td>
   </tr>
@@ -132,7 +132,7 @@
   </tr>
   <tr>
     <td>Benelux</td>
-    <td>2</td>
+    <td>1</td>
     <td>2</td>
     <td></td>
   </tr>
@@ -156,19 +156,19 @@
   </tr>
   <tr>
     <td>Poland</td>
-    <td>2</td>
+    <td>1</td>
     <td>2</td>
     <td></td>
   </tr>
   <tr>
     <td>Italy</td>
-    <td>2</td>
+    <td>1</td>
     <td>2</td>
     <td></td>
   </tr>
   <tr>
     <td>N-Africa</td>
-    <td>1</td>
+    <td>2</td>
     <td>2</td>
     <td></td>
   </tr>
