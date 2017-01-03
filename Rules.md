@@ -133,9 +133,13 @@ player available, all write down their action and execute that action.
   previous one concluded.
 
 * **Train units**:<br>
-    * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
-    * In other land regions: +1 infantry or upgrade 1 infantry to artillery
-    * In sea regions: Nothing happens
+  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
+  city, or 1 coin if it's a normal land region.
+
+  This token is ignored in **sea regions**.
+
+  *Example: A normal land region contains 1 infantry. You can upgrade that infantry to an artillery
+  or add an additional infantry.*
 
 ## Moving units
 
