@@ -161,7 +161,7 @@ least one invested coin.
   Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
   Egypt is not a friendly region before resolving this move token.*
 
-### Raiding
+### Plundering
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
