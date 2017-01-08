@@ -1,15 +1,8 @@
 # Definitions
 
-* **Time:**
-    * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Initial move command round order:** Player order: The game starts with the order below:
-        * UK
-        * Germany
-        * Russia
-        * Ottoman Empire
-        * France
-        * Austro-Hungarian Empire
+* **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
+    * **Healthy unit:** The default state of a unit. Able to move and participate in combat
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
       move (but it can retreat).
 * **Strategic city:** Star on the map
@@ -59,7 +52,7 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn `n` (`n in {1..10}`), have at least a `11 - n` point advantage over the
+1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
    other team (ends the game)
 1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
@@ -73,16 +66,26 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last command round order wins. If this is the first turn, skip this step.
+    1. **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
+       becomes the new start player. If that player is not in the game, roll again until it is.
 
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the move command round order. The full circle of the move command round order
-       should always be the same as that of the initial move command round order.
+       The number-player correspondence is indicated on the board:
+
+        * 1 - UK (down)
+        * 2 - Germany (up)
+        * 3 - Russia (down)
+        * 4 - Ottoman Empire (up)
+        * 5 - France (down)
+        * 6 - Austro-Hungarian Empire (up)
+
+       The board also indicates the direction of the player order. Note that the full circle of the
+       player order should always be the same as that of the above player order.
+
+       *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
+       Austro-Hungarians, France.*
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
-        * **Move**: Resolved in move command round order
+        * **Move**: Resolved in player order
         * **Train units**: Resolved simultaneously (&#42;)
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
@@ -110,13 +113,11 @@ player available, all write down their action and execute that action.
 
 # Command tokens
 
-Token types:
-
 * **Invest**:<br>
   You may change the number of coins in this region.
 
   Coins are exchanged between the player's supply and the region on the board. The maximum number of
-  coins that may be invested in the region is indicated on the map.
+  coins that may be invested in the region is indicated on the board.
 
   This token is ignored in **sea regions**.
 
@@ -130,12 +131,17 @@ Token types:
   All healthy units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
-  destinations in the desired order. Where necessary, battles are resolved in that order.
+  destinations. If there are multiple battles, the player chooses the subsequent battle every time the
+  previous one concluded.
 
 * **Train units**:<br>
-    * In regions with a strategic city: +2 infantry or +1 artillery or upgrade 2 infantry to artillery
-    * In other land regions: +1 infantry or upgrade 1 infantry to artillery
-    * In sea regions: Nothing happens
+  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
+  city, or 1 coin if it's a normal land region.
+
+  This token is ignored in **sea regions**.
+
+  *Example: A normal land region contains 1 infantry. You can upgrade that infantry to an artillery
+  or add an additional infantry.*
 
 ## Moving units
 
@@ -155,7 +161,7 @@ least one invested coin.
   Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
   Egypt is not a friendly region before resolving this move token.*
 
-### Raiding
+### Plundering
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
@@ -177,8 +183,7 @@ Sea-sea movement is not possible for a unit if both land regions at the crossing
 
 ## Battles
 
-When a move proceeds into an enemy region, the move ends and a battle is initiated with all moved
-units.
+When a move proceeds into an enemy region, a battle is initiated with all moved units.
 
 ### Battle mechanic
 
@@ -197,25 +202,30 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6:** Kills an enemy unit (*)
 
     Kills are resolved before wounds.
-1. **Attacker decides to retreat or has no healthy units left:** All units move back to the last
-   touched unoccupied, sea or owned region.
-1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to an adjacent land region that is unoccupied or owned by the defender.
+1. **Attacker decides to retreat or has no healthy units left:** All units move back to the region
+   where to move started.
 
-  If no such regions are found, the units are killed. If there is choice, the defender may choose
+   Edge case: If the attacker has no healthy units left and the defender has no units left, the
+   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
+   supply.
+1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
+   move to a single adjacent land region that is either unoccupied or owned by the defender.
+   Exception: units can't retreat to the region where the attacker's move started.
+
+  If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
 
   Clarifications for edge cases:
 
-    * If the attacker completely **vacated a region** to perform this attack, it could happen that
-      the defending units retreat to this region.
+    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
+      may *not* retreat to this region.
     * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
       another region under attack. Healthy retreated units are allowed to participate in the
       following battle.
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round but the token returns to the defender at the end of the turn.
+  in a next command round after which the token returns to the defender.
 
 (&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
