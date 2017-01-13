@@ -21,7 +21,7 @@ ARMY_LABEL = lambda army: "I{} A{}".format(army.infantry, army.artillery)
 UNIT_LABEL = lambda army: "U{}".format(army.unitCount())
 
 VALUE_MAPPINGS = [
-    ( "win_balance", ["full", "retreat", "round"], "chance diff", lambda b, bs: bs.attackerWon()-bs.defenderWon() ),
+    ( "win_balance", ["full", "retreat", "round"], "chance diff", lambda b, bs: (bs.attackerWon()-bs.defenderWon()+1)/2 ),
     ( "retreat_attacker", ["retreat"], "chance", lambda b, bs: bs.attackerRetreat() ),
     ( "retreat_defender", ["retreat"], "chance", lambda b, bs: bs.defenderRetreat() ),
     ( "net_unit_advantage", ["full", "retreat", "round"], "number", lambda b, bs: bs.unitAdvantage()[0]-b.unitAdvantage() ),
@@ -80,8 +80,8 @@ def plotMatrix(attArmies, defArmies, valueMatrix, name, plotTyp):
     if plotTyp=="chance diff":
         cmap = cm.coolwarm
         cmap.set_bad(color="black")
-        cax = ax.matshow(valueMatrix, cmap=cmap, vmin=-1, vmax=1, interpolation='nearest', aspect='equal')
-        valueTxt = [(i,j, 'D' if abs(z-1)<1e-4 else 'A' if abs(z-1)<1e-4 else "{:.0f}".format(round(z*100))) for (i,j),z in ndenumerate(valueMatrix)]
+        cax = ax.matshow(valueMatrix, cmap=cmap, vmin=0, vmax=1, interpolation='nearest', aspect='equal')
+        valueTxt = [(i,j, 'D' if abs(z)<1e-4 else 'A' if abs(z-1)<1e-4 else "{:.0f}".format(round(z*100))) for (i,j),z in ndenumerate(valueMatrix)]
     elif plotTyp=="chance":
         cmap = cm.Greens
         cmap.set_bad(color="black")
