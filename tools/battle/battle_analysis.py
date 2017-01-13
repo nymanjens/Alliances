@@ -21,29 +21,24 @@ ARMY_LABEL = lambda army: "I{} A{}".format(army.infantry, army.artillery)
 UNIT_LABEL = lambda army: "U{}".format(army.unitCount())
 
 VALUE_MAPPINGS = [
-    ( "win_chance_balance", "full", "chance diff", lambda b, bs: bs.attackerWon()-bs.defenderWon() ),
-    ( "win_chance_balance", "retreat", "chance diff", lambda b, bs: bs.attackerWon()-bs.defenderWon() ),
-    ( "win_chance_balance", "round", "chance diff", lambda b, bs: bs.attackerWon()-bs.defenderWon() ),
-    ( "attacker_retreat", "retreat", "chance", lambda b, bs: bs.attackerRetreat() ),
-    ( "defender_retreat", "retreat", "chance", lambda b, bs: bs.defenderRetreat() ),
-    ( "net_unit_advantage", "full", "number", lambda b, bs: bs.unitAdvantage()[0]-b.unitAdvantage() ),
-    ( "net_unit_advantage", "retreat", "number", lambda b, bs: bs.unitAdvantage()[0]-b.unitAdvantage() ),
-    ( "net_unit_advantage", "round", "number", lambda b, bs: bs.unitAdvantage()[0]-b.unitAdvantage() ),
-    ( "net_value_advantage", "full", "number", lambda b, bs: bs.valueAdvantage()[0]-b.valueAdvantage() ),
-    ( "net_value_advantage", "retreat", "number", lambda b, bs: bs.valueAdvantage()[0]-b.valueAdvantage() ),
-    ( "net_value_advantage", "round", "number", lambda b, bs: bs.valueAdvantage()[0]-b.valueAdvantage() ),
-    ( "attacker_value_loss", "round", "number", lambda b, bs: bs.attackingArmy.value()[0]-b.attackingArmy.value() ),
-    ( "defender_value_loss", "round", "number", lambda b, bs: bs.defendingArmy.value()[0]-b.defendingArmy.value() ),
-    ( "attacker_unit_loss", "round", "number", lambda b, bs: bs.attackingArmy.unitCount()[0]-b.attackingArmy.unitCount() ),
-    ( "defender_unit_loss", "round", "number", lambda b, bs: bs.defendingArmy.unitCount()[0]-b.defendingArmy.unitCount() ),
+    ( "win_balance", ["full", "retreat", "round"], "chance diff", lambda b, bs: bs.attackerWon()-bs.defenderWon() ),
+    ( "retreat_attacker", ["retreat"], "chance", lambda b, bs: bs.attackerRetreat() ),
+    ( "retreat_defender", ["retreat"], "chance", lambda b, bs: bs.defenderRetreat() ),
+    ( "net_unit_advantage", ["full", "retreat", "round"], "number", lambda b, bs: bs.unitAdvantage()[0]-b.unitAdvantage() ),
+    ( "net_value_advantage", ["full", "retreat", "round"], "number", lambda b, bs: bs.valueAdvantage()[0]-b.valueAdvantage() ),
+    ( "loss_value_attacker", ["full", "retreat", "round"], "number", lambda b, bs: bs.attackingArmy.value()[0]-b.attackingArmy.value() ),
+    ( "loss_value_defender", ["full", "retreat", "round"], "number", lambda b, bs: -bs.defendingArmy.value()[0]+b.defendingArmy.value() ),
+    ( "loss_unit_attacker", ["full", "retreat", "round"], "number", lambda b, bs: bs.attackingArmy.unitCount()[0]-b.attackingArmy.unitCount() ),
+    ( "loss_unit_defender", ["full", "retreat", "round"], "number", lambda b, bs: -bs.defendingArmy.unitCount()[0]+b.defendingArmy.unitCount() ),
 ]
 
 def main():
     graph = loadChanceGraph("full")
     
     for typ in ['normal', 'trench']:
-        for name, key, plotTyp, mapper in VALUE_MAPPINGS:
-            plotValue(plotTyp, getMapper(graph, key, mapper), "_tables/{}_{}_{}.png".format(name, typ, key), hasTrench=typ=="trench")
+        for name, keys, plotTyp, mapper in VALUE_MAPPINGS:
+            for key in keys:
+                plotValue(plotTyp, getMapper(graph, key, mapper), "_tables/{}_{}_{}.png".format(name, typ, key), hasTrench=typ=="trench")
 
 def loadChanceGraph(name):
     print "loading pkl {}...".format(name)
@@ -69,7 +64,7 @@ def generateArmiesAttacker():
     return armies
 
 def generateArmiesDefender():
-    armies = [Army(infantry, 0) for infantry in xrange(1, MAX_INFANTRY+1)]+[Army(MAX_INFANTRY, artillery) for artillery in xrange(1, MAX_ARTILLERY+1)]
+    armies = [Army(infantry, 0) for infantry in xrange(1, MAX_INFANTRY+1)]
     return [a for a in armies if a.unitCount()<=MAX_VALUE]
 
 def getValueMatrix(attArmies, defArmies, mapper, hasTrench):
@@ -86,7 +81,7 @@ def plotMatrix(attArmies, defArmies, valueMatrix, name, plotTyp):
         cmap = cm.coolwarm
         cmap.set_bad(color="black")
         cax = ax.matshow(valueMatrix, cmap=cmap, vmin=-1, vmax=1, interpolation='nearest', aspect='equal')
-        valueTxt = [(i,j, 'D' if abs(z)<1e-4 else 'A' if abs(z-1)<1e-4 else "{:.0f}".format(round(z*100))) for (i,j),z in ndenumerate(valueMatrix)]
+        valueTxt = [(i,j, 'D' if abs(z-1)<1e-4 else 'A' if abs(z-1)<1e-4 else "{:.0f}".format(round(z*100))) for (i,j),z in ndenumerate(valueMatrix)]
     elif plotTyp=="chance":
         cmap = cm.Greens
         cmap.set_bad(color="black")
