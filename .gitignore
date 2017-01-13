@@ -1,1 +1,3 @@
 *.pyc
+tools/battle/_graph
+tools/battle/_tables
