@@ -4,32 +4,55 @@ from util import dotIfZero, avgAndStd
 
 class BattleState(object):
     
-    def __init__(self, attackingArmy, defendingArmy):
+    def __init__(self, attackingArmy, defendingArmy, hasTrench, retreater=None):
+        assert retreater in [None, 'attacker', 'defender']
+        if retreater: assert attackingArmy.canBattle() and defendingArmy.canBattle(), "can't retreat if battle already over"
+        
         self.attackingArmy = attackingArmy
         self.defendingArmy = defendingArmy
+        self.hasTrench = hasTrench
+        self.retreater = retreater
     
     @staticmethod
     def fromUnits(attInfantry, attArtillery, defInfantry, defArtillery):
-        return BattleState(Army(attInfantry, attArtillery), Army(defInfantry, defArtillery))
+        return BattleState(Army(attInfantry, attArtillery), Army(defInfantry, defArtillery), False)
+    
+    @staticmethod
+    def fromUnitsWithTrench(attInfantry, attArtillery, defInfantry, defArtillery):
+        return BattleState(Army(attInfantry, attArtillery), Army(defInfantry, defArtillery), True)
     
     ### create new modified battle state ###
     
     def simulate(self):
+        assert not self.hasEnded(), "can't simulate an ended battle"
         return self._simulateArtillery()._simulateInfantry()
     
     def switchSides(self):
-        return BattleState(self.defendingArmy, self.attackingArmy)
+        assert not self.hasEnded(), "only supported for non-ended battles"
+        # note: assuming not retreated and no trench for the retreat-attack strategy
+        return BattleState(self.defendingArmy, self.attackingArmy, False)
+    
+    def attackerRetreats(self):
+        assert self.retreater==None, "can't retreat, because already retreated"
+        return BattleState(self.attackingArmy, self.defendingArmy, self.hasTrench, 'attacker')
+    
+    def defenderRetreats(self):
+        assert self.retreater==None, "can't retreat, because already retreated"
+        return BattleState(self.attackingArmy, self.defendingArmy, self.hasTrench, 'defender')
+    
+    def withTrench(self):
+        return BattleState(self.attackingArmy, self.defendingArmy, True, self.retreater)
     
     ### object information ###
     
     def hasEnded(self):
-        return not self.attackingArmy.canBattle() or not self.defendingArmy.canBattle()
+        return self.retreater!=None or not self.attackingArmy.canBattle() or not self.defendingArmy.canBattle()
     
     def attackerWon(self):
-        return self.attackingArmy.canBattle() and not self.defendingArmy.canBattle()
+        return self.retreater=="defender" or (self.attackingArmy.canBattle() and not self.defendingArmy.canBattle())
     
     def defenderWon(self):
-        return not self.attackingArmy.canBattle() and self.defendingArmy.unitCount()>0
+        return self.retreater=="attacker" or (not self.attackingArmy.canBattle() and self.defendingArmy.unitCount()>0)
     
     def unitAdvantage(self):
         return self.attackingArmy.unitCount() - self.defendingArmy.unitCount()
@@ -40,24 +63,35 @@ class BattleState(object):
     ### utility methods ###
     
     def _simulateArtillery(self):
-        return BattleState(self.attackingArmy, self.defendingArmy.kill(self.attackingArmy.artillery))
+        return BattleState(self.attackingArmy, self.defendingArmy.kill(self.attackingArmy.artillery), self.hasTrench)
     
     def _simulateInfantry(self):
         # Note: speed beats fancyness here
         attackKills, attackWounds = 0, 0
         defendKills, defendWounds = 0, 0
-        for _ in xrange(self.attackingArmy.infantry):
+        for _ in xrange(self._attackerRolls()):
             throw = randint(1,7)
-            if throw in [5, 6]: attackKills += 1
-            elif throw in [3, 4]: attackWounds += 1
-        for _ in xrange(self.defendingArmy.infantry + self.defendingArmy.artillery):
+            if not self.hasTrench and throw in [5, 6]:
+                attackKills += 1
+            elif throw not in [1, 2]:
+                attackWounds += 1
+        for _ in xrange(self._defenderRolls()):
             throw = randint(1,7)
-            if throw>=5: defendKills += 1
-            elif throw<=4: defendWounds += 1
+            if throw>=5:
+                defendKills += 1
+            elif throw<=4:
+                defendWounds += 1
         
         attackingArmy = self.attackingArmy.kill(defendKills).wound(defendWounds)
         defendingArmy = self.defendingArmy.kill(attackKills).wound(attackWounds)
-        return BattleState(attackingArmy, defendingArmy)
+        return BattleState(attackingArmy, defendingArmy, self.hasTrench)
+    
+    def _attackerRolls(self):
+        return self.attackingArmy.infantry
+    
+    def _defenderRolls(self):
+        rolls = self.defendingArmy.infantry + self.defendingArmy.artillery
+        return rolls if not self.hasTrench else 2*rolls
     
     ### overrides ###
     
@@ -83,112 +117,7 @@ class BattleState(object):
         return self.__str__()
     
     def __hash__(self):
-        return hash((self.attackingArmy, self.defendingArmy))
-
-
-class SimpleBattleState(object):
-    '''Limits number of possible states without affecting battle chances'''
-    
-    def __init__(self, attackingArmy, defendingArmy):
-        simpleAttackingArmy = attackingArmy.removeWounded()
-        simpleDefendingArmy = Army(defendingArmy.infantry + defendingArmy.artillery, 0)
-        self.battleState = BattleState(simpleAttackingArmy, simpleDefendingArmy)
-        
-        # to support accessing these directly
-        self.attackingArmy = simpleAttackingArmy
-        self.defendingArmy = simpleDefendingArmy
-    
-    @staticmethod
-    def fromUnits(attInfantry, attArtillery, defInfantry, defArtillery):
-        return SimpleBattleState(Army(attInfantry, attArtillery), Army(defInfantry, defArtillery))
-    
-    @staticmethod
-    def fromBattleState(battleState):
-        return SimpleBattleState(battleState.attackingArmy, battleState.defendingArmy)
-    
-    ### create new modified battle state ###
-    
-    def simulate(self):
-        return SimpleBattleState.fromBattleState(self.battleState.simulate())
-    
-    ### object information ###
-    
-    def hasEnded(self):
-        return self.battleState.hasEnded()
-    
-    def attackerWon(self):
-        return self.battleState.attackerWon()
-    
-    def defenderWon(self):
-        return self.battleState.defenderWon()
-    
-    ### overrides ###
-    
-    def __eq__(self, other):
-        return self.__dict__ == other.__dict__
-    
-    def __ne__(self, other):
-        return self.__dict__ != other.__dict__
-    
-    def __str__(self):
-        return "|I| {:>2} | {:>1} |A|   >   |U| {:>2}".format(
-            dotIfZero(self.battleState.attackingArmy.infantry),
-            dotIfZero(self.battleState.attackingArmy.artillery),
-            dotIfZero(self.battleState.defendingArmy.infantry),
-        )
-    
-    def __repr__(self):
-        return self.__str__()
-    
-    def __hash__(self):
-        return hash(self.battleState)
-
-
-class BattleStateRetreat(object):
-    '''Don't use as a battle graph state key.'''
-    
-    def __init__(self, battle, retreater):
-        assert retreater in ['attacker', 'defender']
-        assert not battle.hasEnded(), "can't retreat if battle already over"
-        self.battle = battle
-        self.retreater = retreater
-        
-        # to support accessing these directly
-        self.attackingArmy = battle.attackingArmy
-        self.defendingArmy = battle.defendingArmy
-    
-    @staticmethod
-    def attackerRetreats(battle):
-        return BattleStateRetreat(battle, 'attacker')
-    
-    @staticmethod
-    def defenderRetreats(battle):
-        return BattleStateRetreat(battle, 'defender')
-    
-    ### object information ###
-    
-    def hasEnded(self):
-        return True
-    
-    def attackerWon(self):
-        return self.retreater=='defender'
-    
-    def defenderWon(self):
-        return self.retreater=='attacker'
-    
-    def unitAdvantage(self):
-        return self.battle.unitAdvantage()
-    
-    def valueAdvantage(self):
-        return self.battle.valueAdvantage()
-    
-    ### overrides ###
-    
-    def __str__(self):
-        return str(self.battle) + " || {} retreated".format(self.retreater)
-    
-    def __repr__(self):
-        return self.__str__()
+        return hash((self.attackingArmy, self.defendingArmy, self.hasTrench, self.retreater))
 
 
 class StochasticBattleState(object):
