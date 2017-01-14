@@ -69,19 +69,19 @@
   <tr>
     <td>N-France</td>
     <td>2</td>
-    <td>3</td>
+    <td>2</td>
     <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Austria</td>
     <td>2</td>
-    <td>3</td>
+    <td>2</td>
     <td></td>
   </tr>
   <tr>
     <td>Poland</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
@@ -133,7 +133,7 @@
   <tr>
     <td>Benelux</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
@@ -151,19 +151,19 @@
   <tr>
     <td>Austria</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>Poland</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>Italy</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
