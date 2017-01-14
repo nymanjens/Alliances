@@ -1,5 +1,5 @@
 from army import Army
-from battle_state import BattleState, SimpleBattleState, StochasticBattleState
+from battle_state import BattleState, StochasticBattleState
 from collections import defaultdict, Counter
 from multiprocessing import Manager
 from cPickle import dump
@@ -8,41 +8,21 @@ import itertools, argparse, gzip
 from util import parallelExec
 from progressbar import ProgressBar
 
+USE_GZIP = False
 
-def main(typ):
-    battles = generateBattles(BattleState if typ!="simple" else SimpleBattleState)
-    
-    if typ=="full":
-        textMod = "all"
-    elif typ=="simple":
-        textMod = "all *simplified*"
-    elif typ=="small":
-        textMod = "some of the"
-        battles = [
-            BattleState.fromUnits(6, 1, 2, 2), 
-            BattleState.fromUnits(6, 1, 3, 2), 
-            BattleState.fromUnits(6, 1, 4, 2), 
-            BattleState.fromUnits(6, 1, 5, 2), 
-            BattleState.fromUnits(6, 1, 6, 2), 
-            BattleState.fromUnits(6, 1, 7, 2),
-            BattleState.fromUnits(2, 2, 6, 1), 
-            BattleState.fromUnits(3, 2, 6, 1), 
-            BattleState.fromUnits(4, 2, 6, 1), 
-            BattleState.fromUnits(5, 2, 6, 1), 
-            BattleState.fromUnits(6, 2, 6, 1), 
-            BattleState.fromUnits(7, 2, 6, 1),
-        ]
+def main():
+    typ = "full"
+    battles = generateBattles()
     
     print "-----------------------------------------------------------"
-    print "Calculating battle chances for {} possible battle cases".format(textMod)
+    print "Calculating battle chances for all battle cases"
     print "Assuming max infantry of {} and max artillery of {}".format(MAX_INFANTRY, MAX_ARTILLERY)
     print "--> Number of battle cases: {}".format(len(battles))
-    graph = updateGraph(battles, "battle_graph_" + typ)
-    print "Number of nodes in battle chances graph: {}".format(len(graph))
+    updateGraph(battles, "_graph/" + typ)
 
 def updateGraph(battles, name):
-    print "calculating battle chances..."
-    battleGraph, battleOutcomes = calcIntensive(battles)
+    print "calculating battle graph..."
+    battleGraph, battleStats = calcIntensive(battles)
     
     # convert to a graph object
     print "converting to graph object..."
@@ -50,22 +30,23 @@ def updateGraph(battles, name):
     del battleGraph
     
     # add expected result
-    print "adding death battle statistics to the graph..."
-    combineResults(graph, battleOutcomes)
-    del battleOutcomes
+    print "adding battle statistics to the graph..."
+    addBattleStats(graph, battleStats)
+    del battleStats
     
     # save
     filename = name+".pkl"
-    print "dumping battle chance graph to: {}".format(filename)
-    with gzip.open(filename, "wb") as fil:
+    print "dumping battle graph to: {}".format(filename)
+    with (gzip.open(filename, "wb") if USE_GZIP else open(filename, "wb")) as fil:
         dump(graph, fil, 2)
     
-    return graph
+    print "Number of nodes in battle graph: {}".format(graph.number_of_nodes())
+    print "Number of edges in battle graph: {}".format(graph.number_of_edges())
 
-def combineResults(graph, battleOutcomes):
-    bar = ProgressBar(max_value=len(battleOutcomes))
-    for i,(battle, outcomes) in enumerate(battleOutcomes.iteritems()):
-        graph.add_node(battle, outcome=StochasticBattleState(*zip(*outcomes.iteritems())))
+def addBattleStats(graph, battleStats):
+    bar = ProgressBar(max_value=graph.number_of_nodes())
+    for i, battle in enumerate(graph.nodes()):
+        graph.add_node(battle, {typ: stats[battle] for typ,stats in battleStats.iteritems() if stats.has_key(battle)})
         bar.update(i+1)
 
 def convertToGraph(battleGraph):
@@ -75,93 +56,158 @@ def convertToGraph(battleGraph):
     graph.add_weighted_edges_from(edgeList)
     return graph
 
+def simpleAttackerRetreatStrat(battle, roundStat, fullBattleStat):
+    if fullBattleStat.attackerWon()>fullBattleStat.defenderWon():
+        return False
+    if roundStat.valueAdvantage()[0]>0:
+        return False
+    return True
+
+def simpleDefenderRetreatStrat(battle, roundStat, fullBattleStat):
+    if fullBattleStat.defenderWon()>fullBattleStat.attackerWon():
+        return False
+    if roundStat.valueAdvantage()[0]<0:
+        return False
+    return True
+
 def calcIntensive(battles):
     with Manager() as manager:
         battleGraph = manager.dict()
+        roundStats = manager.dict()
         lock = manager.Lock()
-        parallelExec(calcBattleChances, ((battle, battleGraph, lock) for battle in battles))
+        parallelExec(calcBattleRoundChances, ((battle, battleGraph, roundStats, lock) for battle in battles))
         
-        print "calculating expected to the death battle..."
-        battleOutcomes = manager.dict()
-        parallelExec(battleEndChances, ((battle, battleGraph, battleOutcomes, lock) for battle in battles))
+        print "calculating full battle chances..."
+        fullBattleChances = manager.dict()
+        fullBattleStats = manager.dict()
+        parallelExec(calcFullBattleChances, ((battle, battleGraph, fullBattleChances, fullBattleStats, lock) for battle in battles))
+        
+        print "calculating retreat battle chances..."
+        retreatBattleChances = manager.dict()
+        retreatBattleStats = manager.dict()
+        parallelExec(calcRetreatBattleChances, ((battle, battleGraph, retreatBattleChances, retreatBattleStats, lock, 
+                roundStats, fullBattleStats, simpleAttackerRetreatStrat, simpleDefenderRetreatStrat) for battle in battles))
         
         print "copying result..."
         battleGraph = dict(battleGraph)
-        battleOutcomes = dict(battleOutcomes)
-    return battleGraph, battleOutcomes
+        roundStats = dict(roundStats)
+        fullBattleStats = dict(fullBattleStats)
+        retreatBattleStats = dict(retreatBattleStats)
+    return battleGraph, {"round": roundStats, "full": fullBattleStats, "retreat": retreatBattleStats}
 
-def calcBattleChances(battle, battleGraph, lock):
+def calcBattleRoundChances(battle, battleGraph, roundStats, lock):
     # prevent unnecessary calculations
-    if battle.hasEnded(): return
     lock.acquire()
-    alreadyCalculated = battle in battleGraph
+    exists = battle in battleGraph
+    if not exists and battle.hasEnded():
+        battleGraph[battle] = {}
     lock.release()
-    if alreadyCalculated: return
+    if exists or battle.hasEnded(): return
     
-    # determine chances for possible outcomes of this battle
-    battleOutcomes = defaultdict(int)
+    # determine chances for possible outcomes of this battle round
+    roundOutcomes = defaultdict(int)
     for _ in xrange(NR_OF_SAMPLES):
-        battleOutcomes[battle.simulate()] += 1
-    battleChances = {k: v/float(NR_OF_SAMPLES) for k,v in battleOutcomes.iteritems()}
+        roundOutcomes[battle.simulate()] += 1
+    roundChances = {k: v/float(NR_OF_SAMPLES) for k,v in roundOutcomes.iteritems()}
+    roundStat = StochasticBattleState.fromDict(roundChances)
     
     lock.acquire()
     if battle not in battleGraph:
-        battleGraph[battle] = battleChances
+        battleGraph[battle] = roundChances
+        roundStats[battle] = roundStat
     lock.release()
     
     # also calculate all subsequent possible battles
-    for sampleBattle in battleChances:
+    for sampleBattle in roundChances:
         # recurse to build up the chance tree
         # Note: max recursive depth equals max infantry
-        calcBattleChances(sampleBattle, battleGraph, lock)
+        calcBattleRoundChances(sampleBattle, battleGraph, roundStats, lock)
 
-def battleEndChances(battle, graph, battleOutcomes, lock):
+def calcFullBattleChances(battle, graph, fullBattleChances, fullBattleStats, lock):
     # prevent unnecessary calculations
-    if battle.hasEnded(): return None
+    if battle.hasEnded(): return Counter({battle: 1})
     lock.acquire()
-    exists = battle in battleOutcomes
-    if exists: battleOutcome = battleOutcomes[battle]
+    exists = battle in fullBattleChances
+    if exists: battleChances = fullBattleChances[battle]
     lock.release()
-    if exists: return battleOutcome
+    if exists: return battleChances
     
     # recursively calculate
     battleChances = Counter()
-    for nextBattle, nextChance in graph[battle].iteritems():
-        nextBattleOutcome = battleEndChances(nextBattle, graph, battleOutcomes, lock)
-        if nextBattleOutcome==None:
-            battleChances[nextBattle] += nextChance
-        else:
-            for b in nextBattleOutcome:
-                nextBattleOutcome[b] *= nextChance
-            battleChances += nextBattleOutcome
+    for nextRound, chance in graph[battle].iteritems():
+        nextRoundBattleChances = calcFullBattleChances(nextRound, graph, fullBattleChances, fullBattleStats, lock)
+        for b in nextRoundBattleChances:
+            nextRoundBattleChances[b] *= chance
+        battleChances += nextRoundBattleChances
+    battleStat = StochasticBattleState.fromDict(battleChances)
     
-    # update battleOutcomes
+    # update fullBattleChances
     lock.acquire()
-    if battle not in battleOutcomes:
-        battleOutcomes[battle] = battleChances
+    if battle not in fullBattleChances:
+        fullBattleChances[battle] = battleChances
+        fullBattleStats[battle] = battleStat
     lock.release()
     return battleChances
 
-def generateBattles(battleStateType=BattleState):
+def calcRetreatBattleChances(battle, graph, retreatBattleChances, retreatBattleStats, lock, 
+        roundBattleStats, fullBattleStats, attackerRetreatStrat, defenderRetreatStrat, first=True):
+    # prevent unnecessary calculations
+    # note: 'first' is meant to disallow retreating even before the first battle round
+    if battle.hasEnded(): return Counter({battle: 1})
+    lock.acquire()
+    exists = battle in retreatBattleChances
+    if exists and not first:
+        battleChances = retreatBattleChances[battle]
+    elif not first:
+        if attackerRetreatStrat(battle, roundBattleStats[battle], fullBattleStats[battle]):
+            battleChances = Counter({battle.attackerRetreats(): 1})
+            retreatBattleChances[battle] = battleChances
+            exists = True
+        elif defenderRetreatStrat(battle, roundBattleStats[battle], fullBattleStats[battle]):
+            battleChances = Counter({battle.defenderRetreats(): 1})
+            retreatBattleChances[battle] = battleChances
+            exists = True
+    lock.release()
+    if exists: return battleChances
+    
+    # recursively calculate
+    battleChances = Counter()
+    for nextRound, chance in graph[battle].iteritems():
+        nextRoundBattleChances = calcRetreatBattleChances(nextRound, graph, retreatBattleChances, retreatBattleStats, lock, 
+                roundBattleStats, fullBattleStats, attackerRetreatStrat, defenderRetreatStrat, first=False)
+        for b in nextRoundBattleChances:
+            nextRoundBattleChances[b] *= chance
+        battleChances += nextRoundBattleChances
+    battleStat = StochasticBattleState.fromDict(battleChances)
+    
+    # update retreatBattleChances
+    lock.acquire()
+    if battle not in retreatBattleChances:
+        retreatBattleChances[battle] = battleChances
+        retreatBattleStats[battle] = battleStat
+    lock.release()
+    return battleChances
+
+def generateBattles():
     combinations = itertools.product(
         xrange(MAX_INFANTRY+1), 
         xrange(MAX_ARTILLERY+1), 
         xrange(MAX_INFANTRY+1), 
         xrange(MAX_ARTILLERY+1)
     )
-    battles = map(lambda args: battleStateType.fromUnits(*args), combinations)
-    return [b for b in battles if not b.hasEnded()]
+    normalBattles = map(lambda args: BattleState.fromUnits(*args), combinations)
+    trenchBattles = [b.withTrench() for b in normalBattles]
+    return [b for b in normalBattles+trenchBattles if not b.hasEnded()]
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Update a battle chance graph.')
-    parser.add_argument('type', type=str, choices=["full", "simple", "small"], help='battle chance graph type')
-    parser.add_argument('--samples', type=int, default=2500, help='nr of samples per battle case')
-    parser.add_argument('--maxinfantry', type=int, default=14, help='max nr of infantry')
-    parser.add_argument('--maxartillery', type=int, default=5, help='max nr of artillery')
+    parser.add_argument('--samples', type=int, default=5000, help='nr of samples per battle case')
+    parser.add_argument('--maxinfantry', type=int, default=8, help='max nr of infantry')
+    parser.add_argument('--maxartillery', type=int, default=4, help='max nr of artillery')
     
     args = parser.parse_args()
     NR_OF_SAMPLES = args.samples
     MAX_INFANTRY = args.maxinfantry
     MAX_ARTILLERY = args.maxartillery
     
-    main(args.type)
+    main()
