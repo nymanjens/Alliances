@@ -6,22 +6,22 @@
 
 * **UK**
     * 2 infantry in England
-    * 1 infantry in Scotland
+    * 2 infantry in Scotland
 * **Russia**
     * 2 infantry in Russia
-    * 1 infantry in Ukraine
+    * 2 infantry in Ukraine
 * **France**
     * 2 infantry in N-France
-    * 1 infantry in S-France
+    * 2 infantry in S-France
 * **Germany**
     * 2 infantry in E-Germany
-    * 1 infantry in W-Germany
+    * 2 infantry in W-Germany
 * **Ottoman Empire**
     * 2 infantry in Turkey
-    * 1 infantry in Middle East
+    * 2 infantry in Middle East
 * **Austro-Hungarian Empire**
     * 2 infantry in Austria
-    * 1 infantry in Hungary
+    * 2 infantry in Hungary
 
 ### Additional tokens on map
 
@@ -46,16 +46,16 @@
 
 * **UK**
     * 2 infantry in England
-    * 1 infantry in Scotland
+    * 2 infantry in Scotland
 * **Russia**
     * 2 infantry in Russia
-    * 1 infantry in Ukraine
+    * 2 infantry in Ukraine
 * **Germany**
     * 2 infantry in E-Germany
-    * 1 infantry in W-Germany
+    * 2 infantry in W-Germany
 * **Ottoman Empire**
     * 2 infantry in Turkey
-    * 1 infantry in Middle East
+    * 2 infantry in Middle East
 
 ### Additional tokens on map
 
@@ -69,19 +69,19 @@
   <tr>
     <td>N-France</td>
     <td>2</td>
-    <td>3</td>
+    <td>2</td>
     <td>with border W-Germany</td>
   </tr>
   <tr>
     <td>Austria</td>
     <td>2</td>
-    <td>3</td>
+    <td>2</td>
     <td></td>
   </tr>
   <tr>
     <td>Poland</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
@@ -98,16 +98,16 @@
 
 * **Russia**
     * 2 infantry in Russia
-    * 1 infantry in Ukraine
+    * 2 infantry in Ukraine
 * **France**
     * 2 infantry in N-France
-    * 1 infantry in S-France
+    * 2 infantry in S-France
 * **Germany**
     * 2 infantry in E-Germany
-    * 1 infantry in W-Germany
+    * 2 infantry in W-Germany
 * **Ottoman Empire**
     * 2 infantry in Turkey
-    * 1 infantry in Middle East
+    * 2 infantry in Middle East
 
 ### Additional tokens on map
 
@@ -133,7 +133,7 @@
   <tr>
     <td>Benelux</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
@@ -151,19 +151,19 @@
   <tr>
     <td>Austria</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>Poland</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
     <td>Italy</td>
     <td>1</td>
-    <td>2</td>
+    <td>1</td>
     <td></td>
   </tr>
   <tr>
