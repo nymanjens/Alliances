@@ -56,14 +56,18 @@ There are 2 teams:
 
 # Goal of the game
 
-One of:
+Be part of the winning team and control the most regions of your team.
+
+To win, your team must:
 
 1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
    other team (ends the game)
-1. Have 5 (6 players) or 6 (4 players) strategic cities at any point in the game to win individually
 1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
    losers.
+
+Either of the above conditions end the game. The players are then ranked within their team by amount
+of strategic cities. Ties are not broken.
 
 # Playing a turn
 
