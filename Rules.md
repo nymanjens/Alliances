@@ -66,13 +66,8 @@ To win, your team must:
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
    losers.
 
-Both of the above conditions end the game. The players are then ranked by amount of points defined
-as:
-
-* Every controlled region gives 1 point
-* Being part of the winning team gives 1000 points
-
-Ties are not broken.
+Both of the above conditions end the game. The players are then ranked within the team by amount of
+controlled regions. Ties are not broken.
 
 # Playing a turn
 
