@@ -3,6 +3,11 @@ from util import avgAndStd
 class Army(object):
     
     def __init__(self, infantry, artillery, woundedInfantry=0, woundedArtillery=0):
+        assert infantry>=0
+        assert artillery>=0
+        assert woundedInfantry>=0
+        assert woundedArtillery>=0
+        
         self.infantry = infantry
         self.artillery = artillery
         self.woundedInfantry = woundedInfantry
@@ -11,6 +16,8 @@ class Army(object):
     ### create new modified army ###
     
     def kill(self, nrOfUnits):
+        assert nrOfUnits>=0
+        
         # Note: speed beats fancyness here
         infantry, _, stillToRemove = Army._unitRemoval(self.infantry, nrOfUnits)
         artillery, _, stillToRemove = Army._unitRemoval(self.artillery, stillToRemove)
@@ -19,6 +26,8 @@ class Army(object):
         return Army(infantry, artillery, woundedInfantry, woundedArtillery)
     
     def wound(self, nrOfUnits):
+        assert nrOfUnits>=0
+        
         # Note: speed beats fancyness here
         infantry, removedInfantry, stillToRemove = Army._unitRemoval(self.infantry, nrOfUnits)
         artillery, removedArtillery, _ = Army._unitRemoval(self.artillery, stillToRemove)

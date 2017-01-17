@@ -1,14 +1,6 @@
 # Definitions
 
-* **Time:**
-    * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
-    * **Initial player order:** The game starts with the order below:
-        * UK
-        * Germany
-        * Russia
-        * Ottoman Empire
-        * France
-        * Austro-Hungarian Empire
+* **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
     * **Healthy unit:** The default state of a unit. Able to move and participate in combat
     * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
@@ -81,13 +73,23 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
-    1. **Bid for start player**: All players put a number of coins in their hand and reveal their
-       bid simultaneously. The player bidding the most wins. In case of a tie, the tied player that
-       came first in the last player order wins. If this is the first turn, skip this step.
+    1. **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
+       becomes the new start player. If that player is not in the game, roll again until it is.
 
-       The winner pays the bidded coins to the supply, becomes start player and chooses the
-       direction of the player order. The full circle of the player order
-       should always be the same as that of the initial player order.
+       The number-player correspondence is indicated on the board:
+
+        * 1 - UK (down)
+        * 2 - Germany (up)
+        * 3 - Russia (down)
+        * 4 - Ottoman Empire (up)
+        * 5 - France (down)
+        * 6 - Austro-Hungarian Empire (up)
+
+       The board also indicates the direction of the player order. Note that the full circle of the
+       player order should always be the same as that of the above player order.
+
+       *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
+       Austro-Hungarians, France.*
     1. **Commands:** Resolve token types in following order:
         * **Invest and Dig trench**: Resolved simultaneously (&#42;)
         * **Move**: Resolved in player order
@@ -166,7 +168,7 @@ least one invested coin.
   Middle East, I cannot go from the Middle East to N-Africa with a single move token. This is because
   Egypt is not a friendly region before resolving this move token.*
 
-### Raiding
+### Plundering
 
 If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
 
@@ -209,6 +211,10 @@ A battle has one or more rounds. Every round has following parts:
     Kills are resolved before wounds.
 1. **Attacker decides to retreat or has no healthy units left:** All units move back to the region
    where to move started.
+
+   Edge case: If the attacker has no healthy units left and the defender has no units left, the
+   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
+   supply.
 1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
    move to a single adjacent land region that is either unoccupied or owned by the defender.
    Exception: units can't retreat to the region where the attacker's move started.
@@ -226,7 +232,7 @@ A battle has one or more rounds. Every round has following parts:
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round but the token returns to the defender at the end of the turn.
+  in a next command round after which the token returns to the defender.
 
 (&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
