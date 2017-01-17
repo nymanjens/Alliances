@@ -66,8 +66,8 @@ To win, your team must:
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
    losers.
 
-Either of the above conditions end the game. The players are then ranked within their team by amount of
-strategic cities. Ties are not broken.
+Either of the above conditions end the game. The players are then ranked within their team by amount
+of strategic cities. Ties are not broken.
 
 # Playing a turn
 
