@@ -9,3 +9,4 @@ exclude_rule 'no-inline-html' # Inline HTML
 exclude_rule 'single-h1' # Multiple top level headers in the same document
 exclude_rule 'no-emphasis-as-header' # Emphasis used instead of a header
 exclude_rule 'no-duplicate-header' # Multiple headers with the same content
+exclude_rule 'ul-indent' # Unordered list indentation - Errors incorrectly due to a bug
