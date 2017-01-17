@@ -67,7 +67,7 @@ To win, your team must:
    losers.
 
 Both of the above conditions end the game. The players are then ranked within the team by amount of
-controlled regions. Ties are not broken.
+strategic cities. Ties are not broken.
 
 # Playing a turn
 
