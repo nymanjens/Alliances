@@ -264,8 +264,8 @@ decision.
 
 ## Coin and token trading
 
-At any point in the game, you are allowed to give coins and tokens to another player (but you can only
-trade tokens with allies).
+At any point in the game, you are allowed to give coins to another player. You can also trade tokens
+with allies.
 
 *Examples:*
 
