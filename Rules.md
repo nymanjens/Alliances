@@ -104,8 +104,8 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        unoccupied or sea region*.
        All added units must be paid immediately.
     1. **Unit healing:** All wounded units are healed
-    1. **Train units**: Resolve tokens simultaneously (&#42;)    
-    
+    1. **Train units**: Resolve tokens simultaneously (&#42;)
+
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
 whisper the solution to a player not involved who then executes the commands. When there is no such
