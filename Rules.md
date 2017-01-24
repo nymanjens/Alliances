@@ -89,7 +89,7 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
-    1. **Payment:** All units in regions the player wants to keep, are paid 1 coins per
+    1. **Payment:** All units in regions the player wants to keep, are paid 1 coin per
        infantry and 2 coins per artillery.
     1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
