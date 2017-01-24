@@ -83,7 +83,6 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
        Austro-Hungarians, France.*
-    1. **Commands:** Resolve token types in following order:
     1. **Invest and Dig trench**: Resolve tokens (&#42;)
 1. **Assault phase:**
     1. **Move**: Resolve tokens in player order
