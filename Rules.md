@@ -62,7 +62,7 @@ One of:
 
 All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
-1. **Command phase:**
+1. **Prepare phase:**
     1. **Token assignment:** All players simultaneously put command tokens face down on regions
        they own.
     1. **Token revealing:** All tokens are turned face up
@@ -84,28 +84,28 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
        Austro-Hungarians, France.*
     1. **Commands:** Resolve token types in following order:
-        * **Invest and Dig trench**: Resolved simultaneously (&#42;)
-        * **Move**: Resolved in player order
-        * **Train units**: Resolved simultaneously (&#42;)
+    1. **Invest and Dig trench**: Resolve tokens (&#42;)
+1. **Assault phase:**
+    1. **Move**: Resolve tokens in player order
 1. **Economic phase:**
     1. **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
-    1. **Payment:** All units in regions the player wants to keep, are paid 1/2 coins per
-       infantry/artillery.
-1. **Cleanup phase**
+    1. **Payment:** All units in regions the player wants to keep, are paid 1 coins per
+       infantry and 2 coins per artillery.
     1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-    1. **Unit healing:** All wounded units are healed
     1. **Point scoring:** Every team scores 1 point per strategic city they own
+    1. **Advance turn counter** by one and check the game end condition
+1. **Reorganise phase**
     1. **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
-       at regions owned by the player. If that's impossible, the player may pick a *single
+       on regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
-
-       All added units must be payed immediately.
-    1. **Advance turn counter** by one and check the game end condition
-
+       All added units must be paid immediately.
+    1. **Unit healing:** All wounded units are healed
+    1. **Train units**: Resolve tokens simultaneously (&#42;)    
+    
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
 whisper the solution to a player not involved who then executes the commands. When there is no such
