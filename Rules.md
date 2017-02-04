@@ -98,13 +98,13 @@ brackets ([example]) need no player input and can be done quickly.
     * **Point scoring:** Every team scores 1 point per strategic city they own
     * **Advance turn counter** by one and check the game end condition
     * **Unit healing:** All wounded units are healed
-1. **Revival and train units** (*)
+1. **Train units and revival** (*)
+    * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
        on regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
        All added units must be paid immediately.
-    * **Resolve Train units tokens**
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
