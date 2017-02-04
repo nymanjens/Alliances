@@ -60,13 +60,14 @@ One of:
 
 # Playing a turn
 
-All decisions below happen simultaneously (&#42;) unless stated otherwise.
+Every turn is divided into parts that happen simultaneously (*) unless stated otherwise. Parts in
+brackets ([example]) need no player input and can be done quickly.
 
-1. **Command phase:**
-    1. **Token assignment:** All players simultaneously put command tokens face down on regions
-       they own.
-    1. **Token revealing:** All tokens are turned face up
-    1. **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
+1. **Token assignment**
+    * All players put command tokens face down on regions they own (*).
+1. **[Token revealing and roll for start player]**
+    * **Token revealing:** All tokens are turned face up
+    * **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
        becomes the new start player. If that player is not in the game, roll again until it is.
 
        The number-player correspondence is indicated on the board:
@@ -83,28 +84,27 @@ All decisions below happen simultaneously (&#42;) unless stated otherwise.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
        Austro-Hungarians, France.*
-    1. **Commands:** Resolve token types in following order:
-        * **Invest and Dig trench**: Resolved simultaneously (&#42;)
-        * **Move**: Resolved in player order
-        * **Train units**: Resolved simultaneously (&#42;)
-1. **Economic phase:**
-    1. **Production:** All players receive the total amount of coins invested in regions they own,
+1. **Resolve Invest and Dig trench tokens** (*)
+1. **Resolve Move tokens** (in player order)
+1. **Production, payment and mutiny** (*)
+    * **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
-    1. **Payment:** All units in regions the player wants to keep, are paid 1/2 coins per
-       infantry/artillery.
-1. **Cleanup phase**
-    1. **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+    * **Payment:** All units in regions the player wants to keep, are paid 1 coin per
+       infantry and 2 coins per artillery.
+    * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-    1. **Unit healing:** All wounded units are healed
-    1. **Point scoring:** Every team scores 1 point per strategic city they own
-    1. **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
+1. **[Point scoring, advance turn counter and healing]**
+    * **Point scoring:** Every team scores 1 point per strategic city they own
+    * **Advance turn counter** by one and check the game end condition
+    * **Unit healing:** All wounded units are healed
+1. **Train units and revival** (*)
+    * **Resolve Train units tokens**
+    * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
-       at regions owned by the player. If that's impossible, the player may pick a *single
+       on regions owned by the player. If that's impossible, the player may pick a *single
        unoccupied or sea region*.
-
-       All added units must be payed immediately.
-    1. **Advance turn counter** by one and check the game end condition
+       All added units must be paid immediately.
 
 (&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
