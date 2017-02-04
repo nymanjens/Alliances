@@ -1,3 +1,5 @@
+# Warning: The `individual-goal` branch is deprecated
+
 # Definitions
 
 * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
