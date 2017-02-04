@@ -36,7 +36,7 @@
   </tr>
   <tr>
     <td>W-Germany</td>
-    <td>with border France</td>
+    <td>with border N-France</td>
   </tr>
 </table>
 
@@ -128,7 +128,7 @@
     <td>England</td>
     <td>2</td>
     <td>2</td>
-    <td>with border France</td>
+    <td>with border N-France</td>
   </tr>
   <tr>
     <td>Benelux</td>
@@ -146,7 +146,7 @@
     <td>W-Germany</td>
     <td></td>
     <td></td>
-    <td>with border France</td>
+    <td>with border N-France</td>
   </tr>
   <tr>
     <td>Austria</td>
