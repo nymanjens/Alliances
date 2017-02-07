@@ -110,8 +110,8 @@
   </tr>
   <tr>
     <td>N-Africa</td>
-    <td>2</td>
-    <td>2</td>
+    <td>1</td>
+    <td>1</td>
     <td></td>
   </tr>
 </table>
