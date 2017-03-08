@@ -1,5 +1,14 @@
 # Scenarios
 
+## Random scenario (4 or 6 players)
+
+* Every player:
+    * Draws a card from a deck containing {England, Russia, N-France, E-Germany, Turkey, Austria}.
+    * Draws 4 cards from a deck containing all non-strategic regions.
+    * For every drawn region: Puts 1 infantry and 1 coin on the region
+* All empty strategic regions (including the ones ont in the deck) get 2 neutral infantry and 2
+  coins
+
 ## 6 player scenario A
 
 ### Players and their units
