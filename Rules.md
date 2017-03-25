@@ -28,7 +28,7 @@
         * Artillery: 5
     * Command tokens:
         * Invest: 2
-        * Dig trench: 1
+        * Dig trenches: 1
         * Move: 3
         * Train units: 2
 * **General:**
@@ -84,7 +84,7 @@ brackets ([example]) need no player input and can be done quickly.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
        Austro-Hungarians, France.*
-1. **Resolve Invest and Dig trench tokens** (*)
+1. **Resolve Invest and Dig trenches tokens** (*)
 1. **Resolve Move tokens** (in player order)
 1. **Production, payment and mutiny** (*)
     * **Production:** All players receive the total amount of coins invested in regions they own,
@@ -121,9 +121,9 @@ player available, all write down their action and execute that action.
 
   This token is ignored in **sea regions**.
 
-* **Dig trench**:<br>
-  A single trench may be placed at a border with another land region that has a trench placeholder
-  on the map.
+* **Dig trenches**:<br>
+  At most two trenches may be placed in this region on trench placeholders that don't already have a
+  trench.
 
   This token is ignored in **sea regions**.
 
@@ -270,7 +270,7 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
 * Every player gets 3 coins in their supply
 * Every player gets command tokens:
     * Invest x 2
-    * Dig trench x 1
+    * Dig trenches x 1
     * Move x 3
     * Train units x 2
 
