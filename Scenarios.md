@@ -118,7 +118,7 @@
     <td></td>
   </tr>
   <tr>
-    <td>N-Africa</td>
+    <td>Libya</td>
     <td>1</td>
     <td>1</td>
     <td></td>
@@ -158,7 +158,7 @@
     <td>with border W-Germany</td>
   </tr>
   <tr>
-    <td>Austria</td>
+    <td>Hungary</td>
     <td>2</td>
     <td>2</td>
     <td></td>
@@ -234,7 +234,7 @@
     <td>with border N-France</td>
   </tr>
   <tr>
-    <td>Austria</td>
+    <td>Hungary</td>
     <td>1</td>
     <td>1</td>
     <td></td>
@@ -252,7 +252,7 @@
     <td></td>
   </tr>
   <tr>
-    <td>N-Africa</td>
+    <td>Libya</td>
     <td>2</td>
     <td>2</td>
     <td></td>
