@@ -26,7 +26,7 @@ STRATEGIC_REGIONS_PER_TEAM = {
 }
 NON_STRATEGIC_REGIONS = [
   "Ireland",
-  "Schotland",
+  "Scotland",
   "Norway",
   "Denmark",
   "Finland",
@@ -36,10 +36,10 @@ NON_STRATEGIC_REGIONS = [
   "Middle East",
   "Egypt",
   "N-Africa",
-  "Portgal",
+  "Portugal",
   "Spain",
   "S-France",
-  "Switserland",
+  "Switzerland",
   "W-Germany",
   "Austria",
   "Bosnia",
@@ -47,7 +47,7 @@ NON_STRATEGIC_REGIONS = [
   "Greece",
   "Bulgaria",
   "Romania",
-  "Szechoslovikia",
+  "Czechoslovakia",
 ]
 
 class RegionGenerator:
