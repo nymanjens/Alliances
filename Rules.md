@@ -224,8 +224,9 @@ A battle has one or more rounds. Every round has following parts:
       another region under attack. Healthy retreated units are allowed to participate in the
       following battle.
 
-  The attacker moves all attacking units into the region and may plunder the region. If a token is present, the attacker may use it
-  in a next command round after which the token returns to the defender.
+  The attacker moves all attacking units into the region and may plunder the region. If a token is
+  present, the attacker may use it in a next command round after which the token returns to the
+  defender.
 
 (&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
