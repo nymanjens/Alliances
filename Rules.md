@@ -147,7 +147,7 @@ player available, all write down their action and execute that action.
 
 Units can move to an adjacent region. If this adjacent region has at least one coin invested and
 if it was already friendly prior to resolving the move token, the unit may move through this
-region to another region. Units cannot end in friendly regions owned by other players. 
+region to another region. Units cannot end in friendly regions owned by other players.
 
 *Examples:*
 
