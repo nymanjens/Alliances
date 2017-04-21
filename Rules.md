@@ -163,8 +163,8 @@ least one invested coin.
 
 ### Plundering
 
-If a unit's move ends in a previously unoccupied region, invested coins may be (partly) moved from the
-unoccupied region to the player's supply.
+If a unit of a player ends a move in a region which was not previously owned by that player, the
+player may move any amount of coins invested in the region to his supply.
 
 ### Sea regions
 
