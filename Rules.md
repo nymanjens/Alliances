@@ -145,13 +145,9 @@ player available, all write down their action and execute that action.
 
 ## Moving units
 
-Units can move to any adjacent region, except for friendly regions owned by other players.
-
-### Roads
-
-Moves can hop over a single friendly region if a road exists (before resolving the move token) between
-the starting region and that friendly region. A road exists between adjacent regions if both have at
-least one invested coin.
+Units can move to an adjacent region. If this adjacent region has at least one coin invested and
+if it was already friendly prior to resolving the move token, the unit may move through this
+region to another region. Units cannot end in friendly regions owned by other players. 
 
 *Examples:*
 
