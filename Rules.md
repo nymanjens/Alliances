@@ -98,7 +98,10 @@ brackets ([example]) need no player input and can be done quickly.
     * **Point scoring:** Every team scores 1 point per strategic city they own
     * **Advance turn counter** by one and check the game end condition
     * **Unit healing:** All wounded units are healed
-1. **Train units and revival** (*)
+1. **Neutral reinforcements, train units and revival** (*)
+    * **Neutral reinforcements**: The team with the least points gets one neutral infantry to put in
+       a region, possibly triggering a battle (retreating neutral units immediately die). In case of
+       a tie between the teams, nothing happens.
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
