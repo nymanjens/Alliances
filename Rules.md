@@ -247,7 +247,7 @@ decision.
 
 # Coin trading
 
-At any point in the game, you are allowed to give coins to another player.
+At any point in the game, you may give 2 coins to a player when you burn an extra coin.
 
 *Examples:*
 
