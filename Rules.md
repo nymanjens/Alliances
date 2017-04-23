@@ -256,28 +256,48 @@ At any point in the game, you are allowed to give coins to another player.
 
 # Initial setup
 
-## Apply scenario
+## Initial supply
 
-Choose a [scenario](Scenarios.md) for the desired number of players *at random* and apply it.
-
-## Coins
-
-* Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 * Every player gets command tokens:
     * Invest x 2
     * Dig trenches x 1
     * Move x 3
     * Train units x 2
+    
+## Beginner
+Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
 
-## Initial seeding
+* Every player gets 2 coins in every region they own
+* Remove one start unit from the non-strategic start region of every player. This makes the first 
+turn easier.
 
-For every unoccupied region, roll a dice. If its result is:
+## Advanced
 
-* 1-3: Nothing happens
-* 4-6: Add 1 coin
+Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
+* Every player gets 2 coins in every region they own
+* For every unoccupied region, roll a dice. If its result is:
+  * 1-3: Nothing happens
+  * 4-6: Add 1 coin
 
-# First play
+## Expert
+Every player chooses a team. The teams are sitting crossed-wise and in order.
 
-**Tip for first time plays:** Remove one start unit from the non-strategic start region of every
-player. This makes the first turn easier.
+For 4|6 players: give everyone 3|2 cards from the 12 strategic cards. Give everyone 6|4 cards of
+the remaining 24 cards. Every player should now have a deck of 9|6 cards to draft from.
+
+Every player drafts their starting regions by picking a card from his deck, and putting it face
+down on the table. When all players did this, reveal the cards and everyone puts a unit on the region
+they picked. Everyone gives the remaining cards to the player on their left, and repeats the procedure
+with the cards they received from the player on their right. Continue until all the cards are drafted.
+
+At the end of the draft, every player chooses at least 3|2 cards from their drafted deck of cards and
+puts them face down on the table. When all players did this, reveal those cards and everyone removes
+all their units from the region on their card. No player may have more than 1 strategic region at this
+point.
+
+Everyone puts an additional 2 coins and 1 unit on every strategic city they own, to a total of 2 units
+and 2 coins. Everyone als puts an additional coin on every land region they own, to a total of 1 coin
+and 1 unit. Everyone who owns a sea region should have a unit there without coins.
+
+Every unused strategic city also gets an additional 2 coins and 2 neutral units.
