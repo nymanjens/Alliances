@@ -270,8 +270,7 @@ At any point in the game, you are allowed to give coins to another player.
 Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
 
 * Every player gets 2 coins in every region they own
-* Remove one start unit from the non-strategic start region of every player. This makes the first
-turn easier.
+* Remove one start unit from the non-strategic start region of every player.
 
 ## Advanced
 
