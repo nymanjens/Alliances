@@ -264,23 +264,26 @@ At any point in the game, you are allowed to give coins to another player.
     * Dig trenches x 1
     * Move x 3
     * Train units x 2
-    
+
 ## Beginner
+
 Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
 
 * Every player gets 2 coins in every region they own
-* Remove one start unit from the non-strategic start region of every player. This makes the first 
+* Remove one start unit from the non-strategic start region of every player. This makes the first
 turn easier.
 
 ## Advanced
 
 Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
+
 * Every player gets 2 coins in every region they own
 * For every unoccupied region, roll a dice. If its result is:
-  * 1-3: Nothing happens
-  * 4-6: Add 1 coin
+    * 1-3: Nothing happens
+    * 4-6: Add 1 coin
 
 ## Expert
+
 Every player chooses a team. The teams are sitting crossed-wise and in order.
 
 For 4|6 players: give everyone 3|2 cards from the 12 strategic cards. Give everyone 6|4 cards of
