@@ -95,7 +95,8 @@ brackets ([example]) need no player input and can be done quickly.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
 1. **[Point scoring, advance turn counter and healing]**
-    * **Point scoring:** Every team scores 1 point per strategic city they own that does not contain a Train token
+    * **Point scoring:** Every team scores 1 point per strategic city they own that does not 
+       contain a Train token
     * **Advance turn counter** by one and check the game end condition
     * **Unit healing:** All wounded units are healed
 1. **Train units and revival** (*)
@@ -136,7 +137,8 @@ player available, all write down their action and execute that action.
 
 * **Train units**:<br>
   You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  city, or 1 coin if it's a normal land region. Having this token on a strategic city however prevents it from generating a point.
+  city, or 1 coin if it's a normal land region. Having this token on a strategic city however
+  prevents it from generating a point.
 
   This token is ignored in **sea regions**.
 
