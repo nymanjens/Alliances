@@ -95,7 +95,7 @@ brackets ([example]) need no player input and can be done quickly.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
 1. **[Point scoring, advance turn counter and healing]**
-    * **Point scoring:** Every team scores 1 point per strategic city they own that does not 
+    * **Point scoring:** Every team scores 1 point per strategic city they own that does not
        contain a Train token
     * **Advance turn counter** by one and check the game end condition
     * **Unit healing:** All wounded units are healed
