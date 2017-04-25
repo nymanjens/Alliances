@@ -195,20 +195,20 @@ A battle has one or more rounds. Every round has following parts:
 
    Wound triggers a retreat for the wounded unit(s).
    Kills are resolved before wounds. Infantries are targeted before artilleries.
-1. **Attacker retreat:** Wounded and other selected units move back to the region where the move 
+1. **Attacker retreat:** Wounded and other selected units move back to the region where the move
    started.
-   
-   If no attacking units are left, the battle is instantly over and any wounded defending 
+  
+   If no attacking units are left, the battle is instantly over and any wounded defending
    units will not retreat.
-1. **Defender retreat:** Wounded and selected units move to a single adjacent land region that is 
-   either owned by the defender or unoccupied, but not the region where the attacker's move 
+1. **Defender retreat:** Wounded and selected units move to a single adjacent land region that is
+   either owned by the defender or unoccupied, but not the region where the attacker's move
    started. Retreating units in subsequent battle rounds need to retreat to this same area.
 
    If no such region is found, the units are killed. If there is a choice, the defender may choose
    the region.
 
-   If no defending units are left, the battle is instantly over and the attacker moves all remaining 
-   attacking units into the region. The invested coins in the conquered region may be kept on the 
+   If no defending units are left, the battle is instantly over and the attacker moves all remaining
+   attacking units into the region. The invested coins in the conquered region may be kept on the
    board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
    round after which the token returns to the defender.
 
