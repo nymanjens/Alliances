@@ -2,9 +2,6 @@
 
 * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
-    * **Healthy unit:** The default state of a unit. Able to move and participate in combat
-    * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
-      move (but it can retreat).
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -97,7 +94,6 @@ brackets ([example]) need no player input and can be done quickly.
 1. **[Point scoring, advance turn counter and healing]**
     * **Point scoring:** Every team scores 1 point per strategic city they own
     * **Advance turn counter** by one and check the game end condition
-    * **Unit healing:** All wounded units are healed
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
@@ -128,7 +124,7 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All healthy units in this region can move. Units can move separately to multiple regions.
+  All units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations. If there are multiple battles, the player chooses the subsequent battle every time the
@@ -186,50 +182,44 @@ When a move proceeds into an enemy region, a battle is initiated with all moved 
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (*)
+    * Every attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets a dice for every healthy attacking **infantry unit**
-    * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
+    * Attacker gets a dice for every attacking **infantry unit**
+    * Defender gets a dice for every defending **unit** (infantry + artillery)
     * Every attacker roll of:
-        * **3-4:** Wounds an enemy unit (*)
-        * **5-6:** Kills an enemy unit (*)
+        * **3-4:** Wounds an enemy unit
+        * **5-6:** Kills an enemy unit
     * Every defender roll of:
-        * **1-4:** Wounds an enemy unit (*)
-        * **5-6:** Kills an enemy unit (*)
+        * **1-4:** Wounds an enemy unit
+        * **5-6:** Kills an enemy unit
 
-    Kills are resolved before wounds.
-1. **Attacker decides to retreat or has no healthy units left:** All units move back to the region
-   where to move started.
+   Wound triggers a retreat for the wounded unit(s).
+   Kills are resolved before wounds. Infantries are targeted before artilleries.
+1. **Attacker retreat:** Wounded and other selected units move back to the region where the move 
+   started.
+   
+   If no attacking units are left, the battle is instantly over and any wounded defending 
+   units will not retreat.
+1. **Defender retreat:** Wounded and selected units move to a single adjacent land region that is 
+   either owned by the defender or unoccupied, but not the region where the attacker's move 
+   started. Retreating units in subsequent battle rounds need to retreat to this same area.
 
-   Edge case: If the attacker has no healthy units left and the defender has no units left, the
-   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
-   supply.
-1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
-   move to a single adjacent land region that is either unoccupied or owned by the defender.
-   Exception: units can't retreat to the region where the attacker's move started.
+   If no such region is found, the units are killed. If there is a choice, the defender may choose
+   the region.
 
-  If no such region is found, the units are killed. If there is a choice, the defender may choose
-  the region.
+   If no defending units are left, the battle is instantly over and the attacker moves all remaining 
+   attacking units into the region. The invested coins in the conquered region may be kept on the 
+   board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
+   round after which the token returns to the defender.
 
-  Clarifications for edge cases:
 
-    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
-      may *not* retreat to this region.
-    * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-      another region under attack. Healthy retreated units are allowed to participate in the
-      following battle.
+Clarifications for edge cases:
 
-  The attacker moves all attacking units into the region. The invested coins in the conquered region
-  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round after which the token returns to the defender.
-
-(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
-priorities:
-
-* Healthy infantry
-* Healthy artillery
-* Wounded infantry
-* Wounded artillery
+  * If the attacker completely **vacated a region** to attack an adjacent region, defending units
+    may *not* retreat to this region.
+  * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
+    another region under attack. Retreated units are allowed to participate in the
+    following battle.
 
 ### Trenches
 
@@ -237,7 +227,7 @@ When attacking a region that has a trench at the border the attacker is crossing
 advantages:
 
 * Defending units cannot be wounded (only killed)
-* The defender gets **2** dice for every healthy defending unit
+* The defender gets **2** dice for every defending unit
 
 ### Fighting neutral regions
 
