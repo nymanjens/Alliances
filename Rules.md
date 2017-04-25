@@ -197,7 +197,7 @@ A battle has one or more rounds. Every round has following parts:
    Kills are resolved before wounds. Infantries are targeted before artilleries.
 1. **Attacker retreat:** Wounded and other selected units move back to the region where the move
    started.
-  
+
    If no attacking units are left, the battle is instantly over and any wounded defending
    units will not retreat.
 1. **Defender retreat:** Wounded and selected units move to a single adjacent land region that is
@@ -212,14 +212,13 @@ A battle has one or more rounds. Every round has following parts:
    board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
    round after which the token returns to the defender.
 
-
 Clarifications for edge cases:
 
-  * If the attacker completely **vacated a region** to attack an adjacent region, defending units
-    may *not* retreat to this region.
-  * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-    another region under attack. Retreated units are allowed to participate in the
-    following battle.
+* If the attacker completely **vacated a region** to attack an adjacent region, defending units
+  may *not* retreat to this region.
+* If the attacker is attacking **multiple regions**, it is possible that units could retreat to
+  another region under attack. Retreated units are allowed to participate in the
+  following battle.
 
 ### Trenches
 
