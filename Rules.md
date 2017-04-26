@@ -219,6 +219,7 @@ Clarifications for edge cases:
 * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
   another region under attack. Retreated units are allowed to participate in the
   following battle.
+* If the attacker has **won the battle**, he can still choose to retreat with any number of his units.
 
 ### Trenches
 
