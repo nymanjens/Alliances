@@ -194,14 +194,14 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6:** Kills an enemy unit
 
    Wound triggers a retreat for the wounded unit(s).
-   Kills are resolved before wounds. Infantries are targeted before artilleries.
-1. **Attacker retreat:** Wounded and other selected units move back to the region where the move
+   Kills are resolved before wounds. Infantries are targeted before artillery.
+1. **Attacker retreat:** Wounded and other attacking units move back to the region where the move
    started.
 
    If no attacking units are left, the battle is instantly over and any wounded defending
    units will not retreat.
-1. **Defender retreat:** Wounded and other selected units move to a single adjacent land region that
-   is either owned by the defender or unoccupied, but not the region where the attacker's move
+1. **Defender retreat:** Wounded and other defending units move to a single adjacent land region
+   that is either owned by the defender or unoccupied, but not the region where the attacker's move
    started. Retreating units in subsequent battle rounds need to retreat to this same area.
 
    If no such region is found, the units are killed. If there is a choice, the defender may choose
