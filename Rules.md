@@ -196,7 +196,7 @@ A battle has one or more rounds. Every round has following parts:
    Wound triggers a retreat for the wounded unit(s). Kills are resolved before wounds.
 1. **Attacker retreat:** The attacker chooses the wounded units plus any additional units that they
    want to retreat. All these units move back to the region where the move started.
-   
+
    If no attacking units are left, the battle is instantly over and any wounded defending
    units will not retreat.
 1. **Defender retreat:** The defender chooses the wounded units plus any additional units that they
