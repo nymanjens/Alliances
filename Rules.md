@@ -30,7 +30,7 @@
         * Invest: 2
         * Dig trenches: 1
         * Move: 3
-        * Train units: 2
+        * Train units: 3
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
@@ -270,7 +270,7 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
     * Invest x 2
     * Dig trenches x 1
     * Move x 3
-    * Train units x 2
+    * Train units x 3
 
 ## Initial seeding
 
