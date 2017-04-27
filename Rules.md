@@ -200,9 +200,9 @@ A battle has one or more rounds. Every round has following parts:
    If no attacking units are left, the battle is instantly over and any defending units that would
    have been forced to retreat, don't retreat but remain in the region.
 1. **Defender retreat:** The defender chooses their forced retreating units plus any additional units
-   they want to retreat. All these units move to a single adjacent land region that is either owned by the
-   defender or unoccupied, but not the region where the attacker's move started. Retreating units in
-   subsequent battle rounds need to retreat to this same area.
+   they want to retreat. All these units move to a single adjacent land region that is either owned by
+   the defender or unoccupied, but not the region where the attacker's move started. Retreating units
+   in subsequent battle rounds need to retreat to this same area.
 
    If no such region is found, the units are killed. If there is a choice, the defender may choose
    the region.
