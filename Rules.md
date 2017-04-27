@@ -187,20 +187,20 @@ A battle has one or more rounds. Every round has following parts:
     * Attacker gets a dice for every attacking **infantry unit**
     * Defender gets a dice for every defending **unit** (infantry + artillery)
     * Every attacker roll of:
-        * **3-4:** Wounds an enemy unit
+        * **3-4:** Forces an enemy unit to retreat
         * **5-6:** Kills an enemy unit
     * Every defender roll of:
-        * **1-4:** Wounds an enemy unit
+        * **1-4:** Forces an enemy unit to retreat
         * **5-6:** Kills an enemy unit
 
-   Wound triggers a retreat for the wounded unit(s). Kills are resolved before wounds.
-1. **Attacker retreat:** The attacker chooses the wounded units plus any additional units that they
-   want to retreat. All these units move back to the region where the move started.
+   Kills are resolved before forced retreat.
+1. **Attacker retreat:** The attacker chooses their forced retreating units plus any additional units
+   they want to retreat. All these units move back to the region where the move started.
 
-   If no attacking units are left, the battle is instantly over and any wounded defending
-   units will not retreat.
-1. **Defender retreat:** The defender chooses the wounded units plus any additional units that they
-   want to retreat. All these units move to a single adjacent land region that is either owned by the
+   If no attacking units are left, the battle is instantly over and any defending units that would
+   have been forced to retreat, don't retreat but remain in the region.
+1. **Defender retreat:** The defender chooses their forced retreating units plus any additional units
+   they want to retreat. All these units move to a single adjacent land region that is either owned by the
    defender or unoccupied, but not the region where the attacker's move started. Retreating units in
    subsequent battle rounds need to retreat to this same area.
 
@@ -226,7 +226,7 @@ Clarifications for edge cases:
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
 
-* Defending units cannot be wounded (only killed)
+* Defending units cannot be forced to retreat (only killed)
 * The defender gets **2** dice for every defending unit
 
 ### Fighting neutral regions
