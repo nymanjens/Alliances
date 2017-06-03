@@ -4,22 +4,22 @@
 
 ### Players and their units
 
-* **UK**
+* **British**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russia**
+* **Russians**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **France**
+* **French**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germany**
+* **Germans**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottoman Empire**
+* **Ottomans**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
-* **Austro-Hungarian Empire**
+* **Austro-Hungarians**
     * 2 infantry in Austria
     * 2 infantry in Hungary
 
@@ -44,22 +44,22 @@
 
 ### Players and their units
 
-* **UK**
+* **British**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russia**
+* **Russians**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **France**
+* **French**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germany**
+* **Germans**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottoman Empire**
+* **Ottomans**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
-* **Austro-Hungarian Empire**
+* **Austro-Hungarians**
     * 2 infantry in Austria
     * 2 infantry in Hungary
 
@@ -120,16 +120,16 @@
 
 ### Players and their units
 
-* **UK**
+* **British**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russia**
+* **Russians**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **Germany**
+* **Germans**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottoman Empire**
+* **Ottomans**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
 
@@ -172,16 +172,16 @@
 
 ### Players and their units
 
-* **Russia**
+* **Russians**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **France**
+* **French**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germany**
+* **Germans**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottoman Empire**
+* **Ottomans**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
 
