@@ -39,14 +39,14 @@
 
 There are 2 teams:
 
-* The Triple Entente:
-    * UK
-    * Russia
-    * France
-* Central players:
-    * Germany
-    * Ottoman Empire
-    * Austro-Hungarian Empire
+* Triple Entente:
+    * British
+    * Russians
+    * French
+* Central Powers:
+    * Germans
+    * Ottomans
+    * Austro-Hungarians
 
 # Goal of the game
 
@@ -72,18 +72,18 @@ brackets ([example]) need no player input and can be done quickly.
 
        The number-player correspondence is indicated on the board:
 
-        * 1 - UK (down)
-        * 2 - Germany (up)
-        * 3 - Russia (down)
-        * 4 - Ottoman Empire (up)
-        * 5 - France (down)
-        * 6 - Austro-Hungarian Empire (up)
+        * 1 - British (down)
+        * 2 - Germans (up)
+        * 3 - Russians (down)
+        * 4 - Ottomans (up)
+        * 5 - French (down)
+        * 6 - Austro-Hungarians (up)
 
        The board also indicates the direction of the player order. Note that the full circle of the
        player order should always be the same as that of the above player order.
 
-       *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
-       Austro-Hungarians, France.*
+       *Example: If the dice shows 4 eyes, the player order is Ottomans, Russians, Germans, British,
+       Austro-Hungarians, French.*
 1. **Resolve Invest and Dig trenches tokens** (*)
 1. **Resolve Move tokens** (in player order)
 1. **Production, payment and mutiny** (*)
