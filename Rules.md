@@ -39,11 +39,11 @@
 
 There are 2 teams:
 
-* Triple Entente:
+* The Triple Entente:
     * The British Empire
     * The Russian Empire (Россійская Имперія)
     * The French Third Republic (La Troisième République)
-* Central Powers:
+* The Central Powers:
     * The German Empire (Das Deutsches Kaiserreich)
     * The Ottoman Empire (دولت عليه عثمانیه)
     * The Austro-Hungarian Empire (Die Österreichisch-Ungarische Monarchie / Az Osztrák–Magyar Monarchia)
