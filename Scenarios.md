@@ -4,16 +4,16 @@
 
 ### Players and their units
 
-* **UK**
+* **British Empire**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russia**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **France**
+* **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germany**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
 * **Ottoman Empire**
@@ -44,16 +44,16 @@
 
 ### Players and their units
 
-* **UK**
+* **British Empire**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russia**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **France**
+* **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germany**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
 * **Ottoman Empire**
@@ -120,13 +120,13 @@
 
 ### Players and their units
 
-* **UK**
+* **British Empire**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russia**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **Germany**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
 * **Ottoman Empire**
@@ -172,13 +172,13 @@
 
 ### Players and their units
 
-* **Russia**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **France**
+* **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germany**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
 * **Ottoman Empire**
