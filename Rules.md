@@ -76,14 +76,14 @@ brackets ([example]) need no player input and can be done quickly.
         * 2 - German Empire (up)
         * 3 - Russian Empire (down)
         * 4 - Ottoman Empire (up)
-        * 5 - French Third Republic (down)
+        * 5 - French Republic (down)
         * 6 - Austro-Hungarian Empire (up)
 
        The board also indicates the direction of the player order. Note that the full circle of the
        player order should always be the same as that of the above player order.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russian Empire, German
-       Empire, British Empire, Austro-Hungarian Empire, French Third Republic.*
+       Empire, British Empire, Austro-Hungarian Empire, French Republic.*
 1. **Resolve Invest and Dig trenches tokens** (*)
 1. **Resolve Move tokens** (in player order)
 1. **Production, payment and mutiny** (*)
