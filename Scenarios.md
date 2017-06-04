@@ -10,7 +10,7 @@
 * **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **French Third Republic**
+* **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
 * **German Empire**
@@ -50,7 +50,7 @@
 * **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **French Third Republic**
+* **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
 * **German Empire**
@@ -175,7 +175,7 @@
 * **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **French Third Republic**
+* **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
 * **German Empire**
