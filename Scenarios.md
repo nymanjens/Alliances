@@ -4,22 +4,22 @@
 
 ### Players and their units
 
-* **British**
+* **British Empire**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russians**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **French**
+* **French Third Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germans**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottomans**
+* **Ottoman Empire**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
-* **Austro-Hungarians**
+* **Austro-Hungarian Empire**
     * 2 infantry in Austria
     * 2 infantry in Hungary
 
@@ -44,22 +44,22 @@
 
 ### Players and their units
 
-* **British**
+* **British Empire**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russians**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **French**
+* **French Third Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germans**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottomans**
+* **Ottoman Empire**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
-* **Austro-Hungarians**
+* **Austro-Hungarian Empire**
     * 2 infantry in Austria
     * 2 infantry in Hungary
 
@@ -120,16 +120,16 @@
 
 ### Players and their units
 
-* **British**
+* **British Empire**
     * 2 infantry in England
     * 2 infantry in Scotland
-* **Russians**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **Germans**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottomans**
+* **Ottoman Empire**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
 
@@ -172,16 +172,16 @@
 
 ### Players and their units
 
-* **Russians**
+* **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
-* **French**
+* **French Third Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
-* **Germans**
+* **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottomans**
+* **Ottoman Empire**
     * 2 infantry in Turkey
     * 2 infantry in Middle East
 
