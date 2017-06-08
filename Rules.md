@@ -191,23 +191,23 @@ A battle has one or more rounds. Every round has following parts:
 1. **Artillery strike:**
     * Every healthy attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets a dice for every healthy attacking **infantry unit**
-    * Defender gets a dice for every healthy defending **unit** (infantry + artillery)
-    * Every attacker roll of:
-        * **3-4:** Wounds an enemy unit (*)
-        * **5-6:** Kills an enemy unit (*)
-    * Every defender roll of:
-        * **1-4:** Wounds an enemy unit (*)
-        * **5-6:** Kills an enemy unit (*)
+    * The attacker gets a dice for every healthy attacking **infantry unit**
+    * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
+    * Every attacker roll of
+        * **3-4** wounds an enemy unit, (*)
+        * **5-6** kills an enemy unit. (*)
+    * Every defender roll of
+        * **1-4** wounds an enemy unit, (*)
+        * **5-6** kills an enemy unit. (*)
 
     Kills are resolved before wounds.
-1. **Attacker decides to retreat or has no healthy units left:** All units move back to the region
+1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
    where to move started.
 
    Edge case: If the attacker has no healthy units left and the defender has no units left, the
    attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
    supply.
-1. **Defender decides to retreat or has no healthy units left:** All units (including wounded units)
+1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
    move to a single adjacent land region that is either unoccupied or owned by the defender.
    Exception: units can't retreat to the region where the attacker's move started.
 
