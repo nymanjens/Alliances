@@ -202,7 +202,7 @@ A battle has one or more rounds. Every round has following parts:
 
     Kills are resolved before wounds.
 1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
-   where to move started.
+   where the move started.
 
    Edge case: If the attacker has no healthy units left and the defender has no units left, the
    attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
