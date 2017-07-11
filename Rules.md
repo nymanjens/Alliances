@@ -91,7 +91,7 @@ brackets ([example]) need no player input and can be done quickly.
     * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-1. **[Point scoring, advance turn counter and healing]**
+1. **[Point scoring and advance turn counter]**
     * **Point scoring:** Every team scores 1 point per strategic city they own
     * **Advance turn counter** by one and check the game end condition
 1. **Train units and revival** (*)
