@@ -248,7 +248,7 @@ decision.
 
 # Coin trading
 
-At any point in the game, you may give 2 coins to another player when you remove an extra coin
+At any point in the game, you may give up to 2 coins to another player when you remove an extra coin
 from your supply.
 
 *Examples:*
