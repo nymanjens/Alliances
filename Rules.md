@@ -176,7 +176,7 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **Gibraltar**
 * **Istanbul**
 
-Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
+Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
 
 ## Battles
 
