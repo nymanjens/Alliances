@@ -202,7 +202,8 @@ A battle has one or more rounds. Every round has following parts:
    where the move started.
 
    Edge case: If the attacker has no healthy units left and the defender has no units left, the
-   attacker has to retreat.
+   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
+   supply.
 1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
    move to a single adjacent land region that is either unoccupied or owned by the defender.
    Exception: units can't retreat to the region where the attacker's move started.
