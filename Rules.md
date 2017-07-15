@@ -237,8 +237,8 @@ priorities:
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
 
-* Defending units cannot be wounded (only killed)
-* The defender gets **2** dice for every healthy defending unit
+* Defending units cannot be forced to retreat (only killed)
+* The defender gets **2** dice for every defending unit
 
 ### Fighting neutral regions
 
