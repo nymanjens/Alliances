@@ -2,6 +2,9 @@
 
 * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
+    * **Healthy unit:** The default state of a unit. Able to participate in combat.
+    * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
+      the battle is over, this becomes a healthy unit again.
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -27,7 +30,7 @@
         * Invest: 2
         * Dig trenches: 1
         * Move: 3
-        * Train units: 2
+        * Train units: 3
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
@@ -37,13 +40,13 @@
 There are 2 teams:
 
 * The Triple Entente:
-    * UK
-    * Russia
-    * France
-* Central players:
-    * Germany
-    * Ottoman Empire
-    * Austro-Hungarian Empire
+    * The British Empire
+    * The Russian Empire (Россійская Имперія)
+    * The French Third Republic (La Troisième République)
+* The Central Powers:
+    * The German Empire (Das Deutsches Kaiserreich)
+    * The Ottoman Empire (دولت عليه عثمانیه)
+    * The Austro-Hungarian Empire (Die Österreichisch-Ungarische Monarchie / Az Osztrák–Magyar Monarchia)
 
 # Goal of the game
 
@@ -69,18 +72,18 @@ brackets ([example]) need no player input and can be done quickly.
 
        The number-player correspondence is indicated on the board:
 
-        * 1 - UK (down)
-        * 2 - Germany (up)
-        * 3 - Russia (down)
+        * 1 - British Empire (down)
+        * 2 - German Empire (up)
+        * 3 - Russian Empire (down)
         * 4 - Ottoman Empire (up)
-        * 5 - France (down)
+        * 5 - French Republic (down)
         * 6 - Austro-Hungarian Empire (up)
 
        The board also indicates the direction of the player order. Note that the full circle of the
        player order should always be the same as that of the above player order.
 
-       *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russia, Germany, UK,
-       Austro-Hungarians, France.*
+       *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russian Empire, German
+       Empire, British Empire, Austro-Hungarian Empire, French Republic.*
 1. **Resolve Invest and Dig trenches tokens** (*)
 1. **Resolve Move tokens** (in player order)
 1. **Production, payment and mutiny** (*)
@@ -92,7 +95,8 @@ brackets ([example]) need no player input and can be done quickly.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
 1. **[Point scoring and advance turn counter]**
-    * **Point scoring:** Every team scores 1 point per strategic city they own
+    * **Point scoring:** Every team scores 1 point per strategic city they own that does not
+       contain a Train token
     * **Advance turn counter** by one and check the game end condition
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
@@ -132,7 +136,8 @@ player available, all write down their action and execute that action.
 
 * **Train units**:<br>
   You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  city, or 1 coin if it's a normal land region.
+  city, or 1 coin if it's a normal land region. Having this token on a strategic city however
+  prevents it from generating a point.
 
   This token is ignored in **sea regions**.
 
@@ -169,9 +174,8 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **English Channel**
 * **Gibraltar**
 * **Istanbul**
-* **North Channel (between Ireland and Scotland)**
 
-Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
+Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
 
 ## Battles
 
@@ -182,52 +186,60 @@ When a move proceeds into an enemy region, a battle is initiated with all moved 
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
-    * Every attacking artillery kills 1 unit (*)
+    * Every healthy attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * Attacker gets a dice for every attacking **infantry unit**
-    * Defender gets a dice for every defending **unit** (infantry + artillery)
-    * Every attacker roll of:
-        * **3-4:** Forces an enemy unit to retreat
-        * **5-6:** Kills an enemy unit
-    * Every defender roll of:
-        * **1-4:** Forces an enemy unit to retreat
-        * **5-6:** Kills an enemy unit
+    * The attacker gets a dice for every healthy attacking **infantry unit**
+    * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
+    * Every attacker roll of
+        * **3-4** wounds an enemy unit, (*)
+        * **5-6** kills an enemy unit. (*)
+    * Every defender roll of
+        * **1-4** wounds an enemy unit, (*)
+        * **5-6** kills an enemy unit. (*)
 
-   Kills are resolved before forced retreat.
-1. **Attacker retreat:** The attacker chooses their forced retreating units plus any additional units
-   they want to retreat. All these units move back to the region where the move started.
+    Kills are resolved before wounds.
+1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
+   where the move started.
 
-   If no attacking units are left, the battle is instantly over and any defending units that would
-   have been forced to retreat, don't retreat but remain in the region.
-1. **Defender retreat:** The defender chooses their forced retreating units plus any additional units
-   they want to retreat. All these units move to a single adjacent land region that is either owned by
-   the defender or unoccupied, but not the region where the attacker's move started. Retreating units
-   in subsequent battle rounds need to retreat to this same area.
+   Edge case: If the attacker has no healthy units left and the defender has no units left, the
+   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
+   supply.
+1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
+   move to a single adjacent land region that is either unoccupied or owned by the defender.
+   Exception: units can't retreat to the region where the attacker's move started.
 
-   If no such region is found, the units are killed. If there is a choice, the defender may choose
-   the region.
+  If no such region is found, the units are killed. If there is a choice, the defender may choose
+  the region.
 
-   If no defending units are left, the battle is instantly over and the attacker moves all remaining
-   attacking units into the region. The invested coins in the conquered region may be kept on the
-   board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
-   round after which the token returns to the defender.
+  Clarifications for edge cases:
 
-Clarifications for edge cases:
+    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
+      may *not* retreat to this region.
+    * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
+      another region under attack. Retreated units are allowed to participate in the following
+      battle. Note that wounded units that retreated will be healthy again in this following battle.
 
-* If the attacker completely **vacated a region** to attack an adjacent region, defending units
-  may *not* retreat to this region.
-* If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-  another region under attack. Retreated units are allowed to participate in the
-  following battle.
-* If the attacker has **won the battle**, he can still choose to retreat with any number of his units.
+  The attacker moves all attacking units into the region. The invested coins in the conquered region
+  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
+  in a next command round after which the token returns to the defender.
+
+After the battle, all wounded units become healthy again.
+
+(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
+priorities:
+
+* Healthy infantry
+* Healthy artillery
+* Wounded infantry
+* Wounded artillery
 
 ### Trenches
 
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
 
-* Defending units cannot be forced to retreat (only killed)
-* The defender gets **2** dice for every defending unit
+* Defending units cannot be wounded (only killed)
+* The defender gets **2** dice for every healthy defending unit
 
 ### Fighting neutral regions
 
@@ -237,7 +249,8 @@ decision.
 
 # Coin trading
 
-At any point in the game, you are allowed to give coins to another player.
+At any point in the game, you may give up to 2 coins to another player when you remove an extra coin
+from your supply.
 
 *Examples:*
 
@@ -246,28 +259,50 @@ At any point in the game, you are allowed to give coins to another player.
 
 # Initial setup
 
-## Apply scenario
+## Initial supply
 
-Choose a [scenario](Scenarios.md) for the desired number of players *at random* and apply it.
-
-## Coins
-
-* Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 * Every player gets command tokens:
     * Invest x 2
     * Dig trenches x 1
     * Move x 3
-    * Train units x 2
+    * Train units x 3
 
-## Initial seeding
+## Beginner
 
-For every unoccupied region, roll a dice. If its result is:
+Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
 
-* 1-3: Nothing happens
-* 4-6: Add 1 coin
+* Every player gets 2 coins in every region they own
+* Remove one start unit from the non-strategic start region of every player.
 
-# First play
+## Advanced
 
-**Tip for first time plays:** Remove one start unit from the non-strategic start region of every
-player. This makes the first turn easier.
+Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
+
+* Every player gets 2 coins in every region they own
+* For every unoccupied region, roll a dice. If its result is:
+    * 1-3: Nothing happens
+    * 4-6: Add 1 coin
+
+## Expert
+
+Every player chooses a team. The teams are sitting crossed-wise and in order.
+
+For 4|6 players: give everyone 3|2 cards from the 12 strategic cards. Give everyone 6|4 cards of
+the remaining 24 cards. Every player should now have a deck of 9|6 cards to draft from.
+
+Every player drafts their starting regions by picking a card from his deck, and putting it face
+down on the table. When all players did this, reveal the cards and everyone puts a unit on the region
+they picked. Everyone gives the remaining cards to the player on their left, and repeats the procedure
+with the cards they received from the player on their right. Continue until all the cards are drafted.
+
+At the end of the draft, every player chooses at least 3|2 cards from their drafted deck of cards and
+puts them face down on the table. When all players did this, reveal those cards and everyone removes
+all their units from the region on their card. No player may have more than 1 strategic region at this
+point.
+
+Everyone puts an additional 2 coins and 1 unit on their strategic city (if any), to a total of 2 units
+and 2 coins. Everyone also puts an additional coin on every land region they own, to a total of 1 coin
+and 1 unit. Everyone who owns a sea region should have a unit there without coins.
+
+Every unused strategic city also gets an additional 2 coins and 2 neutral units.
