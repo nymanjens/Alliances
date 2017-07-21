@@ -85,6 +85,10 @@ brackets ([example]) need no player input and can be done quickly.
        Empire, British Empire, Austro-Hungarian Empire, French Republic.*
 1. **Resolve Invest and Dig trenches tokens** (*)
 1. **Resolve Move tokens** (in player order)
+1. **[Point scoring]**
+    * The team controlling the most strategic cities that don't contain a Train token gains points
+      equal to those surplus cities. In case of a tie, both teams gain 1 point. Check the game end
+      condition.
 1. **Production, payment and mutiny** (*)
     * **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
@@ -93,10 +97,6 @@ brackets ([example]) need no player input and can be done quickly.
     * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-1. **[Point scoring]**
-    * The team controlling the most strategic cities that don't contain a Train token gains points
-      equal to those surplus cities. In case of a tie, both teams gain 1 point. Check the game end
-      condition.
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
