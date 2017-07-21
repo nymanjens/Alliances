@@ -2,9 +2,6 @@
 
 * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
-    * **Healthy unit:** The default state of a unit. Able to participate in combat.
-    * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
-      the battle is over, this becomes a healthy unit again.
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -186,60 +183,52 @@ When a move proceeds into an enemy region, a battle is initiated with all moved 
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (*)
+    * Every attacking artillery kills 1 unit (*)
 1. **Rolling dice:**
-    * The attacker gets a dice for every healthy attacking **infantry unit**
-    * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
-    * Every attacker roll of
-        * **3-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
-    * Every defender roll of
-        * **1-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+    * Attacker gets a dice for every attacking **infantry unit**
+    * Defender gets a dice for every defending **unit** (infantry + artillery)
+    * Every attacker roll of:
+        * **3-4:** Forces an enemy unit to retreat
+        * **5-6:** Kills an enemy unit
+    * Every defender roll of:
+        * **1-4:** Forces an enemy unit to retreat
+        * **5-6:** Kills an enemy unit
 
-    Kills are resolved before wounds.
-1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
-   where the move started.
+   Kills are resolved before forced retreat.
+1. **Attacker retreat:** The attacker chooses their forced retreating units plus any additional units
+   they want to retreat. All these units move back to the region where the move started.
 
-   Edge case: If the attacker has no healthy units left and the defender has no units left, the
-   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
-   supply.
-1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
-   move to a single adjacent land region that is either unoccupied or owned by the defender.
-   Exception: units can't retreat to the region where the attacker's move started.
+   If no attacking units are left, the battle is instantly over and any defending units that would
+   have been forced to retreat, don't retreat but remain in the region.
+1. **Defender retreat:** The defender chooses their forced retreating units plus any additional units
+   they want to retreat. All these units move to a single adjacent land region that is either owned by
+   the defender or unoccupied, but not the region where the attacker's move started. Retreating units
+   in subsequent battle rounds need to retreat to this same area.
 
-  If no such region is found, the units are killed. If there is a choice, the defender may choose
-  the region.
+   If no such region is found, the units are killed. If there is a choice, the defender may choose
+   the region.
 
-  Clarifications for edge cases:
+   If no defending units are left, the battle is instantly over and the attacker moves all remaining
+   attacking units into the region. The invested coins in the conquered region may be kept on the
+   board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
+   round after which the token returns to the defender.
 
-    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
-      may *not* retreat to this region.
-    * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-      another region under attack. Retreated units are allowed to participate in the following
-      battle. Note that wounded units that retreated will be healthy again in this following battle.
+Clarifications for edge cases:
 
-  The attacker moves all attacking units into the region. The invested coins in the conquered region
-  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round after which the token returns to the defender.
-
-After the battle, all wounded units become healthy again.
-
-(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
-priorities:
-
-* Healthy infantry
-* Healthy artillery
-* Wounded infantry
-* Wounded artillery
+* If the attacker completely **vacated a region** to attack an adjacent region, defending units
+  may *not* retreat to this region.
+* If the attacker is attacking **multiple regions**, it is possible that units could retreat to
+  another region under attack. Retreated units are allowed to participate in the
+  following battle.
+* If the attacker has **won the battle**, he can still choose to retreat with any number of his units.
 
 ### Trenches
 
 When attacking a region that has a trench at the border the attacker is crossing, the defender has
 advantages:
 
-* Defending units cannot be wounded (only killed)
-* The defender gets **2** dice for every healthy defending unit
+* Defending units cannot be forced to retreat (only killed)
+* The defender gets **2** dice for every defending unit
 
 ### Fighting neutral regions
 
