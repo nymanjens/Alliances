@@ -2,9 +2,9 @@
 
 * **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
 * **Unit:** Military unit, either an infantry or an artillery
-    * **Healthy unit:** The default state of a unit. Able to move and participate in combat
-    * **Wounded unit:** Acts like a normal unit, except that it has zero defence/attack and can't
-      move (but it can retreat).
+    * **Healthy unit:** The default state of a unit. Able to participate in combat.
+    * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
+      the battle is over, this becomes a healthy unit again.
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
@@ -97,7 +97,6 @@ brackets ([example]) need no player input and can be done quickly.
 1. **[Point scoring, advance turn counter and healing]**
     * **Point scoring:** Every team scores 1 point per strategic city they own
     * **Advance turn counter** by one and check the game end condition
-    * **Unit healing:** All wounded units are healed
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
@@ -128,7 +127,7 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Move**:<br>
-  All healthy units in this region can move. Units can move separately to multiple regions.
+  All units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
   destinations. If there are multiple battles, the player chooses the subsequent battle every time the
@@ -145,13 +144,9 @@ player available, all write down their action and execute that action.
 
 ## Moving units
 
-Units can move to any adjacent region, except for friendly regions owned by other players.
-
-### Roads
-
-Moves can hop over a single friendly region if a road exists (before resolving the move token) between
-the starting region and that friendly region. A road exists between adjacent regions if both have at
-least one invested coin.
+Units can move to an adjacent region. If this adjacent region has at least one coin invested and
+if it was already friendly prior to resolving the move token, the unit may move through this
+region to another region. Units cannot end in friendly regions owned by other players.
 
 *Examples:*
 
@@ -178,7 +173,7 @@ The following points on the map can be crossed both by land-land and sea-sea mov
 * **Gibraltar**
 * **Istanbul**
 
-Sea-sea movement is not possible for a unit if both land regions at the crossing are enemy regions.
+Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
 
 ## Battles
 
@@ -219,12 +214,14 @@ A battle has one or more rounds. Every round has following parts:
     * If the attacker completely **vacated a region** to attack an adjacent region, defending units
       may *not* retreat to this region.
     * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-      another region under attack. Healthy retreated units are allowed to participate in the
-      following battle.
+      another region under attack. Retreated units are allowed to participate in the following
+      battle. Note that wounded units that retreated will be healthy again in this following battle.
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
   in a next command round after which the token returns to the defender.
+
+After the battle, all wounded units become healthy again.
 
 (&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
