@@ -1,6 +1,6 @@
 # Definitions
 
-* **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
+* **Turn:** A single iteration of the game flow.
 * **Unit:** Military unit, either an infantry or an artillery
 * **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
@@ -47,13 +47,12 @@ There are 2 teams:
 
 # Goal of the game
 
-One of:
+Take control over strategic cities. On every turn the team with the most strategic cities gains
+points equal to the number of surplus cities. Strategic cities where units are trained this turn,
+temporarily don't count. In case of a tie, both teams get 1 point.
 
-1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
-   other team (ends the game)
-1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
-   match, whichever side may call itself the victor. For in war, there are no winners, but all are
-   losers.
+First to 6 points wins. If both teams reach 6 points simultaneously, whichever side may call itself
+the victor. For in war, there are no winners, but all are losers.
 
 # Playing a turn
 
@@ -83,6 +82,10 @@ brackets ([example]) need no player input and can be done quickly.
        Empire, British Empire, Austro-Hungarian Empire, French Republic.*
 1. **Resolve Invest and Dig trenches tokens** (*)
 1. **Resolve Move tokens** (in player order)
+1. **[Point scoring]**
+    * The team controlling the most strategic cities that don't contain a Train token gains points
+      equal to those surplus cities. In case of a tie, both teams gain 1 point. Check the game end
+      condition.
 1. **Production, payment and mutiny** (*)
     * **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
@@ -91,10 +94,6 @@ brackets ([example]) need no player input and can be done quickly.
     * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-1. **[Point scoring and advance turn counter]**
-    * **Point scoring:** Every team scores 1 point per strategic city they own that does not
-       contain a Train token
-    * **Advance turn counter** by one and check the game end condition
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
