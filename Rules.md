@@ -81,7 +81,9 @@ brackets ([example]) need no player input and can be done quickly.
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russian Empire, German
        Empire, British Empire, Austro-Hungarian Empire, French Republic.*
 1. **Resolve Invest and Dig trenches tokens** (*)
-1. **Resolve Move tokens** (in player order)
+1. **Resolve Move tokens**
+    * In player order. The remaining Move tokens in a player's supply can be used to skip resolving
+      a Move token.
 1. **[Point scoring]**
     * The team controlling the most strategic cities that don't contain a Train token gains points
       equal to those surplus cities. In case of a tie, both teams gain 1 point. Check the game end
