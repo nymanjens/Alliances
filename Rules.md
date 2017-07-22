@@ -5,7 +5,7 @@
     * **Healthy unit:** The default state of a unit. Able to participate in combat.
     * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
       the battle is over, this becomes a healthy unit again.
-* **Regions:** Region on the map bounded by white lines
+* **Regions:** Named region on the map bounded by lines
     * **Strategic region:** Region with a star
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
