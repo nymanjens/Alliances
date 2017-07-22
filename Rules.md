@@ -9,8 +9,8 @@
     * **Strategic region:** Region with a star
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
-    * **Occupied region:** Land region occupied by at least one military unit
-    * **Unoccupied region:** Land region not occupied by any military units
+    * **Occupied region:** Land region occupied by at least one unit
+    * **Unoccupied region:** Land region not occupied by any units
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
     * **Friendly region for a player:** Land region occupied by units of that player, or
