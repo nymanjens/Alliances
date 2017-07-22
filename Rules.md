@@ -232,7 +232,7 @@ priorities:
 * Wounded infantry
 * Wounded artillery
 
-### Trenches
+### Trench warfare
 
 When attacking a region that has a trench on the defender's side of the border that the attacker is
 crossing, the defender has advantages:
