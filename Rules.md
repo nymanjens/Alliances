@@ -5,8 +5,8 @@
     * **Healthy unit:** The default state of a unit. Able to participate in combat.
     * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
       the battle is over, this becomes a healthy unit again.
-* **Strategic city:** Star on the map
 * **Regions:** Region on the map bounded by white lines
+    * **Strategic region:** Region with a star
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
     * **Occupied region:** Land region occupied by at least one military unit
@@ -96,7 +96,7 @@ brackets ([example]) need no player input and can be done quickly.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
 1. **[Point scoring, advance round counter and healing]**
-    * **Point scoring:** Every team scores 1 point per strategic city they own
+    * **Point scoring:** Every team scores 1 point per strategic region they own
     * **Advance round counter** by one and check the game end condition
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
@@ -136,7 +136,7 @@ player available, all write down their action and execute that action.
 
 * **Train units**:<br>
   You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  city, or 1 coin if it's a normal land region.
+  region, or 1 coin if it's a normal land region.
 
   This token is ignored in **sea regions**.
 
