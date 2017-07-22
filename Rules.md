@@ -266,11 +266,6 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
-* Every player gets command tokens:
-    * Invest x 2
-    * Dig trenches x 1
-    * Move x 3
-    * Train units x 2
 
 ## Initial seeding
 
