@@ -163,7 +163,7 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 
 ### Sea regions
 
-Units of different teams can reside in the same sea region simultaneously.
+Units of different players and even teams can reside in the same sea region simultaneously.
 
 ### Ambiguous crossings
 
