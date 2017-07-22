@@ -38,7 +38,7 @@
 
 # Teams
 
-There are 2 teams:
+There are 2 opposing teams:
 
 * The Triple Entente:
     * The British Empire
