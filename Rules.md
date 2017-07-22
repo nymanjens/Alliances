@@ -234,8 +234,8 @@ priorities:
 
 ### Trenches
 
-When attacking a region that has a trench at the border the attacker is crossing, the defender has
-advantages:
+When attacking a region that has a trench on the defender's side of the border that the attacker is
+crossing, the defender has advantages:
 
 * Defending units cannot be wounded (only killed)
 * The defender gets **2** dice for every healthy defending unit
