@@ -151,11 +151,11 @@ adjacent to this invested region. Units cannot end in friendly regions owned by 
 
 *Examples:*
 
-* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
-  England and N-France have an invested coin.*
-* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
-  Middle East, I cannot go from the Middle East to Libya with a single move token. This is because
-  Egypt is not a friendly region before resolving this move token.*
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because
+  N-France has an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt, I cannot
+  go from the Middle East to Libya with a single move token. This is because Egypt is not a friendly
+  region before resolving this move token.*
 
 ### Plundering
 
