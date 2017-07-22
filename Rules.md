@@ -167,12 +167,12 @@ Units of different players and even teams can reside in the same sea region simu
 
 ### Ambiguous crossings
 
-The following points on the map can be crossed both by land-land and sea-sea movement:
+The following land-land borders can also be crossed by sea-sea movement, as indicated on the map:
 
-* **Denmark islands**
-* **English Channel**
-* **Gibraltar**
-* **Istanbul**
+* **Sweden - Finland** (Denmark Islands)
+* **England - North France** (English Channel)
+* **Spain - North Africa** (Gibraltar)
+* **Bulgaria - Turkey** (Istanbul)
 
 Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
 
