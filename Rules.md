@@ -34,6 +34,7 @@
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
+    * Trenches: infinite
 
 # Teams
 
