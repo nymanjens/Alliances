@@ -1,6 +1,6 @@
 # Definitions
 
-* **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
+* **Round:** A single iteration of the game flow. There are a maximum of 10 rounds in a game.
 * **Unit:** Military unit, either an infantry or an artillery
     * **Healthy unit:** The default state of a unit. Able to participate in combat.
     * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
@@ -52,15 +52,15 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
+1. At the end of a round `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
    other team (ends the game)
-1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
+1. If there is no winner after round 10, the team with the most strategic regions wins. If these
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
    losers.
 
-# Playing a turn
+# Playing a round
 
-Every turn is divided into parts that happen simultaneously (*) unless stated otherwise. Parts in
+Every round is divided into parts that happen simultaneously (*) unless stated otherwise. Parts in
 brackets ([example]) need no player input and can be done quickly.
 
 1. **Token assignment**
@@ -91,12 +91,12 @@ brackets ([example]) need no player input and can be done quickly.
        with a *minimum of 3*.
     * **Payment:** All units in regions the player wants to keep, are paid 1 coin per
        infantry and 2 coins per artillery.
-    * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+    * **Mutiny:** All units which were not paid this round, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-1. **[Point scoring, advance turn counter and healing]**
+1. **[Point scoring, advance round counter and healing]**
     * **Point scoring:** Every team scores 1 point per strategic city they own
-    * **Advance turn counter** by one and check the game end condition
+    * **Advance round counter** by one and check the game end condition
 1. **Train units and revival** (*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
