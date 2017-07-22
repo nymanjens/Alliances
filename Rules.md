@@ -122,8 +122,8 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Dig trenches**:<br>
-  Up to two new trenches may be placed in this region on trench placeholders that don't already have a
-  trench.
+  Up to two new trenches may be placed in this region on trench placeholders that don't already have
+  a trench.
 
   This token is ignored in **sea regions**.
 
