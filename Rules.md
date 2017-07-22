@@ -169,7 +169,7 @@ Units of different players and even teams can reside in the same sea region simu
 
 The following land-land borders can also be crossed by sea-sea movement, as indicated on the map:
 
-* **Sweden - Finland** (Sound Strait)
+* **Sweden - Denmark** (the Sound)
 * **England - North France** (Strait of Dover)
 * **Spain - North Africa** (Strait of Gibraltar)
 * **Bulgaria - Turkey** (Bosphorus Strait and Dardanelles Strait)
