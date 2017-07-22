@@ -165,14 +165,14 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 
 Units of different players and even teams can reside in the same sea region simultaneously.
 
-### Ambiguous crossings
+### Straits
 
 The following land-land borders can also be crossed by sea-sea movement, as indicated on the map:
 
-* **Sweden - Finland** (Denmark Islands)
-* **England - North France** (English Channel)
-* **Spain - North Africa** (Gibraltar)
-* **Bulgaria - Turkey** (Istanbul)
+* **Sweden - Finland** (Sound Strait)
+* **England - North France** (Strait of Dover)
+* **Spain - North Africa** (Strait of Gibraltar)
+* **Bulgaria - Turkey** (Bosphorus Strait and Dardanelles Strait)
 
 Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
 
