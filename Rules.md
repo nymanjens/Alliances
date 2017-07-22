@@ -61,11 +61,11 @@ One of:
 
 # Playing a round
 
-Every round is divided into parts that happen simultaneously (*) unless stated otherwise. Parts in
+Every round is divided into parts that happen simultaneously (\*) unless stated otherwise. Parts in
 brackets ([example]) need no player input and can be done quickly.
 
 1. **Token assignment**
-    * All players put command tokens face down on regions they own (*).
+    * All players put command tokens face down on regions they own (\*).
 1. **[Token revealing and roll for start player]**
     * **Token revealing:** All tokens are turned face up
     * **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
@@ -85,9 +85,9 @@ brackets ([example]) need no player input and can be done quickly.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russian Empire, German
        Empire, British Empire, Austro-Hungarian Empire, French Republic.*
-1. **Resolve Invest and Dig trenches tokens** (*)
+1. **Resolve Invest and Dig trenches tokens** (\*)
 1. **Resolve Move tokens** (in player order)
-1. **Production, payment and mutiny** (*)
+1. **Production, payment and mutiny** (\*)
     * **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
     * **Payment:** All units in regions the player wants to keep, are paid 1 coin per
@@ -98,7 +98,7 @@ brackets ([example]) need no player input and can be done quickly.
 1. **[Point scoring, advance round counter and healing]**
     * **Point scoring:** Every team scores 1 point per strategic region they own
     * **Advance round counter** by one and check the game end condition
-1. **Train units and revival** (*)
+1. **Train units and revival** (\*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
@@ -185,16 +185,16 @@ When a move proceeds into an enemy region, a battle is initiated with all moved 
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (*)
+    * Every healthy attacking artillery kills 1 unit (\*)
 1. **Rolling dice:**
     * The attacker gets a dice for every healthy attacking **infantry unit**
     * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
     * Every attacker roll of
-        * **3-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+        * **3-4** wounds an enemy unit, (\*)
+        * **5-6** kills an enemy unit. (\*)
     * Every defender roll of
-        * **1-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+        * **1-4** wounds an enemy unit, (\*)
+        * **5-6** kills an enemy unit. (\*)
 
     Kills are resolved before wounds.
 1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
