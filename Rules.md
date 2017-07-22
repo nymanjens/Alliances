@@ -174,7 +174,7 @@ The following land-land borders can also be crossed by sea-sea movement, as indi
 * **Spain - North Africa** (Strait of Gibraltar)
 * **Bulgaria - Turkey** (Bosphorus Strait and Dardanelles Strait)
 
-Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
+Sea-sea movement is not possible for a unit if any land region at the strait is an enemy region.
 
 ## Battles
 
