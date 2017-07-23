@@ -56,7 +56,8 @@ def main():
     for typ in ['normal', 'trench']:
         for name, keys, plot_typ, mapper in VALUE_MAPPINGS:
             for key in keys:
-                plot_value(plot_typ, get_mapper(graph, key, mapper), "_tables/{}_{}_{}.png".format(name, typ, key),
+                plot_value(plot_typ, get_mapper(graph, key, mapper),
+                           "_tables/{}/{}_{}_{}.png".format(name, name, typ, key),
                            has_trench=typ == "trench")
 
 
@@ -125,8 +126,8 @@ def plot_matrix(att_armies, def_armies, value_matrix, name, plot_typ):
         assert False
     # fig.colorbar(cax)
 
-    ax.set_xticklabels(list(map(army_label, att_armies)), family="monospace", rotation="vertical")
-    ax.set_yticklabels(list(map(unit_label, def_armies)), family="monospace")
+    ax.set_xticklabels([""] + list(map(army_label, att_armies)), family="monospace", rotation="vertical")
+    ax.set_yticklabels([""] + list(map(unit_label, def_armies)), family="monospace")
     ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
     ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
     ax.xaxis.set_label_position('top')
@@ -140,16 +141,24 @@ def plot_matrix(att_armies, def_armies, value_matrix, name, plot_typ):
         txt.set_path_effects([patheffects.withStroke(linewidth=1, foreground='w')])
 
     val = 0
+    xs = []
     for i, a in enumerate(att_armies):
         if a.value() != val:
             val = a.value()
             pylab.axvline(i - .5, c="k", alpha=.6, linewidth=.6)
+            xs.append(i)
+    xs.append(len(att_armies))
 
     val = 0
+    ys = []
     for i, a in enumerate(def_armies):
         if a.value() != val:
             val = a.value()
             pylab.axhline(i - .5, c="k", alpha=.6, linewidth=.6)
+            ys.append(i)
+    ys.append(len(def_armies))
+
+    pylab.plot(numpy.array(xs) - .5, numpy.array(ys) - .5, alpha=.1, c='k')
 
     os.makedirs(os.path.dirname(name), exist_ok=True)
     pylab.savefig(name, transparent=True, bbox_inches='tight', dpi=300)
