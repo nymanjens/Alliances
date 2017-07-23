@@ -144,79 +144,90 @@ def calc_battle_round_chances(battle, battle_graph, round_stats, lock):
 def calc_full_battle_chances(battle, graph, full_battle_chances, full_battle_stats, lock):
     # prevent unnecessary calculations
     if battle.has_ended():
-        return Counter({battle: 1})
+        return Counter({battle: 1}), 0
     lock.acquire()
     exists = battle in full_battle_chances
     if exists:
-        battle_chances = full_battle_chances[battle]
+        battle_chances, battle_rounds = full_battle_chances[battle]
     lock.release()
     if exists:
-        return battle_chances
+        return battle_chances, battle_rounds
 
     # recursively calculate
     battle_chances = Counter()
+    battle_rounds = 1
     for nextRound, chance in graph[battle].items():
-        next_round_battle_chances = calc_full_battle_chances(nextRound, graph, full_battle_chances, full_battle_stats,
-                                                             lock)
+        next_round_battle_chances, next_round_battle_rounds = calc_full_battle_chances(nextRound, graph,
+                                                                                       full_battle_chances,
+                                                                                       full_battle_stats,
+                                                                                       lock)
         for b in next_round_battle_chances:
             next_round_battle_chances[b] *= chance
         battle_chances += next_round_battle_chances
+        battle_rounds += next_round_battle_rounds * chance
     battle_stat = StochasticBattleState.from_dict(battle_chances)
+    battle_stat.rounds = battle_rounds
 
     # update full_battle_chances
     lock.acquire()
     if battle not in full_battle_chances:
-        full_battle_chances[battle] = battle_chances
+        full_battle_chances[battle] = (battle_chances, battle_rounds)
         full_battle_stats[battle] = battle_stat
     lock.release()
-    return battle_chances
+    return battle_chances, battle_rounds
 
 
-def calc_retreat_battle_chances(battle, graph, retreat_battle_chances, retreat_battle_stats, lock,
-                                round_battle_stats, full_battle_stats, attacker_retreat_strat, defender_retreat_strat,
-                                first=True):
+def calc_retreat_battle_chances(battle, graph, retreat_battle_chances, retreat_battle_stats, lock, round_battle_stats,
+                                full_battle_stats, attacker_retreat_strat, defender_retreat_strat, first=True):
     # prevent unnecessary calculations
     # note: 'first' is meant to disallow retreating even before the first battle round
     if battle.has_ended():
-        return Counter({battle: 1})
+        return Counter({battle: 1}), 0
     lock.acquire()
     exists = battle in retreat_battle_chances
     if exists and not first:
-        battle_chances = retreat_battle_chances[battle]
+        battle_chances, battle_rounds = retreat_battle_chances[battle]
     elif not first:
         if attacker_retreat_strat(battle, round_battle_stats[battle], full_battle_stats[battle]):
             battle_chances = Counter({battle.attacker_retreats(): 1})
-            retreat_battle_chances[battle] = battle_chances
+            battle_rounds = 0
+            retreat_battle_chances[battle] = (battle_chances, battle_rounds)
             exists = True
         elif defender_retreat_strat(battle, round_battle_stats[battle], full_battle_stats[battle]):
             battle_chances = Counter({battle.defender_retreats(): 1})
-            retreat_battle_chances[battle] = battle_chances
+            battle_rounds = 0
+            retreat_battle_chances[battle] = (battle_chances, battle_rounds)
             exists = True
     lock.release()
     if exists:
-        return battle_chances
+        return battle_chances, battle_rounds
 
     # recursively calculate
     battle_chances = Counter()
+    battle_rounds = 1
     for nextRound, chance in graph[battle].items():
-        next_round_battle_chances = calc_retreat_battle_chances(nextRound, graph, retreat_battle_chances,
-                                                                retreat_battle_stats,
-                                                                lock,
-                                                                round_battle_stats, full_battle_stats,
-                                                                attacker_retreat_strat,
-                                                                defender_retreat_strat, first=False)
+        next_round_battle_chances, next_round_battle_rounds = calc_retreat_battle_chances(nextRound, graph,
+                                                                                          retreat_battle_chances,
+                                                                                          retreat_battle_stats, lock,
+                                                                                          round_battle_stats,
+                                                                                          full_battle_stats,
+                                                                                          attacker_retreat_strat,
+                                                                                          defender_retreat_strat,
+                                                                                          first=False)
         for b in next_round_battle_chances:
             next_round_battle_chances[b] *= chance
         battle_chances += next_round_battle_chances
+        battle_rounds += next_round_battle_rounds * chance
     battle_stat = StochasticBattleState.from_dict(battle_chances)
+    battle_stat.rounds = battle_rounds
 
     # update retreat_battle_chances
     lock.acquire()
     if battle not in retreat_battle_chances:
-        retreat_battle_chances[battle] = battle_chances
+        retreat_battle_chances[battle] = (battle_chances, battle_rounds)
         retreat_battle_stats[battle] = battle_stat
     lock.release()
-    return battle_chances
+    return battle_chances, battle_rounds
 
 
 def generate_battles():

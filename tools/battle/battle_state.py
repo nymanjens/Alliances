@@ -141,6 +141,8 @@ class StochasticBattleState(object):
         self.defender_retreat_chance = sum(
             c for s, c in zip(states, chances) if hasattr(s, 'retreater') and s.retreater == "defender")
 
+        self.rounds = 0  # will be set later
+
     @staticmethod
     def from_dict(state_chances_dict):
         return StochasticBattleState(state_chances_dict.keys(), list(state_chances_dict.values()))
