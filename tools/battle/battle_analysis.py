@@ -1,13 +1,18 @@
-from __future__ import division
-from pylab import *
-from army import Army, StochasticArmy
-from battle_state import BattleState, StochasticBattleState
-from networkx import DiGraph
-from pprint import pprint
-from cPickle import load
-import cProfile, gzip, itertools
-from matplotlib import ticker
+import cProfile
+import gzip
+import itertools
+import os
+from pickle import load
+
+import numpy
+import pylab
 from matplotlib import patheffects
+from matplotlib import ticker
+
+from army import Army
+from battle_state import BattleState
+
+pylab.ioff()
 
 PROFILE = False
 USE_GZIP = False
@@ -17,115 +22,141 @@ MAX_INFANTRY = 8
 MAX_ARTILLERY = 4
 
 
-ARMY_LABEL = lambda army: "I{} A{}".format(army.infantry, army.artillery)
-UNIT_LABEL = lambda army: "U{}".format(army.unitCount())
+def army_label(army):
+    return "I{} A{}".format(army.infantry, army.artillery)
+
+
+def unit_label(army):
+    return "U{}".format(army.unit_count())
+
 
 VALUE_MAPPINGS = [
-    ( "win_balance", ["full", "retreat", "round"], "chance diff", lambda b, bs: (bs.attackerWon()-bs.defenderWon()+1)/2 ),
-    ( "retreat_attacker", ["retreat"], "chance", lambda b, bs: bs.attackerRetreat() ),
-    ( "retreat_defender", ["retreat"], "chance", lambda b, bs: bs.defenderRetreat() ),
-    ( "net_unit_advantage", ["full", "retreat", "round"], "number", lambda b, bs: bs.unitAdvantage()[0]-b.unitAdvantage() ),
-    ( "net_value_advantage", ["full", "retreat", "round"], "number", lambda b, bs: bs.valueAdvantage()[0]-b.valueAdvantage() ),
-    ( "loss_value_attacker", ["full", "retreat", "round"], "number", lambda b, bs: bs.attackingArmy.value()[0]-b.attackingArmy.value() ),
-    ( "loss_value_defender", ["full", "retreat", "round"], "number", lambda b, bs: -bs.defendingArmy.value()[0]+b.defendingArmy.value() ),
-    ( "loss_unit_attacker", ["full", "retreat", "round"], "number", lambda b, bs: bs.attackingArmy.unitCount()[0]-b.attackingArmy.unitCount() ),
-    ( "loss_unit_defender", ["full", "retreat", "round"], "number", lambda b, bs: -bs.defendingArmy.unitCount()[0]+b.defendingArmy.unitCount() ),
+    ("win_balance", ["full", "retreat", "round"], "chance diff",
+     lambda b, bs: (bs.attacker_won() - bs.defender_won() + 1) / 2),
+    ("retreat_attacker", ["retreat"], "chance", lambda b, bs: bs.attacker_retreat()),
+    ("retreat_defender", ["retreat"], "chance", lambda b, bs: bs.defender_retreat()),
+    ("net_unit_advantage", ["full", "retreat", "round"], "number",
+     lambda b, bs: bs.unit_advantage()[0] - b.unit_advantage()),
+    ("net_value_advantage", ["full", "retreat", "round"], "number",
+     lambda b, bs: bs.value_advantage()[0] - b.value_advantage()),
+    ("loss_value_attacker", ["full", "retreat", "round"], "number",
+     lambda b, bs: bs.attacking_army.value()[0] - b.attacking_army.value()),
+    ("loss_value_defender", ["full", "retreat", "round"], "number",
+     lambda b, bs: -bs.defending_army.value()[0] + b.defending_army.value()),
+    ("loss_unit_attacker", ["full", "retreat", "round"], "number",
+     lambda b, bs: bs.attacking_army.unit_count()[0] - b.attacking_army.unit_count()),
+    ("loss_unit_defender", ["full", "retreat", "round"], "number",
+     lambda b, bs: -bs.defending_army.unit_count()[0] + b.defending_army.unit_count()),
 ]
 
+
 def main():
-    graph = loadChanceGraph("full")
-    
+    graph = load_chance_graph("full")
+
     for typ in ['normal', 'trench']:
-        for name, keys, plotTyp, mapper in VALUE_MAPPINGS:
+        for name, keys, plot_typ, mapper in VALUE_MAPPINGS:
             for key in keys:
-                plotValue(plotTyp, getMapper(graph, key, mapper), "_tables/{}_{}_{}.png".format(name, typ, key), hasTrench=typ=="trench")
+                plot_value(plot_typ, get_mapper(graph, key, mapper), "_tables/{}_{}_{}.png".format(name, typ, key),
+                           has_trench=typ == "trench")
 
-def loadChanceGraph(name):
-    print "loading pkl {}...".format(name)
-    with (gzip.open("_graph/"+name+".pkl", "rb") if USE_GZIP else open("_graph/"+name+".pkl", "rb")) as fil:
-        chanceGraph = load(fil)
-    return chanceGraph
 
-def getMapper(graph, key, valueMapping):
-    return lambda battle: valueMapping(battle, graph.node[battle][key]) if battle in graph.node and key in graph.node[battle] else nan
+def load_chance_graph(name):
+    print("loading pkl {}...".format(name))
+    with (gzip.open("_graph/" + name + ".pkl", "rb") if USE_GZIP else open("_graph/" + name + ".pkl", "rb")) as fil:
+        chance_graph = load(fil)
+    return chance_graph
 
-def plotValue(plotTyp, mapper, name, hasTrench=False):
-    print "plotting", name
+
+def get_mapper(graph, key, value_mapping):
+    return lambda battle: value_mapping(battle, graph.node[battle][key]) if battle in graph.node and key in graph.node[
+        battle] else pylab.nan
+
+
+def plot_value(plot_typ, mapper, name, has_trench=False):
+    print("plotting", name)
     # TODO find in graph instead of this?
-    attArmies = generateArmiesAttacker()
-    defArmies = generateArmiesDefender()
-    valueMatrix = getValueMatrix(attArmies, defArmies, mapper, hasTrench)
-    plotMatrix(attArmies, defArmies, valueMatrix, name, plotTyp)
+    att_armies = generate_armies_attacker()
+    def_armies = generate_armies_defender()
+    value_matrix = get_value_matrix(att_armies, def_armies, mapper, has_trench)
+    plot_matrix(att_armies, def_armies, value_matrix, name, plot_typ)
 
-def generateArmiesAttacker():
-    armies = [Army(*args) for args in itertools.product(xrange(MAX_INFANTRY+1), xrange(MAX_ARTILLERY+1))]
-    armies = [a for a in armies if 0<a.value()<=MAX_VALUE]
+
+def generate_armies_attacker():
+    armies = [Army(*args) for args in itertools.product(range(MAX_INFANTRY + 1), range(MAX_ARTILLERY + 1))]
+    armies = [a for a in armies if 0 < a.value() <= MAX_VALUE]
     armies.sort(key=lambda x: (x.value(), x.artillery))
     return armies
 
-def generateArmiesDefender():
-    armies = [Army(infantry, 0) for infantry in xrange(1, MAX_INFANTRY+1)]
-    return [a for a in armies if a.unitCount()<=MAX_VALUE]
 
-def getValueMatrix(attArmies, defArmies, mapper, hasTrench):
-    values = zeros((len(defArmies),len(attArmies)))
-    for i,defender in enumerate(defArmies):
-        for j,attacker in enumerate(attArmies):
-            values[i,j] = mapper(BattleState(attacker, defender, hasTrench))
+def generate_armies_defender():
+    armies = [Army(infantry, 0) for infantry in range(1, MAX_INFANTRY + 1)]
+    return [a for a in armies if a.unit_count() <= MAX_VALUE]
+
+
+def get_value_matrix(att_armies, def_armies, mapper, has_trench):
+    values = pylab.zeros((len(def_armies), len(att_armies)))
+    for i, defender in enumerate(def_armies):
+        for j, attacker in enumerate(att_armies):
+            values[i, j] = mapper(BattleState(attacker, defender, has_trench))
     return values
 
-def plotMatrix(attArmies, defArmies, valueMatrix, name, plotTyp):
-    fig, ax = plt.subplots()
-    
-    if plotTyp=="chance diff":
-        cmap = cm.coolwarm
+
+def plot_matrix(att_armies, def_armies, value_matrix, name, plot_typ):
+    fig, ax = pylab.plt.subplots()
+
+    if plot_typ == "chance diff":
+        cmap = pylab.cm.coolwarm
         cmap.set_bad(color="black")
-        cax = ax.matshow(valueMatrix, cmap=cmap, vmin=0, vmax=1, interpolation='nearest', aspect='equal')
-        valueTxt = [(i,j, 'D' if abs(z)<1e-4 else 'A' if abs(z-1)<1e-4 else "{:.0f}".format(round(z*100))) for (i,j),z in ndenumerate(valueMatrix)]
-    elif plotTyp=="chance":
-        cmap = cm.Greens
+        cax = ax.matshow(value_matrix, cmap=cmap, vmin=0, vmax=1, interpolation='nearest', aspect='equal')
+        value_txt = [(i, j, 'D' if numpy.abs(z) < 1e-4 else 'A' if numpy.abs(z - 1) < 1e-4 else "{:.0f}".format(
+            numpy.round(z * 100))) for
+                     (i, j), z in pylab.ndenumerate(value_matrix)]
+    elif plot_typ == "chance":
+        cmap = pylab.cm.Greens
         cmap.set_bad(color="black")
-        cax = ax.matshow(valueMatrix, cmap=cmap, vmin=0, vmax=1, interpolation='nearest', aspect='equal')
-        valueTxt = [(i,j, "{:.0f}".format(round(z*100))) for (i,j),z in ndenumerate(valueMatrix)]
-    elif plotTyp=="number":
-        cmap = cm.coolwarm
+        cax = ax.matshow(value_matrix, cmap=cmap, vmin=0, vmax=1, interpolation='nearest', aspect='equal')
+        value_txt = [(i, j, "{:.0f}".format(numpy.round(z * 100))) for (i, j), z in pylab.ndenumerate(value_matrix)]
+    elif plot_typ == "number":
+        cmap = pylab.cm.coolwarm
         cmap.set_bad(color="black")
-        cax = ax.matshow(valueMatrix, cmap=cmap, vmin=-5, vmax=5, interpolation='nearest', aspect='equal')
-        valueTxt = [(i,j, "{:.1f}".format(z)) for (i,j),z in ndenumerate(valueMatrix)]
+        cax = ax.matshow(value_matrix, cmap=cmap, vmin=-5, vmax=5, interpolation='nearest', aspect='equal')
+        value_txt = [(i, j, "{:.1f}".format(z)) for (i, j), z in pylab.ndenumerate(value_matrix)]
     else:
         assert False
-    #fig.colorbar(cax)
-    
-    ax.set_xticklabels(map(ARMY_LABEL, attArmies), family="monospace", rotation="vertical")
-    ax.set_yticklabels(map(UNIT_LABEL, defArmies), family="monospace")
+    # fig.colorbar(cax)
+
+    ax.set_xticklabels(list(map(army_label, att_armies)), family="monospace", rotation="vertical")
+    ax.set_yticklabels(list(map(unit_label, def_armies)), family="monospace")
     ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
     ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
-    ax.xaxis.set_label_position('top') 
-    ax.tick_params(axis='both', which='both',length=0)
-    
+    ax.xaxis.set_label_position('top')
+    ax.tick_params(axis='both', which='both', length=0)
+
     ax.set_xlabel("Attacker")
     ax.set_ylabel("Defender")
-    
-    for i,j,t in valueTxt:
+
+    for i, j, t in value_txt:
         txt = ax.text(j, i, t, ha='center', va='center', fontsize=5)
         txt.set_path_effects([patheffects.withStroke(linewidth=1, foreground='w')])
-    
+
     val = 0
-    for i,a in enumerate(attArmies):
-        if a.value()!=val:
+    for i, a in enumerate(att_armies):
+        if a.value() != val:
             val = a.value()
-            axvline(i-.5,c="k", alpha=.6, linewidth=.6)
-    
+            pylab.axvline(i - .5, c="k", alpha=.6, linewidth=.6)
+
     val = 0
-    for i,a in enumerate(defArmies):
-        if a.value()!=val:
+    for i, a in enumerate(def_armies):
+        if a.value() != val:
             val = a.value()
-            axhline(i-.5,c="k", alpha=.6, linewidth=.6)
-    
-    savefig(name, transparent=True, bbox_inches='tight', dpi=300)
+            pylab.axhline(i - .5, c="k", alpha=.6, linewidth=.6)
+
+    os.makedirs(os.path.dirname(name), exist_ok=True)
+    pylab.savefig(name, transparent=True, bbox_inches='tight', dpi=300)
+    pylab.close()
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     if PROFILE:
         cProfile.run("main()")
     else:
