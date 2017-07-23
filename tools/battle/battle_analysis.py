@@ -54,7 +54,7 @@ VALUE_MAPPINGS = [
 def main():
     graph = load_chance_graph("full")
 
-    for typ in ['trench']:
+    for typ in ['normal', 'trench']:
         for name, keys, plot_typ, mapper in VALUE_MAPPINGS:
             for key in keys:
                 plot_value(plot_typ, get_mapper(graph, key, mapper),
@@ -160,7 +160,7 @@ def plot_matrix(att_armies, def_armies, value_matrix, name, plot_typ):
     ys.append(len(def_armies))
 
     if 'trench' in name:
-        ys = [e/2 for e in ys]
+        ys = [e / 2 for e in ys]
     pylab.plot(numpy.array(xs) - .5, numpy.array(ys) - .5, alpha=.1, c='k')
 
     os.makedirs(os.path.dirname(name), exist_ok=True)
