@@ -106,7 +106,7 @@ brackets ([example]) need no player input and can be done quickly.
        unoccupied or sea region*.
        All added units must be paid immediately.
 
-(&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
+(\*) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
 whisper the solution to a player not involved who then executes the commands. When there is no such
 player available, all write down their action and execute that action.
@@ -224,7 +224,7 @@ A battle has one or more rounds. Every round has following parts:
 
 After the battle, all wounded units become healthy again.
 
-(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
+(\*) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
 
 * Healthy infantry
