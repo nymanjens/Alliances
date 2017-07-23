@@ -1,13 +1,13 @@
 # Definitions
 
-* **Turn:** A single iteration of the game flow.
+* **Round:** A single iteration of the game flow.
 * **Unit:** Military unit, either an infantry or an artillery
-* **Strategic city:** Star on the map
-* **Regions:** Region on the map bounded by white lines
+* **Regions:** Named region on the map bounded by lines
+    * **Strategic region:** Region with a star
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
-    * **Occupied region:** Land region occupied by at least one military unit
-    * **Unoccupied region:** Land region not occupied by any military units
+    * **Occupied region:** Land region occupied by at least one unit
+    * **Unoccupied region:** Land region not occupied by any units
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
     * **Friendly region for a player:** Land region occupied by units of that player, or
@@ -31,10 +31,11 @@
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
+    * Trenches: infinite
 
 # Teams
 
-There are 2 teams:
+There are 2 opposing teams:
 
 * The Triple Entente:
     * The British Empire
@@ -47,20 +48,20 @@ There are 2 teams:
 
 # Goal of the game
 
-Take control over strategic cities. On every turn the team with the most strategic cities gains
-points equal to the number of surplus cities. Strategic cities where units are trained this turn,
+Take control over strategic regions. On every turn the team with the most strategic regions gains
+points equal to the number of surplus regions. Strategic regions where units are trained this turn,
 temporarily don't count. In case of a tie, both teams get 1 point.
 
 First to 6 points wins. If both teams reach 6 points simultaneously, whichever side may call itself
 the victor. For in war, there are no winners, but all are losers.
 
-# Playing a turn
+# Playing a round
 
-Every turn is divided into parts that happen simultaneously (*) unless stated otherwise. Parts in
+Every round is divided into parts that happen simultaneously (\*) unless stated otherwise. Parts in
 brackets ([example]) need no player input and can be done quickly.
 
 1. **Token assignment**
-    * All players put command tokens face down on regions they own (*).
+    * All players put command tokens face down on regions they own (\*).
 1. **[Token revealing and roll for start player]**
     * **Token revealing:** All tokens are turned face up
     * **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
@@ -80,21 +81,21 @@ brackets ([example]) need no player input and can be done quickly.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russian Empire, German
        Empire, British Empire, Austro-Hungarian Empire, French Republic.*
-1. **Resolve Invest and Dig trenches tokens** (*)
+1. **Resolve Invest and Dig trenches tokens** (\*)
 1. **Resolve Move tokens** (in player order)
 1. **[Point scoring]**
-    * The team controlling the most strategic cities that don't contain a Train token gains points
-      equal to those surplus cities. In case of a tie, both teams gain 1 point. Check the game end
+    * The team controlling the most strategic regions that don't contain a Train token gains points
+      equal to those surplus regions. In case of a tie, both teams gain 1 point. Check the game end
       condition.
-1. **Production, payment and mutiny** (*)
+1. **Production, payment and mutiny** (\*)
     * **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
     * **Payment:** All units in regions the player wants to keep, are paid 1 coin per
        infantry and 2 coins per artillery.
-    * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+    * **Mutiny:** All units which were not paid this round, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-1. **Train units and revival** (*)
+1. **Train units and revival** (\*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
@@ -102,7 +103,7 @@ brackets ([example]) need no player input and can be done quickly.
        unoccupied or sea region*.
        All added units must be paid immediately.
 
-(&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
+(\*) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
 whisper the solution to a player not involved who then executes the commands. When there is no such
 player available, all write down their action and execute that action.
@@ -118,8 +119,8 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Dig trenches**:<br>
-  At most two trenches may be placed in this region on trench placeholders that don't already have a
-  trench.
+  Up to two new trenches may be placed in this region on trench placeholders that don't already have
+  a trench.
 
   This token is ignored in **sea regions**.
 
@@ -132,7 +133,7 @@ player available, all write down their action and execute that action.
 
 * **Train units**:<br>
   You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  city, or 1 coin if it's a normal land region. Having this token on a strategic city however
+  region, or 1 coin if it's a normal land region. Having this token on a strategic region however
   prevents it from generating a point.
 
   This token is ignored in **sea regions**.
@@ -142,17 +143,17 @@ player available, all write down their action and execute that action.
 
 ## Moving units
 
-Units can move to an adjacent region. If this adjacent region has at least one coin invested and
-if it was already friendly prior to resolving the move token, the unit may move through this
-region to another region. Units cannot end in friendly regions owned by other players.
+Units can move to an adjacent region. If this adjacent region has at least one invested coin and
+was already friendly prior to resolving the move token, the unit may move through it to a next region
+adjacent to this invested region. Units cannot end in friendly regions owned by other players.
 
 *Examples:*
 
-* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
-  England and N-France have an invested coin.*
-* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
-  Middle East, I cannot go from the Middle East to Libya with a single move token. This is because
-  Egypt is not a friendly region before resolving this move token.*
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because
+  N-France has an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt, I cannot
+  go from the Middle East to Libya with a single move token. This is because Egypt is not a friendly
+  region before resolving this move token.*
 
 ### Plundering
 
@@ -160,18 +161,18 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 
 ### Sea regions
 
-Units of different teams can reside in the same sea region simultaneously.
+Units of different players and even teams can reside in the same sea region simultaneously.
 
-### Ambiguous crossings
+### Straits
 
-The following points on the map can be crossed both by land-land and sea-sea movement:
+The following land-land borders can also be crossed by sea-sea movement, as indicated on the map:
 
-* **Denmark islands**
-* **English Channel**
-* **Gibraltar**
-* **Istanbul**
+* **Sweden - Denmark** (the Sound)
+* **England - North France** (Strait of Dover)
+* **Spain - North Africa** (Strait of Gibraltar)
+* **Bulgaria - Turkey** (Bosphorus Strait and Dardanelles Strait)
 
-Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
+Sea-sea movement is not possible for a unit if any land region at the strait is an enemy region.
 
 ## Battles
 
@@ -182,7 +183,7 @@ When a move proceeds into an enemy region, a battle is initiated with all moved 
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
-    * Every attacking artillery kills 1 unit (*)
+    * Every attacking artillery kills 1 unit (\*)
 1. **Rolling dice:**
     * Attacker gets a dice for every attacking **infantry unit**
     * Defender gets a dice for every defending **unit** (infantry + artillery)
@@ -221,10 +222,10 @@ Clarifications for edge cases:
   following battle.
 * If the attacker has **won the battle**, he can still choose to retreat with any number of his units.
 
-### Trenches
+### Trench warfare
 
-When attacking a region that has a trench at the border the attacker is crossing, the defender has
-advantages:
+When attacking a region that has a trench on the defender's side of the border that the attacker is
+crossing, the defender has advantages:
 
 * Defending units cannot be forced to retreat (only killed)
 * The defender gets **2** dice for every defending unit
@@ -250,11 +251,6 @@ from your supply.
 ## Initial supply
 
 * Every player gets 3 coins in their supply
-* Every player gets command tokens:
-    * Invest x 2
-    * Dig trenches x 1
-    * Move x 3
-    * Train units x 3
 
 ## Beginner
 
@@ -289,8 +285,8 @@ puts them face down on the table. When all players did this, reveal those cards 
 all their units from the region on their card. No player may have more than 1 strategic region at this
 point.
 
-Everyone puts an additional 2 coins and 1 unit on their strategic city (if any), to a total of 2 units
-and 2 coins. Everyone also puts an additional coin on every land region they own, to a total of 1 coin
-and 1 unit. Everyone who owns a sea region should have a unit there without coins.
+Everyone puts an additional 2 coins and 1 unit on their strategic region (if any), to a total of 2
+units and 2 coins. Everyone also puts an additional coin on every land region they own, to a total
+of 1 coin and 1 unit. Everyone who owns a sea region should have a unit there without coins.
 
-Every unused strategic city also gets an additional 2 coins and 2 neutral units.
+Every unused strategic region also gets an additional 2 coins and 2 neutral units.
