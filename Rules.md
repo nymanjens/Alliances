@@ -219,6 +219,9 @@ A battle has the following phases:
     * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
       another region under attack. Retreated units are allowed to participate in the following
       battle.
+    * If the defender's units all got killed, but he had equal or more military power than the
+      attacker, the attacker still loses and still has to move back to the region where the move
+      started. Effectively leaving the attacked region unoccupied.
 
 (\*) Kills target infantry before artillery. Killed units are instantly removed from the board.
 
