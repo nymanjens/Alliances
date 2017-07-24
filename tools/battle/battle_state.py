@@ -5,55 +5,40 @@ from util import dot_if_zero, avg_and_std
 
 
 class BattleState(object):
-    def __init__(self, attacking_army, defending_army, has_trench, retreater=None):
-        assert retreater in [None, 'attacker', 'defender']
-        if retreater:
-            assert attacking_army.can_battle() and defending_army.can_battle(), "can't retreat if battle already over"
-
+    def __init__(self, attacking_army, defending_army, has_trench, retreater=None, aftermath=False, winner=None):
         self.attacking_army = attacking_army
         self.defending_army = defending_army
         self.has_trench = has_trench
+        assert not retreater
         self.retreater = retreater
+        self.aftermath = aftermath
+        self.winner = winner
 
     @staticmethod
     def from_units(att_infantry, att_artillery, def_infantry, def_artillery):
         return BattleState(Army(att_infantry, att_artillery), Army(def_infantry, def_artillery), False)
 
-    @staticmethod
-    def from_units_with_trench(att_infantry, att_artillery, def_infantry, def_artillery):
-        return BattleState(Army(att_infantry, att_artillery), Army(def_infantry, def_artillery), True)
-
     def simulate(self):
         assert not self.has_ended(), "can't simulate an ended battle"
         return self._simulate_artillery()._simulate_infantry()
 
-    def switch_sides(self):
-        assert not self.has_ended(), "only supported for non-ended battles"
-        # note: assuming not retreated and no trench for the retreat-attack strategy
-        return BattleState(self.defending_army, self.attacking_army, False)
-
     def attacker_retreats(self):
-        assert self.retreater is None, "can't retreat, because already retreated"
-        return BattleState(self.attacking_army, self.defending_army, self.has_trench, 'attacker')
+        assert False
 
     def defender_retreats(self):
-        assert self.retreater is None, "can't retreat, because already retreated"
-        return BattleState(self.attacking_army, self.defending_army, self.has_trench, 'defender')
+        assert False
 
     def with_trench(self):
-        return BattleState(self.attacking_army, self.defending_army, True, self.retreater)
+        return BattleState(self.attacking_army, self.defending_army, True, self.retreater, aftermath=self.aftermath)
 
     def has_ended(self):
-        return self.retreater is not None or not self.attacking_army.can_battle() or \
-               not self.defending_army.can_battle()
+        return not self.attacking_army.can_battle() or not self.defending_army.can_battle() or self.aftermath
 
     def attacker_won(self):
-        return self.retreater == "defender" or (
-            self.attacking_army.can_battle() and not self.defending_army.can_battle())
+        return self.aftermath and self.winner == 'attacker'
 
     def defender_won(self):
-        return self.retreater == "attacker" or (
-            not self.attacking_army.can_battle() and self.defending_army.unit_count() > 0)
+        return self.aftermath and self.winner == 'defender'
 
     def unit_advantage(self):
         return self.attacking_army.unit_count() - self.defending_army.unit_count()
@@ -62,10 +47,12 @@ class BattleState(object):
         return self.attacking_army.value() - self.defending_army.value()
 
     def _simulate_artillery(self):
+        # TODO
         return BattleState(self.attacking_army, self.defending_army.kill(self.attacking_army.artillery),
                            self.has_trench)
 
     def _simulate_infantry(self):
+        # TODO
         # Note: speed beats fanciness here
         attack_kills, attack_wounds = 0, 0
         defend_kills, defend_wounds = 0, 0
@@ -84,12 +71,22 @@ class BattleState(object):
 
         attacking_army = self.attacking_army.kill(defend_kills).wound(defend_wounds)
         defending_army = self.defending_army.kill(attack_kills).wound(attack_wounds)
-        return BattleState(attacking_army, defending_army, self.has_trench)
+
+        winner = None
+        factor = 1 if self.has_trench else 1
+        if attacking_army.healthy_count() + attacking_army.artillery > factor*defending_army.healthy_count():
+            winner = 'attacker'
+        elif defending_army.unit_count() > 0 and factor*defending_army.healthy_count() >= attacking_army.healthy_count() + attacking_army.artillery:
+            winner = 'defender'
+
+        return BattleState(attacking_army, defending_army, self.has_trench, aftermath=True, winner=winner)
 
     def _attacker_rolls(self):
+        # TODO
         return self.attacking_army.infantry
 
     def _defender_rolls(self):
+        # TODO
         rolls = self.defending_army.infantry + self.defending_army.artillery
         return rolls if not self.has_trench else 2 * rolls
 
@@ -115,7 +112,8 @@ class BattleState(object):
         return self.__str__()
 
     def __hash__(self):
-        return hash((self.attacking_army, self.defending_army, self.has_trench, self.retreater))
+        return hash(
+            (self.attacking_army, self.defending_army, self.has_trench, self.retreater, self.aftermath, self.winner))
 
 
 class StochasticBattleState(object):
