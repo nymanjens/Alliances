@@ -178,37 +178,41 @@ Sea-sea movement is not possible for a unit if any land region at the strait is 
 
 ## Battles
 
-When a move proceeds into an enemy region, a battle is initiated with all moved units.
+When a move proceeds into an enemy region, a battle is initiated between all units moved into the
+region versus the enemy units already in that region.
 
 ### Battle mechanic
 
-A battle has one or more rounds. Every round has following parts:
+A battle has the following phases:
 
 1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (\*)
+    * Every attacking artillery kills 1 unit (\*) and gives 2 military power to the attacker.
 1. **Rolling dice:**
-    * The attacker gets a dice for every healthy attacking **infantry unit**
-    * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
+    * The attacker gets a dice for every attacking **infantry unit**
+    * The defender gets a dice for every surviving defending **unit** (infantry + artillery)
     * Every attacker roll of
-        * **3-4** wounds an enemy unit, (\*)
-        * **5-6** kills an enemy unit. (\*)
+        * **1-2** equals 1 military power,
+        * **3-4** equals 2 military power,
+        * **5-6** equals 2 military power and kills an enemy unit. (\*)
     * Every defender roll of
-        * **1-4** wounds an enemy unit, (\*)
-        * **5-6** kills an enemy unit. (\*)
+        * **1-4** equals 2 military power,
+        * **5-6** equals 2 military power and kills an enemy unit. (\*)
+   The attacker and defender sum their military power separately.
 
-    Kills are resolved before wounds.
-1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
-   where the move started.
-
-   Edge case: If the attacker has no healthy units left and the defender has no units left, the
-   attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
-   supply.
-1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
-   move to a single adjacent land region that is either unoccupied or owned by the defender.
+1. **The attacker wins** if his total military power is strictly larger than the defender's military
+   power. If so, then all the remaining defending units move to a single adjacent land region that
+   is either unoccupied or owned by the defender.
    Exception: units can't retreat to the region where the attacker's move started.
 
-  If no such region is found, the units are killed. If there is a choice, the defender may choose
-  the region.
+   If no such region is found, the units are killed. If there is a choice, the defender may choose
+   the region.
+
+   All remaining attacking units move into the region. The invested coins in the conquered region
+   remain on the board, but the attacker can choose to (partly) steal them. If a token is present,
+   the attacker may use it in a next command round after which the token returns to the defender.
+
+1. **If the attacker loses** then all his remaining attacking units move back to the region where
+   the move started.
 
   Clarifications for edge cases:
 
@@ -216,29 +220,14 @@ A battle has one or more rounds. Every round has following parts:
       may *not* retreat to this region.
     * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
       another region under attack. Retreated units are allowed to participate in the following
-      battle. Note that wounded units that retreated will be healthy again in this following battle.
+      battle.
 
-  The attacker moves all attacking units into the region. The invested coins in the conquered region
-  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round after which the token returns to the defender.
-
-After the battle, all wounded units become healthy again.
-
-(\*) When an enemy kills/wounds your unit, the choice of unit is determined by following
-priorities:
-
-* Healthy infantry
-* Healthy artillery
-* Wounded infantry
-* Wounded artillery
+(\*) Kills target infantry before artillery. Killed units are instantly removed from the board.
 
 ### Trench warfare
 
 When attacking a region that has a trench on the defender's side of the border that the attacker is
-crossing, the defender has advantages:
-
-* Defending units cannot be wounded (only killed)
-* The defender gets **2** dice for every healthy defending unit
+crossing, the defender gets **2** dice for every defending unit surviving the artillery strike.
 
 ### Fighting neutral regions
 
