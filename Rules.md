@@ -176,59 +176,56 @@ Sea-sea movement is not possible for a unit if any land region at the strait is 
 
 ## Battles
 
-When a move proceeds into an enemy region, a battle is initiated with all moved units.
+When a move proceeds into an enemy region, a battle is initiated between all units moved into the
+region versus the enemy units already in that region.
 
 ### Battle mechanic
 
-A battle has one or more rounds. Every round has following parts:
+A battle has the following phases:
 
 1. **Artillery strike:**
-    * Every attacking artillery kills 1 unit (\*)
+    * Every attacking artillery kills 1 unit (\*) and gives 2 military power to the attacker.
 1. **Rolling dice:**
-    * Attacker gets a dice for every attacking **infantry unit**
-    * Defender gets a dice for every defending **unit** (infantry + artillery)
-    * Every attacker roll of:
-        * **3-4:** Forces an enemy unit to retreat
-        * **5-6:** Kills an enemy unit
-    * Every defender roll of:
-        * **1-4:** Forces an enemy unit to retreat
-        * **5-6:** Kills an enemy unit
+    * The attacker gets a dice for every attacking **infantry unit**
+    * The defender gets a dice for every surviving defending **unit** (infantry + artillery)
+    * Every attacker roll of
+        * **1-2** equals 1 military power,
+        * **3-4** equals 2 military power,
+        * **5-6** equals 2 military power and kills an enemy unit. (\*)
+    * Every defender roll of
+        * **1-4** equals 2 military power,
+        * **5-6** equals 2 military power and kills an enemy unit. (\*)
+   The attacker and defender sum their military power separately.
 
-   Kills are resolved before forced retreat.
-1. **Attacker retreat:** The attacker chooses their forced retreating units plus any additional units
-   they want to retreat. All these units move back to the region where the move started.
-
-   If no attacking units are left, the battle is instantly over and any defending units that would
-   have been forced to retreat, don't retreat but remain in the region.
-1. **Defender retreat:** The defender chooses their forced retreating units plus any additional units
-   they want to retreat. All these units move to a single adjacent land region that is either owned by
-   the defender or unoccupied, but not the region where the attacker's move started. Retreating units
-   in subsequent battle rounds need to retreat to this same area.
+1. **The attacker wins** if his total military power is strictly larger than the defender's military
+   power. If so, then all the remaining defending units move to a single adjacent land region that
+   is either unoccupied or owned by the defender.
+   Exception: units can't retreat to the region where the attacker's move started.
 
    If no such region is found, the units are killed. If there is a choice, the defender may choose
    the region.
 
-   If no defending units are left, the battle is instantly over and the attacker moves all remaining
-   attacking units into the region. The invested coins in the conquered region may be kept on the
-   board or may be (partly) stolen. If a token is present, the attacker may use it in a next command
-   round after which the token returns to the defender.
+   All remaining attacking units move into the region. The invested coins in the conquered region
+   remain on the board, but the attacker can choose to (partly) steal them. If a token is present,
+   the attacker may use it in a next command round after which the token returns to the defender.
 
-Clarifications for edge cases:
+1. **If the attacker loses** then all his remaining attacking units move back to the region where
+   the move started.
 
-* If the attacker completely **vacated a region** to attack an adjacent region, defending units
-  may *not* retreat to this region.
-* If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-  another region under attack. Retreated units are allowed to participate in the
-  following battle.
-* If the attacker has **won the battle**, he can still choose to retreat with any number of his units.
+  Clarifications for edge cases:
+
+    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
+      may *not* retreat to this region.
+    * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
+      another region under attack. Retreated units are allowed to participate in the following
+      battle.
+
+(\*) Kills target infantry before artillery. Killed units are instantly removed from the board.
 
 ### Trench warfare
 
 When attacking a region that has a trench on the defender's side of the border that the attacker is
-crossing, the defender has advantages:
-
-* Defending units cannot be forced to retreat (only killed)
-* The defender gets **2** dice for every defending unit
+crossing, the defender gets **2** dice for every defending unit surviving the artillery strike.
 
 ### Fighting neutral regions
 
