@@ -186,7 +186,7 @@ region versus the enemy units already in that region.
 A battle has the following phases:
 
 1. **Artillery strike:**
-    * Every attacking artillery kills 1 unit (\*) and gives 2 military power to the attacker.
+    * Every attacking artillery kills 1 unit (\*).
 1. **Rolling dice:**
     * The attacker gets a dice for every attacking **infantry unit**
     * The defender gets a dice for every surviving defending **unit** (infantry + artillery)
@@ -197,6 +197,7 @@ A battle has the following phases:
     * Every defender roll of
         * **1-4** equals 2 military power,
         * **5-6** equals 2 military power and kills an enemy unit. (\*)
+   The attacker gets an additional 2 military power for each of his surviving artillery.
    The attacker and defender sum their military power separately.
 
 1. **The attacker wins** if his total military power is strictly larger than the defender's military
