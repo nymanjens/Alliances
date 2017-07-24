@@ -1,16 +1,16 @@
 # Definitions
 
-* **Turn:** A single iteration of the game flow. There are a maximum of 10 turns in a game.
+* **Round:** A single iteration of the game flow. There are a maximum of 10 rounds in a game.
 * **Unit:** Military unit, either an infantry or an artillery
     * **Healthy unit:** The default state of a unit. Able to participate in combat.
     * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
       the battle is over, this becomes a healthy unit again.
-* **Strategic city:** Star on the map
-* **Regions:** Region on the map bounded by white lines
+* **Regions:** Named region on the map bounded by lines
+    * **Strategic region:** Region with a star
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
-    * **Occupied region:** Land region occupied by at least one military unit
-    * **Unoccupied region:** Land region not occupied by any military units
+    * **Occupied region:** Land region occupied by at least one unit
+    * **Unoccupied region:** Land region not occupied by any units
     * **Neutral region:** Land region occupied by neutral units
     * **Region owned by a player:** Land region occupied by units of that player
     * **Friendly region for a player:** Land region occupied by units of that player, or
@@ -34,10 +34,11 @@
 * **General:**
     * Coins: infinite
     * Neutral infantry: infinite
+    * Trenches: infinite
 
 # Teams
 
-There are 2 teams:
+There are 2 opposing teams:
 
 * The Triple Entente:
     * The British Empire
@@ -52,19 +53,19 @@ There are 2 teams:
 
 One of:
 
-1. At the end of a turn `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
+1. At the end of a round `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
    other team (ends the game)
-1. If there is no winner after turn 10, the team with the most strategic cities wins. If these
+1. If there is no winner after round 10, the team with the most strategic regions wins. If these
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
    losers.
 
-# Playing a turn
+# Playing a round
 
-Every turn is divided into parts that happen simultaneously (*) unless stated otherwise. Parts in
+Every round is divided into parts that happen simultaneously (\*) unless stated otherwise. Parts in
 brackets ([example]) need no player input and can be done quickly.
 
 1. **Token assignment**
-    * All players put command tokens face down on regions they own (*).
+    * All players put command tokens face down on regions they own (\*).
 1. **[Token revealing and roll for start player]**
     * **Token revealing:** All tokens are turned face up
     * **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
@@ -84,20 +85,20 @@ brackets ([example]) need no player input and can be done quickly.
 
        *Example: If the dice shows 4 eyes, the player order is Ottoman Empire, Russian Empire, German
        Empire, British Empire, Austro-Hungarian Empire, French Republic.*
-1. **Resolve Invest and Dig trenches tokens** (*)
+1. **Resolve Invest and Dig trenches tokens** (\*)
 1. **Resolve Move tokens** (in player order)
-1. **Production, payment and mutiny** (*)
+1. **Production, payment and mutiny** (\*)
     * **Production:** All players receive the total amount of coins invested in regions they own,
        with a *minimum of 3*.
     * **Payment:** All units in regions the player wants to keep, are paid 1 coin per
        infantry and 2 coins per artillery.
-    * **Mutiny:** All units which were not paid this turn, convert to neutral infantry units (i.e.
+    * **Mutiny:** All units which were not paid this round, convert to neutral infantry units (i.e.
        artillery converts to neutral infantry). Neutral units in sea regions are removed from the
        board.
-1. **[Point scoring, advance turn counter and healing]**
-    * **Point scoring:** Every team scores 1 point per strategic city they own
-    * **Advance turn counter** by one and check the game end condition
-1. **Train units and revival** (*)
+1. **[Point scoring, advance round counter and healing]**
+    * **Point scoring:** Every team scores 1 point per strategic region they own
+    * **Advance round counter** by one and check the game end condition
+1. **Train units and revival** (\*)
     * **Resolve Train units tokens**
     * **Revival:** Any player with *a unit cost of less than 3 coins* gets free units of their
        choice. After revival, the total unit cost may not exceed 3 coins. New units must be placed
@@ -105,7 +106,7 @@ brackets ([example]) need no player input and can be done quickly.
        unoccupied or sea region*.
        All added units must be paid immediately.
 
-(&#42;) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
+(\*) Decisions are made simultaneously if possible. In case of a conflict, e.g. when a number of
 players repetitively alter their decision in reaction to another player's decision, all players
 whisper the solution to a player not involved who then executes the commands. When there is no such
 player available, all write down their action and execute that action.
@@ -121,8 +122,8 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Dig trenches**:<br>
-  At most two trenches may be placed in this region on trench placeholders that don't already have a
-  trench.
+  Up to two new trenches may be placed in this region on trench placeholders that don't already have
+  a trench.
 
   This token is ignored in **sea regions**.
 
@@ -135,7 +136,7 @@ player available, all write down their action and execute that action.
 
 * **Train units**:<br>
   You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  city, or 1 coin if it's a normal land region.
+  region, or 1 coin if it's a normal land region.
 
   This token is ignored in **sea regions**.
 
@@ -144,17 +145,17 @@ player available, all write down their action and execute that action.
 
 ## Moving units
 
-Units can move to an adjacent region. If this adjacent region has at least one coin invested and
-if it was already friendly prior to resolving the move token, the unit may move through this
-region to another region. Units cannot end in friendly regions owned by other players.
+Units can move to an adjacent region. If this adjacent region has at least one invested coin and
+was already friendly prior to resolving the move token, the unit may move through it to a next region
+adjacent to this invested region. Units cannot end in friendly regions owned by other players.
 
 *Examples:*
 
-* *My infantry in England can move through N-France (occupied by an ally) to Benelux because both
-  England and N-France have an invested coin.*
-* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt and the
-  Middle East, I cannot go from the Middle East to Libya with a single move token. This is because
-  Egypt is not a friendly region before resolving this move token.*
+* *My infantry in England can move through N-France (occupied by an ally) to Benelux because
+  N-France has an invested coin.*
+* *If I have 3 units in the Middle East and there are coins invested in unoccupied Egypt, I cannot
+  go from the Middle East to Libya with a single move token. This is because Egypt is not a friendly
+  region before resolving this move token.*
 
 ### Plundering
 
@@ -162,18 +163,18 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 
 ### Sea regions
 
-Units of different teams can reside in the same sea region simultaneously.
+Units of different players and even teams can reside in the same sea region simultaneously.
 
-### Ambiguous crossings
+### Straits
 
-The following points on the map can be crossed both by land-land and sea-sea movement:
+The following land-land borders can also be crossed by sea-sea movement, as indicated on the map:
 
-* **Denmark islands**
-* **English Channel**
-* **Gibraltar**
-* **Istanbul**
+* **Sweden - Denmark** (the Sound)
+* **England - North France** (Strait of Dover)
+* **Spain - North Africa** (Strait of Gibraltar)
+* **Bulgaria - Turkey** (Bosphorus Strait and Dardanelles Strait)
 
-Sea-sea movement is not possible for a unit if any land region at the crossing is an enemy region.
+Sea-sea movement is not possible for a unit if any land region at the strait is an enemy region.
 
 ## Battles
 
@@ -184,16 +185,16 @@ When a move proceeds into an enemy region, a battle is initiated with all moved 
 A battle has one or more rounds. Every round has following parts:
 
 1. **Artillery strike:**
-    * Every healthy attacking artillery kills 1 unit (*)
+    * Every healthy attacking artillery kills 1 unit (\*)
 1. **Rolling dice:**
     * The attacker gets a dice for every healthy attacking **infantry unit**
     * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
     * Every attacker roll of
-        * **3-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+        * **3-4** wounds an enemy unit, (\*)
+        * **5-6** kills an enemy unit. (\*)
     * Every defender roll of
-        * **1-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+        * **1-4** wounds an enemy unit, (\*)
+        * **5-6** kills an enemy unit. (\*)
 
     Kills are resolved before wounds.
 1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
@@ -223,7 +224,7 @@ A battle has one or more rounds. Every round has following parts:
 
 After the battle, all wounded units become healthy again.
 
-(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
+(\*) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
 
 * Healthy infantry
@@ -231,10 +232,10 @@ priorities:
 * Wounded infantry
 * Wounded artillery
 
-### Trenches
+### Trench warfare
 
-When attacking a region that has a trench at the border the attacker is crossing, the defender has
-advantages:
+When attacking a region that has a trench on the defender's side of the border that the attacker is
+crossing, the defender has advantages:
 
 * Defending units cannot be wounded (only killed)
 * The defender gets **2** dice for every healthy defending unit
@@ -265,11 +266,6 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
-* Every player gets command tokens:
-    * Invest x 2
-    * Dig trenches x 1
-    * Move x 3
-    * Train units x 2
 
 ## Initial seeding
 
