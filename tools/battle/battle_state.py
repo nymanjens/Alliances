@@ -52,6 +52,10 @@ class BattleState(object):
                            self.has_trench)
 
     def _simulate_infantry(self):
+
+        defender_total = self.defending_army.unit_count() * (2 if self.has_trench else 1)
+        attacker_total = self.attacking_army.artillery
+
         # TODO
         # Note: speed beats fanciness here
         attack_kills, attack_wounds = 0, 0
@@ -60,8 +64,12 @@ class BattleState(object):
             throw = randint(1, 7)
             if throw in [5, 6]:
                 attack_kills += 1
+                attacker_total += 1
             elif throw in [3, 4] and not self.has_trench:
                 attack_wounds += 1
+                attacker_total += 1
+            else:
+                attacker_total += 1 / 2
         for _ in range(self._defender_rolls()):
             throw = randint(1, 7)
             if throw in [5, 6]:
@@ -73,10 +81,11 @@ class BattleState(object):
         defending_army = self.defending_army.kill(attack_kills).wound(attack_wounds)
 
         winner = None
-        factor = 1 if self.has_trench else 1
-        if attacking_army.healthy_count() + attacking_army.artillery > factor*defending_army.healthy_count():
+        if attacker_total > defender_total:
+            if not attacking_army.can_battle():
+                print(f"attacker won without army {attacking_army} {defending_army} {self}")
             winner = 'attacker'
-        elif defending_army.unit_count() > 0 and factor*defending_army.healthy_count() >= attacking_army.healthy_count() + attacking_army.artillery:
+        elif defending_army.unit_count() > 0:
             winner = 'defender'
 
         return BattleState(attacking_army, defending_army, self.has_trench, aftermath=True, winner=winner)
