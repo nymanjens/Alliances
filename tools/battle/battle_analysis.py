@@ -31,34 +31,25 @@ def unit_label(army):
 
 
 VALUE_MAPPINGS = [
-    ("battle_rounds", ["full", "retreat"], "number", lambda b, bs: bs.rounds),
-    ("win_balance", ["full", "retreat", "round"], "chance diff",
+    ("win_balance", ["retreat"], "chance diff",
      lambda b, bs: (bs.attacker_won() - bs.defender_won() + 1) / 2),
-    ("retreat_attacker", ["retreat"], "chance", lambda b, bs: bs.attacker_retreat()),
-    ("retreat_defender", ["retreat"], "chance", lambda b, bs: bs.defender_retreat()),
-    ("net_unit_advantage", ["full", "retreat", "round"], "number",
-     lambda b, bs: bs.unit_advantage()[0] - b.unit_advantage()),
-    ("net_value_advantage", ["full", "retreat", "round"], "number",
+    ("net_value_advantage", ["retreat"], "number",
      lambda b, bs: bs.value_advantage()[0] - b.value_advantage()),
-    ("loss_value_attacker", ["full", "retreat", "round"], "number",
+    ("loss_value_attacker", ["retreat"], "number",
      lambda b, bs: bs.attacking_army.value()[0] - b.attacking_army.value()),
-    ("loss_value_defender", ["full", "retreat", "round"], "number",
+    ("loss_value_defender", ["retreat"], "number",
      lambda b, bs: -bs.defending_army.value()[0] + b.defending_army.value()),
-    ("loss_unit_attacker", ["full", "retreat", "round"], "number",
-     lambda b, bs: bs.attacking_army.unit_count()[0] - b.attacking_army.unit_count()),
-    ("loss_unit_defender", ["full", "retreat", "round"], "number",
-     lambda b, bs: -bs.defending_army.unit_count()[0] + b.defending_army.unit_count()),
 ]
 
 
 def main():
-    graph = load_chance_graph("full")
+    graph = load_chance_graph("test")
 
     for typ in ['normal', 'trench']:
         for name, keys, plot_typ, mapper in VALUE_MAPPINGS:
             for key in keys:
                 plot_value(plot_typ, get_mapper(graph, key, mapper),
-                           "_tables/{}/{}_{}_{}.png".format(name, name, typ, key),
+                           "_tables/{}_{}.png".format(name, typ, key),
                            has_trench=typ == "trench")
 
 

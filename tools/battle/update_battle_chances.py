@@ -16,7 +16,7 @@ USE_GZIP = False
 
 
 def main():
-    typ = "full"
+    typ = "test"
     battles = generate_battles()
 
     print("-----------------------------------------------------------")
