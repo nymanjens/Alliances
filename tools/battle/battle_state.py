@@ -60,32 +60,31 @@ class BattleState(object):
         defender_total = 0
         for _ in range(self._attacker_rolls()):
             throw = randint(1, 7)
-            if throw in [5, 6]:
+            if throw in [5, 6] and not (self.has_trench and throw is 5):
                 attack_kills += 1
-                pass
-            elif throw in [2, 3, 4]:
-                pass
-            elif throw in [1]:
+            elif throw in [3, 4]:
+                attacker_total += 1
+            elif throw in [1, 2]:
                 pass
         for _ in range(self._defender_rolls()):
             throw = randint(1, 7)
             if throw in [5, 6]:
                 defend_kills += 1
-            elif throw in [3, 4]:
-                pass
-            elif throw in [1, 2]:
+            elif throw in [1, 2, 3, 4]:
+                defender_total += 1
+            elif throw in []:
                 pass
 
         attacking_army = self.attacking_army.kill(defend_kills)
-        defending_army = self.defending_army.kill(attack_kills // (2 if self.has_trench else 1))
+        defending_army = self.defending_army.kill(attack_kills)
 
-        attacker_total = attacking_army.unit_count()
-        defender_total = defending_army.unit_count() * (2 if self.has_trench else 1)
+        attacker_total += attacking_army.unit_count()
+        defender_total += defending_army.unit_count() * (2 if self.has_trench else 1)
 
         winner = None
 
         if attacker_total > defender_total:
-            if not attacking_army.can_battle():
+            if not attacking_army.can_battle() and defending_army.unit_count()>0:
                 print(f"attacker won without army {attacking_army} {defending_army} {self}")
             winner = 'attacker'
         elif defending_army.unit_count() > 0:
@@ -95,7 +94,7 @@ class BattleState(object):
 
     def _attacker_rolls(self):
         # TODO
-        return self.attacking_army.infantry
+        return self.attacking_army.infantry + self.attacking_army.artillery
 
     def _defender_rolls(self):
         # TODO
