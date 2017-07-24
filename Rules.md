@@ -187,7 +187,7 @@ A battle has the following phases:
     * Every attacking artillery kills 1 unit (\*).
 1. **Rolling dice:**
     * The attacker gets a dice for every attacking **infantry unit**
-    * The defender gets a dice for every surviving defending **unit** (infantry + artillery)
+    * The defender gets a dice for every defending **unit** (infantry + artillery)
     * Every attacker roll of
         * **1-2** equals 1 military power,
         * **3-4** equals 2 military power,
