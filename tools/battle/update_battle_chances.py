@@ -89,26 +89,26 @@ def calc_intensive(battles):
         lock = manager.Lock()
         parallel_exec(calc_battle_round_chances, ((battle, battle_graph, round_stats, lock) for battle in battles))
 
-        print("calculating full battle chances...")
-        full_battle_chances = manager.dict()
-        full_battle_stats = manager.dict()
-        parallel_exec(calc_full_battle_chances,
-                      ((battle, battle_graph, full_battle_chances, full_battle_stats, lock) for battle in battles))
+        #print("calculating full battle chances...")
+        #full_battle_chances = manager.dict()
+        #full_battle_stats = manager.dict()
+        #parallel_exec(calc_full_battle_chances,
+        #              ((battle, battle_graph, full_battle_chances, full_battle_stats, lock) for battle in battles))
 
-        print("calculating retreat battle chances...")
-        retreat_battle_chances = manager.dict()
-        retreat_battle_stats = manager.dict()
-        parallel_exec(calc_retreat_battle_chances,
-                      ((battle, battle_graph, retreat_battle_chances, retreat_battle_stats, lock,
-                        round_stats, full_battle_stats, simple_attacker_retreat_strat,
-                        simple_defender_retreat_strat) for battle in battles))
+        #print("calculating retreat battle chances...")
+        #retreat_battle_chances = manager.dict()
+        #retreat_battle_stats = manager.dict()
+        #parallel_exec(calc_retreat_battle_chances,
+        #              ((battle, battle_graph, retreat_battle_chances, retreat_battle_stats, lock,
+        #                round_stats, full_battle_stats, simple_attacker_retreat_strat,
+        #                simple_defender_retreat_strat) for battle in battles))
 
         print("copying result...")
         battle_graph = dict(battle_graph)
         round_stats = dict(round_stats)
-        full_battle_stats = dict(full_battle_stats)
-        retreat_battle_stats = dict(retreat_battle_stats)
-    return battle_graph, {"round": round_stats, "full": full_battle_stats, "retreat": retreat_battle_stats}
+        #full_battle_stats = dict(full_battle_stats)
+        #retreat_battle_stats = dict(retreat_battle_stats)
+    return battle_graph, {"round": round_stats}#, "full": full_battle_stats, "retreat": retreat_battle_stats}
 
 
 def calc_battle_round_chances(battle, battle_graph, round_stats, lock):

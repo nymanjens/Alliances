@@ -31,13 +31,13 @@ def unit_label(army):
 
 
 VALUE_MAPPINGS = [
-    ("win_balance", ["retreat"], "chance diff",
+    ("win_balance", ["round"], "chance diff",
      lambda b, bs: (bs.attacker_won() - bs.defender_won() + 1) / 2),
-    ("net_value_advantage", ["retreat"], "number",
+    ("net_value_advantage", ["round"], "number",
      lambda b, bs: bs.value_advantage()[0] - b.value_advantage()),
-    ("loss_value_attacker", ["retreat"], "number",
+    ("loss_value_attacker", ["round"], "number",
      lambda b, bs: bs.attacking_army.value()[0] - b.attacking_army.value()),
-    ("loss_value_defender", ["retreat"], "number",
+    ("loss_value_defender", ["round"], "number",
      lambda b, bs: -bs.defending_army.value()[0] + b.defending_army.value()),
 ]
 

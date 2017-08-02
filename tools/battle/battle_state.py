@@ -60,18 +60,18 @@ class BattleState(object):
         defender_total = 0
         for _ in range(self._attacker_rolls()):
             throw = randint(1, 7)
-            if throw in [5, 6] and not (self.has_trench and throw is 5):
+            if throw in [5, 6]:
                 attack_kills += 1
             elif throw in [3, 4]:
-                attacker_total += 1
+                pass
             elif throw in [1, 2]:
                 pass
         for _ in range(self._defender_rolls()):
             throw = randint(1, 7)
-            if throw in [5, 6]:
+            if throw in [4, 5, 6]:
                 defend_kills += 1
-            elif throw in [1, 2, 3, 4]:
-                defender_total += 1
+            elif throw in [1, 2, 3]:
+                pass
             elif throw in []:
                 pass
 
