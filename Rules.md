@@ -5,7 +5,7 @@
     * **Healthy unit:** The default state of a unit. Able to participate in combat.
     * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
       the battle is over, this becomes a healthy unit again.
-* **Regions:** Region on the map bounded by white lines
+* **Regions:** Named region on the map bounded by lines
     * **Strategic region:** Region with a star
     * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
     * **Land region:** Region that consists mostly of land (the inverse of sea regions)
@@ -191,11 +191,11 @@ A battle has one or more rounds. Every round has following parts:
     * The attacker gets a dice for every healthy attacking **infantry unit**
     * The defender gets a dice for every healthy defending **unit** (infantry + artillery)
     * Every attacker roll of
-        * **3-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+        * **3-4** wounds an enemy unit, (\*)
+        * **5-6** kills an enemy unit. (\*)
     * Every defender roll of
-        * **1-4** wounds an enemy unit, (*)
-        * **5-6** kills an enemy unit. (*)
+        * **1-4** wounds an enemy unit, (\*)
+        * **5-6** kills an enemy unit. (\*)
 
     Kills are resolved before wounds.
 1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
@@ -225,7 +225,7 @@ A battle has one or more rounds. Every round has following parts:
 
 After the battle, all wounded units become healthy again.
 
-(&#42;) When an enemy kills/wounds your unit, the choice of unit is determined by following
+(\*) When an enemy kills/wounds your unit, the choice of unit is determined by following
 priorities:
 
 * Healthy infantry
