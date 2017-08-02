@@ -53,10 +53,10 @@ There are 2 opposing teams:
 
 Take control over strategic regions. On every turn the team with the most strategic regions gains
 points equal to the number of surplus regions. Strategic regions where units are trained this turn,
-temporarily don't count. In case of a tie, both teams get 1 point.
+temporarily don't count. In case of a tie, neither team gains a point.
 
-First to 6 points wins. If both teams reach 6 points simultaneously, whichever side may call itself
-the victor. For in war, there are no winners, but all are losers.
+First to 6 points wins. If after an exhaustingly long war, neither team manages to reach 6 points,
+whichever side may call itself the victor. For in war, there are no winners, but all are losers.
 
 # Playing a round
 
