@@ -52,8 +52,7 @@ There are 2 opposing teams:
 # Goal of the game
 
 Take control over strategic regions. On every turn the team with the most strategic regions gains
-points equal to the number of surplus regions. Strategic regions where units are trained this turn,
-temporarily don't count. In case of a tie, neither team gains a point.
+points equal to the number of surplus regions. In case of a tie, neither team gains a point.
 
 First to 6 points wins. If after an exhaustingly long war, neither team manages to reach 6 points,
 whichever side may call itself the victor. For in war, there are no winners, but all are losers.
@@ -135,14 +134,9 @@ player available, all write down their action and execute that action.
   previous one concluded.
 
 * **Train units**:<br>
-  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  region, or 1 coin if it's a normal land region. Having this token on a strategic region however
-  prevents it from generating a point.
+  You can add/upgrade units in this region up to an additional cost of 2 coins.
 
   This token is ignored in **sea regions**.
-
-  *Example: A normal land region contains 1 infantry. You can upgrade that infantry to an artillery
-  or add an additional infantry.*
 
 ## Moving units
 
