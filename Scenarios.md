@@ -218,7 +218,7 @@ Every player gets 2 coins in every region they own.
   </tr>
 </table>
 
-## 6 player beginner scenario
+## 4 player beginner scenario
 
 ### Players, their units and their coins
 
