@@ -198,20 +198,17 @@ A battle has one or more rounds. Every round has following parts:
    Edge case: If the attacker has no healthy units left and the defender has no units left, the
    attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
    supply.
-1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
-   move to a single adjacent land region that is either unoccupied or owned by the defender.
-   Exception: units can't retreat to the region where the attacker's move started.
+1. **The defender has no healthy units left or decides to retreat:** All units (including wounded
+   units) move to a single adjacent land region that is either unoccupied or owned by the defender.
+
+   Exceptions: Units can't retreat to:
+
+   * The region where the attacker's move started
+   * Any region that is under attack, i.e. has an unresolved battle pending from the same move token
+     that initated this battle
 
   If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
-
-  Clarifications for edge cases:
-
-    * If the attacker completely **vacated a region** to attack an adjacent region, defending units
-      may *not* retreat to this region.
-    * If the attacker is attacking **multiple regions**, it is possible that units could retreat to
-      another region under attack. Retreated units are allowed to participate in the following
-      battle. Note that wounded units that retreated will be healthy again in this following battle.
 
   The attacker moves all attacking units into the region. The invested coins in the conquered region
   may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
