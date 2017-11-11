@@ -203,9 +203,9 @@ A battle has one or more rounds. Every round has following parts:
 
    Exceptions: Units can't retreat to:
 
-   * The region where the attacker's move started
-   * Any region that is under attack, i.e. has an unresolved battle pending from the same move token
-     that initated this battle
+    * The region where the attacker's move started
+    * Any region that is under attack, i.e. has an unresolved battle pending from the same move token
+      that initated this battle
 
   If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
