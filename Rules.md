@@ -266,8 +266,3 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
-
-# First play
-
-**Tip for first time plays:** Remove one start unit from the non-strategic start region of every
-player. This makes the first turn easier.
