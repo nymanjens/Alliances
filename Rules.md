@@ -267,13 +267,6 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
 * Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
-## Initial seeding
-
-For every unoccupied region, roll a dice. If its result is:
-
-* 1-3: Nothing happens
-* 4-6: Add 1 coin
-
 # First play
 
 **Tip for first time plays:** Remove one start unit from the non-strategic start region of every
