@@ -264,7 +264,6 @@ Choose a [scenario](Scenarios.md) for the desired number of players *at random* 
 
 ## Coins
 
-* Every player gets 2 coins in every region they own
 * Every player gets 3 coins in their supply
 
 # First play
