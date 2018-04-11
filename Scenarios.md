@@ -4,10 +4,6 @@
 
 ### Players, their units and their coins
 
-* **British Empire**
-    * 1 infantry in England + 2 coins
-    * 1 infantry in Scotland + 2 coins
-    * 1 infantry in The Atlantic Ocean
 * **Russian Empire**
     * 1 infantry in Russia + 2 coins
     * 1 infantry in Ukraine + 1 coin
@@ -16,18 +12,22 @@
     * 1 infantry in N-France + 2 coins
     * 1 infantry in S-France + 1 coin
     * 1 infantry in Spain + 1 coin
+* **British Empire**
+    * 1 infantry in England + 2 coins
+    * 1 infantry in Scotland + 2 coins
+    * 1 infantry in The Atlantic Ocean
 * **German Empire**
     * 1 infantry in E-Germany + 2 coins
     * 1 infantry in W-Germany + 1 coin
     * 1 infantry in Denmark + 1 coin
-* **Ottoman Empire**
-    * 1 infantry in Turkey + 2 coins
-    * 1 infantry in Middle East + 2 coins
-    * 1 infantry in The Mediterranean Sea
 * **Austro-Hungarian Empire**
     * 1 infantry in Austria + 2 coins
     * 1 infantry in Hungary + 1 coin
     * 1 infantry in Bosnia + 1 coin
+* **Ottoman Empire**
+    * 1 infantry in Turkey + 2 coins
+    * 1 infantry in Middle East + 2 coins
+    * 1 infantry in The Mediterranean Sea
 
 When done, every player should have 3 infantry units that occupy 3 regions containing a total of 4
 coins.
@@ -89,24 +89,24 @@ coins.
 
 ### Players and their units
 
-* **British Empire**
-    * 2 infantry in England
-    * 2 infantry in Scotland
 * **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
 * **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
+* **British Empire**
+    * 2 infantry in England
+    * 2 infantry in Scotland
 * **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottoman Empire**
-    * 2 infantry in Turkey
-    * 2 infantry in Middle East
 * **Austro-Hungarian Empire**
     * 2 infantry in Austria
     * 2 infantry in Hungary
+* **Ottoman Empire**
+    * 2 infantry in Turkey
+    * 2 infantry in Middle East
 
 ### Coins
 
@@ -133,24 +133,24 @@ Every player gets 2 coins in every region they own.
 
 ### Players and their units
 
-* **British Empire**
-    * 2 infantry in England
-    * 2 infantry in Scotland
 * **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
 * **French Republic**
     * 2 infantry in N-France
     * 2 infantry in S-France
+* **British Empire**
+    * 2 infantry in England
+    * 2 infantry in Scotland
 * **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
-* **Ottoman Empire**
-    * 2 infantry in Turkey
-    * 2 infantry in Middle East
 * **Austro-Hungarian Empire**
     * 2 infantry in Austria
     * 2 infantry in Hungary
+* **Ottoman Empire**
+    * 2 infantry in Turkey
+    * 2 infantry in Middle East
 
 ### Coins
 
@@ -302,12 +302,12 @@ coins.
 
 ### Players and their units
 
-* **British Empire**
-    * 2 infantry in England
-    * 2 infantry in Scotland
 * **Russian Empire**
     * 2 infantry in Russia
     * 2 infantry in Ukraine
+* **British Empire**
+    * 2 infantry in England
+    * 2 infantry in Scotland
 * **German Empire**
     * 2 infantry in E-Germany
     * 2 infantry in W-Germany
