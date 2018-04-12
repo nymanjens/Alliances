@@ -224,7 +224,7 @@ Every player gets 2 coins in every region they own.
 * **German Empire**
     * 1 infantry in E-Germany + 2 coins
     * 1 infantry in W-Germany + 1 coins
-    * 1 infantry in Denmark
+    * 1 infantry in Denmark + 1 coins
 * **Austro-Hungarian Empire**
     * 1 infantry in Austria + 2 coins
     * 1 infantry in Hungary + 2 coins
