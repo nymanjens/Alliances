@@ -63,7 +63,7 @@ Every round is divided into parts that happen simultaneously (\*) unless stated 
 brackets ([example]) need no player input and can be done quickly.
 
 1. **Token assignment**
-    * All players put command tokens face down on regions they own (\*).
+    * All players put zero or one command token face down on regions they own (\*).
 1. **[Token revealing and roll for start player]**
     * **Token revealing:** All tokens are turned face up
     * **Roll for start player**: Roll a dice. The player corresponding to the number (see below)
