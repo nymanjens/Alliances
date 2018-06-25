@@ -264,4 +264,4 @@ Choose a [scenario](Scenarios.md) for the desired number of players and apply it
 
 ## Coins
 
-* Every player gets 3 coins in their supply
+Every player gets 3 coins in their supply
