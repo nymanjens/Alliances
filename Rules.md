@@ -260,7 +260,7 @@ from your supply.
 
 ## Apply scenario
 
-Choose a [scenario](Scenarios.md) for the desired number of players *at random* and apply it.
+Choose a [scenario](Scenarios.md) for the desired number of players and apply it.
 
 ## Coins
 
