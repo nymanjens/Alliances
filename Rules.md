@@ -252,7 +252,7 @@ from your supply.
 
 ## Initial supply
 
-* Every player gets 3 coins in their supply
+Every player gets 3 coins in their supply
 
 ## Beginner
 
