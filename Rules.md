@@ -262,7 +262,7 @@ In the first round, each player can resolve no more than one move token.
 
 ## Advanced
 
-Choose a [scenario](Scenarios.md) for the desired number of players *at random*.
+Choose a [scenario](Scenarios.md) for the desired number of players.
 
 For every unoccupied region, roll a dice. If its result is:
 
