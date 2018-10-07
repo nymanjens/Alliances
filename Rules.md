@@ -1,25 +1,3 @@
-# Definitions
-
-* **Round:** A single iteration of the game flow. There are a maximum of 10 rounds in a game.
-* **Unit:** Military unit, either an infantry or an artillery
-    * **Healthy unit:** The default state of a unit. Able to participate in combat.
-    * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
-      the battle is over, this becomes a healthy unit again.
-* **Regions:** Named region on the map bounded by lines
-    * **Strategic region:** Region with a star
-    * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
-    * **Land region:** Region that consists mostly of land (the inverse of sea regions)
-    * **Occupied region:** Land region occupied by at least one unit
-    * **Unoccupied region:** Land region not occupied by any units
-    * **Neutral region:** Land region occupied by neutral units
-    * **Region owned by a player:** Land region occupied by units of that player
-    * **Friendly region for a player:** Land region occupied by units of that player, or
-      units of an ally of that player
-    * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
-      of that player
-    * **Conquered region:** Land region won after successful battle earlier during the current
-      command. This excludes previously unoccupied regions now occupied by retreated units.
-
 # Contents of the game
 
 * **Per player:**
@@ -35,6 +13,12 @@
     * Coins: infinite
     * Neutral infantry: infinite
     * Trenches: infinite
+
+# Initial setup
+
+## Apply scenario
+
+Choose a [scenario](Scenarios.md) for the desired number of players and apply it. Every player starts with 3 coins in their supply
 
 # Teams
 
@@ -58,6 +42,28 @@ One of:
 1. If there is no winner after round 10, the team with the most strategic regions wins. If these
    match, whichever side may call itself the victor. For in war, there are no winners, but all are
    losers.
+
+# Definitions
+
+* **Round:** A single iteration of the game flow. There are a maximum of 10 rounds in a game.
+* **Unit:** Military unit, either an infantry or an artillery
+    * **Healthy unit:** The default state of a unit. Able to participate in combat.
+    * **Wounded unit:** Temporary state of a unit that can no longer participate in a battle. After
+      the battle is over, this becomes a healthy unit again.
+* **Regions:** Named region on the map bounded by lines
+    * **Strategic region:** Region with a star
+    * **Sea region:** Region that consists mostly of a water body (the inverse of land regions)
+    * **Land region:** Region that consists mostly of land (the inverse of sea regions)
+    * **Occupied region:** Land region occupied by at least one unit
+    * **Unoccupied region:** Land region not occupied by any units
+    * **Neutral region:** Land region occupied by neutral units
+    * **Region owned by a player:** Land region occupied by units of that player
+    * **Friendly region for a player:** Land region occupied by units of that player, or
+      units of an ally of that player
+    * **Enemy region for a player:** Land region occupied by neutral units, or units of an enemy
+      of that player
+    * **Conquered region:** Land region won after successful battle earlier during the current
+      command. This excludes previously unoccupied regions now occupied by retreated units.
 
 # Playing a round
 
@@ -122,7 +128,7 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Dig trenches**:<br>
-  Up to two new trenches may be placed in this region on trench placeholders that don't already have
+  Up to two new trenches may be placed in this region on trench placeholders that do not already have
   a trench.
 
   This token is ignored in **sea regions**.
@@ -135,8 +141,8 @@ player available, all write down their action and execute that action.
   previous one concluded.
 
 * **Train units**:<br>
-  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  region, or 1 coin if it's a normal land region.
+  You can add/upgrade units in this region up to an additional cost of 2 coins if it is a strategic
+  region, or 1 coin if it is a normal land region.
 
   This token is ignored in **sea regions**.
 
@@ -163,7 +169,7 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 
 ### Sea regions
 
-Units of different players and even teams can reside in the same sea region simultaneously.
+Units of different players and even different teams can reside in the same sea region simultaneously.
 
 ### Straits
 
@@ -205,7 +211,7 @@ A battle has one or more rounds. Every round has following parts:
    supply.
 1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
    move to a single adjacent land region that is either unoccupied or owned by the defender.
-   Exception: units can't retreat to the region where the attacker's move started.
+   Exception: units cannot retreat to the region where the attacker's move started.
 
   If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
@@ -243,7 +249,7 @@ crossing, the defender has advantages:
 ### Fighting neutral regions
 
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
-a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
+a defender has to make a choice (e.g. where to retreat to), the enemy team of the attacker makes that
 decision.
 
 # Coin trading
@@ -255,13 +261,3 @@ from your supply.
 
 * *When an ally is struggling with paying their units*
 * *When an ally wants to invest in a region but has no coins*
-
-# Initial setup
-
-## Apply scenario
-
-Choose a [scenario](Scenarios.md) for the desired number of players and apply it.
-
-## Coins
-
-Every player gets 3 coins in their supply
