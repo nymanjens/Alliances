@@ -16,8 +16,6 @@
 
 # Initial setup
 
-## Apply scenario
-
 Choose a [scenario](Scenarios.md) for the desired number of players and apply it. Every player
 starts with 3 coins in their supply
 
