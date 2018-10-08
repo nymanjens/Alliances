@@ -1,3 +1,48 @@
+# Contents of the game
+
+* **Per player:**
+    * Units:
+        * Infantry: 14
+        * Artillery: 5
+    * Command tokens:
+        * Invest: 2
+        * Dig trenches: 1
+        * Move: 3
+        * Train units: 2
+* **General:**
+    * Coins: infinite
+    * Neutral infantry: infinite
+    * Trenches: infinite
+
+# Initial setup
+
+Choose a [scenario](Scenarios.md) for the desired number of players and apply it. Every player
+starts with 3 coins in their supply
+
+# Teams
+
+There are 2 opposing teams:
+
+* The Triple Entente:
+    * The Russian Empire (Россійская Имперія)
+    * The French Third Republic (La Troisième République)
+    * The British Empire
+* The Central Powers:
+    * The German Empire (Das Deutsches Kaiserreich)
+    * The Austro-Hungarian Empire (Die Österreichisch-Ungarische Monarchie/ Az Osztrák–Magyar
+      Monarchia)
+    * The Ottoman Empire (دولت عليه عثمانیه)
+
+# Goal of the game
+
+One of:
+
+1. At the end of a round `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
+   other team (ends the game)
+1. If there is no winner after round 10, the team with the most strategic regions wins. If these
+   match, whichever side may call itself the victor. For in war, there are no winners, but all are
+   losers.
+
 # Definitions
 
 * **Round:** A single iteration of the game flow. There are a maximum of 10 rounds in a game.
@@ -19,45 +64,6 @@
       of that player
     * **Conquered region:** Land region won after successful battle earlier during the current
       command. This excludes previously unoccupied regions now occupied by retreated units.
-
-# Contents of the game
-
-* **Per player:**
-    * Units:
-        * Infantry: 14
-        * Artillery: 5
-    * Command tokens:
-        * Invest: 2
-        * Dig trenches: 1
-        * Move: 3
-        * Train units: 2
-* **General:**
-    * Coins: infinite
-    * Neutral infantry: infinite
-    * Trenches: infinite
-
-# Teams
-
-There are 2 opposing teams:
-
-* The Triple Entente:
-    * The Russian Empire (Россійская Имперія)
-    * The French Third Republic (La Troisième République)
-    * The British Empire
-* The Central Powers:
-    * The German Empire (Das Deutsches Kaiserreich)
-    * The Austro-Hungarian Empire (Die Österreichisch-Ungarische Monarchie / Az Osztrák–Magyar Monarchia)
-    * The Ottoman Empire (دولت عليه عثمانیه)
-
-# Goal of the game
-
-One of:
-
-1. At the end of a round `n` (`n in {1..10}`), have at least an `11 - n` point advantage over the
-   other team (ends the game)
-1. If there is no winner after round 10, the team with the most strategic regions wins. If these
-   match, whichever side may call itself the victor. For in war, there are no winners, but all are
-   losers.
 
 # Playing a round
 
@@ -122,8 +128,8 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Dig trenches**:<br>
-  Up to two new trenches may be placed in this region on trench placeholders that don't already have
-  a trench.
+  Up to two new trenches may be placed in this region on trench placeholders that do not already
+  have a trench.
 
   This token is ignored in **sea regions**.
 
@@ -131,12 +137,12 @@ player available, all write down their action and execute that action.
   All units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
-  destinations. If there are multiple battles, the player chooses the subsequent battle every time the
-  previous one concluded.
+  destinations. If there are multiple battles, the player chooses the subsequent battle every time
+  the previous one concluded.
 
 * **Train units**:<br>
-  You can add/upgrade units in this region up to an additional cost of 2 coins if it's a strategic
-  region, or 1 coin if it's a normal land region.
+  You can add/upgrade units in this region up to an additional cost of 2 coins if it is a strategic
+  region, or 1 coin if it is a normal land region.
 
   This token is ignored in **sea regions**.
 
@@ -163,7 +169,7 @@ If a unit's move ends in a previously unoccupied region, invested coins may be (
 
 ### Sea regions
 
-Units of different players and even teams can reside in the same sea region simultaneously.
+Units of different players and even different teams can reside in the same sea region simultaneously.
 
 ### Straits
 
@@ -197,15 +203,15 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6** kills an enemy unit. (\*)
 
     Kills are resolved before wounds.
-1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
-   where the move started.
+1. **The attacker has no healthy units left or decides to retreat:** All units move back to the
+   region where the move started.
 
    Edge case: If the attacker has no healthy units left and the defender has no units left, the
    attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
    supply.
-1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
-   move to a single adjacent land region that is either unoccupied or owned by the defender.
-   Exception: units can't retreat to the region where the attacker's move started.
+1. **The defender has no healthy units left or decides to retreat:** All units (including wounded
+   units) move to a single adjacent land region that is either unoccupied or owned by the defender.
+   Exception: units cannot retreat to the region where the attacker's move started.
 
   If no such region is found, the units are killed. If there is a choice, the defender may choose
   the region.
@@ -243,8 +249,8 @@ crossing, the defender has advantages:
 ### Fighting neutral regions
 
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
-a defender has to make a choice (e.g. retreat), the enemy team of the attacker may make that
-decision.
+a defender has to make a choice (e.g. where to retreat to), the enemy team of the attacker makes
+that decision.
 
 # Coin trading
 
@@ -255,13 +261,3 @@ from your supply.
 
 * *When an ally is struggling with paying their units*
 * *When an ally wants to invest in a region but has no coins*
-
-# Initial setup
-
-## Apply scenario
-
-Choose a [scenario](Scenarios.md) for the desired number of players and apply it.
-
-## Coins
-
-Every player gets 3 coins in their supply
