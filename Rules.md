@@ -18,7 +18,8 @@
 
 ## Apply scenario
 
-Choose a [scenario](Scenarios.md) for the desired number of players and apply it. Every player starts with 3 coins in their supply
+Choose a [scenario](Scenarios.md) for the desired number of players and apply it. Every player
+starts with 3 coins in their supply
 
 # Teams
 
@@ -30,7 +31,8 @@ There are 2 opposing teams:
     * The British Empire
 * The Central Powers:
     * The German Empire (Das Deutsches Kaiserreich)
-    * The Austro-Hungarian Empire (Die Österreichisch-Ungarische Monarchie / Az Osztrák–Magyar Monarchia)
+    * The Austro-Hungarian Empire (Die Österreichisch-Ungarische Monarchie/ Az Osztrák–Magyar
+      Monarchia)
     * The Ottoman Empire (دولت عليه عثمانیه)
 
 # Goal of the game
@@ -128,8 +130,8 @@ player available, all write down their action and execute that action.
   This token is ignored in **sea regions**.
 
 * **Dig trenches**:<br>
-  Up to two new trenches may be placed in this region on trench placeholders that do not already have
-  a trench.
+  Up to two new trenches may be placed in this region on trench placeholders that do not already
+  have a trench.
 
   This token is ignored in **sea regions**.
 
@@ -137,8 +139,8 @@ player available, all write down their action and execute that action.
   All units in this region can move. Units can move separately to multiple regions.
 
   First, the player shows the other players all planned moves by moving units to their desired
-  destinations. If there are multiple battles, the player chooses the subsequent battle every time the
-  previous one concluded.
+  destinations. If there are multiple battles, the player chooses the subsequent battle every time
+  the previous one concluded.
 
 * **Train units**:<br>
   You can add/upgrade units in this region up to an additional cost of 2 coins if it is a strategic
@@ -203,14 +205,14 @@ A battle has one or more rounds. Every round has following parts:
         * **5-6** kills an enemy unit. (\*)
 
     Kills are resolved before wounds.
-1. **The attacker has no healthy units left or decides to retreat:** All units move back to the region
-   where the move started.
+1. **The attacker has no healthy units left or decides to retreat:** All units move back to the
+   region where the move started.
 
    Edge case: If the attacker has no healthy units left and the defender has no units left, the
    attacker has to retreat. Any command tokens on the attacked region are returned to the defender's
    supply.
-1. **The defender has no healthy units left or decides to retreat:** All units (including wounded units)
-   move to a single adjacent land region that is either unoccupied or owned by the defender.
+1. **The defender has no healthy units left or decides to retreat:** All units (including wounded
+   units) move to a single adjacent land region that is either unoccupied or owned by the defender.
    Exception: units cannot retreat to the region where the attacker's move started.
 
   If no such region is found, the units are killed. If there is a choice, the defender may choose
@@ -249,8 +251,8 @@ crossing, the defender has advantages:
 ### Fighting neutral regions
 
 Neutral units will never attack, but do defend. The same rules apply as for normal combat. Whenever
-a defender has to make a choice (e.g. where to retreat to), the enemy team of the attacker makes that
-decision.
+a defender has to make a choice (e.g. where to retreat to), the enemy team of the attacker makes
+that decision.
 
 # Coin trading
 
