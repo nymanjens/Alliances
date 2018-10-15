@@ -215,16 +215,16 @@ Every player gets 2 coins in every region they own.
 
 * **Russian Empire**
     * 1 infantry in Russia + 2 coins
-    * 1 infantry in Ukraine + 1 coins
-    * 1 infantry in Finland + 1 coins
+    * 1 infantry in Ukraine + 1 coin
+    * 1 infantry in Finland + 1 coin
 * **French Republic**
     * 1 infantry in N-France + 2 coins
     * 1 infantry in S-France + 2 coins
     * 1 infantry in The North Sea
 * **German Empire**
     * 1 infantry in E-Germany + 2 coins
-    * 1 infantry in W-Germany + 1 coins
-    * 1 infantry in Denmark + 1 coins
+    * 1 infantry in W-Germany + 1 coin
+    * 1 infantry in Denmark + 1 coin
 * **Austro-Hungarian Empire**
     * 1 infantry in Austria + 2 coins
     * 1 infantry in Hungary + 2 coins
