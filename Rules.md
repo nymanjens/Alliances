@@ -165,7 +165,8 @@ adjacent to this invested region. Units cannot end in friendly regions owned by 
 
 ### Plundering
 
-If a unit's move ends in a previously unoccupied region, invested coins may be (partly) stolen.
+If a unit of a player ends a move in a region which was not previously owned by that player, the
+player may move any amount of coins invested in the region to his supply.
 
 ### Sea regions
 
@@ -224,9 +225,9 @@ A battle has one or more rounds. Every round has following parts:
     another region under attack. Retreated units are allowed to participate in the following
     battle. Note that wounded units that retreated will be healthy again in this following battle.
 
-  The attacker moves all attacking units into the region. The invested coins in the conquered region
-  may be kept on the board or may be (partly) stolen. If a token is present, the attacker may use it
-  in a next command round after which the token returns to the defender.
+  The attacker moves all attacking units into the region and may plunder the region. If a token is
+  present, the attacker may use it in a next command round after which the token returns to the
+  defender.
 
 After the battle, all wounded units become healthy again.
 
