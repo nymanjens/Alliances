@@ -6,4 +6,11 @@ master:
 individual-goal:
 [![Build Status](https://travis-ci.org/nymanjens/Alliances.svg?branch=individual-goal)](https://travis-ci.org/nymanjens/Alliances)
 
-[**Click here to see the rules**](Rules.md)
+This GitHub repository is used to manage discussions and versions of this board game.
+
+**Links:**
+
+- [Rules as pdf (with images)](bit.ly/alliances-1914)
+- [Published game (free) on Tabletop Simulator](https://steamcommunity.com/sharedfiles/filedetails/?id=2038974445)
+- [1-page description of the game](bit.ly/alliances-1914-summary)
+- [Rules on GitHub (without images)](Rules.md)
