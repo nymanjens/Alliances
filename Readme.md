@@ -1,4 +1,4 @@
-# Alliances
+# Alliances 1914
 
 master:
 [![Build Status](https://travis-ci.org/nymanjens/Alliances.svg?branch=master)](https://travis-ci.org/nymanjens/Alliances)
